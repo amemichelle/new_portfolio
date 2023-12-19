@@ -22,13 +22,11 @@ function ProjectBlock(props) {
         onMouseLeave={mouseLeave}
         className="project"
       >
-        <p style={{ color: "black" }}>{hovered.value} PARAGRAPH</p>
-
         <div
           className={"project__img-container"}
           style={{ backgroundColor: props.bgcolor }}
         >
-          <AnimatePresence>
+          <AnimatePresence mode="popLayout">
             {hovered ? (
               <motion.img
                 initial={{ opacity: 0 }}

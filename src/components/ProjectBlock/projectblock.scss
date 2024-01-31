@@ -38,10 +38,7 @@
   }
 
   &__logo {
-    width: 8rem;
-    @include breakpoint-min-size($desktop) {
-      width: 10rem;
-    }
+    width: 70%;
   }
 
   &__title {

@@ -1,6 +1,6 @@
 import "./projectblock.scss";
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 function ProjectBlock(props) {
   const [hovered, setHovered] = useState(false);
@@ -26,27 +26,14 @@ function ProjectBlock(props) {
           className={"project__img-container"}
           style={{ backgroundColor: props.bgcolor }}
         >
-          <AnimatePresence mode="popLayout">
-            {hovered ? (
-              <motion.img
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                key="hover"
-                src={props.img}
-                className={"project__logo"}
-              />
-            ) : (
-              <motion.img
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                key="default"
-                src={props.hoverimg}
-                className={"project__logo"}
-              />
-            )}
-          </AnimatePresence>
+          <motion.img
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            key="default"
+            src={props.hoverimg}
+            className={"project__logo"}
+          />
         </div>
         <div className="project__info">
           <h2 className="project__title" style={style}>

@@ -1,0 +1,41 @@
+@import "../../styles/partials/_FontStyles";
+@import "../../styles/partials/_Mixins";
+@import "../../styles/partials/_Variables";
+
+.context {
+  @include flex-column;
+  align-items: center;
+
+  &__container {
+    margin: 1rem 0;
+    width: 90%;
+    @include breakpoint-min-size($tablet) {
+      width: 70%;
+    }
+
+    @include breakpoint-min-size($desktop) {
+      width: 61%;
+    }
+  }
+
+  &__heading-stack {
+    @include flex-row;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  &__icon-text {
+    @include flex-row;
+  }
+
+  &__title {
+    @include m-h1-style;
+    @include removeMargin;
+    padding-left: 1rem;
+  }
+
+  &__desc {
+    @include m-serif-lg;
+    padding-left: 1rem;
+  }
+}

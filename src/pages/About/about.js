@@ -107,8 +107,9 @@ function about() {
         </section>
 
         <CTA></CTA>
-        <Footer></Footer>
       </motion.div>
+
+      <Footer></Footer>
     </>
   );
 }

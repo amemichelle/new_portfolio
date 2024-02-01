@@ -62,8 +62,8 @@ function Home() {
             </Link>
           </div>
         </section>
-        <Footer></Footer>
       </motion.div>
+      <Footer></Footer>
     </>
   );
 }

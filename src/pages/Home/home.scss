@@ -4,6 +4,9 @@
 
 .page__container {
   position: relative;
+  z-index: 5;
+  margin-bottom: 8rem;
+  background-color: $white;
 }
 
 .projects-box {

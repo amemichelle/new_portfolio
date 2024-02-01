@@ -7,6 +7,18 @@
   justify-content: space-between;
   height: 2rem;
   align-items: center;
+  cursor: pointer;
+
+  &__img-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 12rem;
+  }
+
+  &__img {
+    height: 100%;
+  }
 
   &__main {
     @include flex-row;
@@ -29,4 +41,12 @@
     @include removeMargin;
     width: 10%;
   }
+}
+
+.hackathon-item > .hackathon-item__img-box {
+  display: none;
+}
+
+.hackathon-item:hover > .hackathon-item__img-box {
+  display: block;
 }

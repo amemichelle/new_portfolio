@@ -50,7 +50,7 @@ function MarketingProject() {
         <Navbar />
         <div className="container__box">
           <div className="container">
-            <h2 class="graphics__header">
+            <h2 className="graphics__header">
               <span>Guusto</span> - Blog Post Graphics
             </h2>
             <div className="container__graphics">
@@ -74,7 +74,7 @@ function MarketingProject() {
               />
             </div>
 
-            <h2 class="graphics__header">
+            <h2 className="graphics__header">
               <span>Guusto</span> - Video Thumbnails
             </h2>
 
@@ -99,7 +99,7 @@ function MarketingProject() {
               />
             </div>
 
-            <h2 class="graphics__header">
+            <h2 className="graphics__header">
               <span>Guusto</span> - Webinar Graphics
             </h2>
 
@@ -124,7 +124,7 @@ function MarketingProject() {
               />
             </div>
 
-            <h2 class="graphics__header">
+            <h2 className="graphics__header">
               <span>SFU Surge</span> - Stormhacks '22 Content
             </h2>
 
@@ -168,7 +168,7 @@ function MarketingProject() {
               />
             </div>
 
-            <h2 class="graphics__header">
+            <h2 className="graphics__header">
               <span>SFU Surge</span> - Stormhacks '21 Content
             </h2>
 
@@ -212,7 +212,7 @@ function MarketingProject() {
               />
             </div>
 
-            <h2 class="graphics__header">
+            <h2 className="graphics__header">
               <span>Youth Mental Health Association</span> - Facebook Event
               Graphics
             </h2>

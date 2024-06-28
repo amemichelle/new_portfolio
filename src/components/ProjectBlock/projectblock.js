@@ -27,9 +27,8 @@ function ProjectBlock(props) {
           style={{ backgroundColor: props.bgcolor }}
         >
           <motion.img
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            initial={false}
+            animate={{ width: hovered ? "72%" : "70%" }}
             key="default"
             src={props.hoverimg}
             className={"project__logo"}

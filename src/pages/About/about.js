@@ -11,6 +11,7 @@ import ResumeItem from "../../components/ResumeItem/ResumeItem";
 import brainStationLogo from "../../assets/brainstation-logo.svg";
 import freelancePlaceholder from "../../assets/freelance-placeholder.svg";
 import guustoIcon from "../../assets/guusto-icon.svg";
+import deltaTriangle from "../../assets/delta-triangle.svg";
 
 function about() {
   return (
@@ -20,7 +21,7 @@ function about() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.2 }}
         variants={{
           visible: { opacity: 1 },
           hidden: { opacity: 0 },
@@ -48,30 +49,40 @@ function about() {
             <div className="resume-things">
               <h2 className="about__h2">Experience</h2>
               <ResumeItem
-                icon={freelancePlaceholder}
-                position="Freelance Designer"
-                company="Self-Employed"
-                date="Dec 2023 - Present"
-                desc="Managed multiple web design and development projects for clients to support their marketing teams in increasing customer conversion."
-              ></ResumeItem>
+                icon={deltaTriangle}
+                position="Intermediate UI/UX Designer"
+                company="Delta Controls"
+                date="February 2024 - Present"
+              >
+                Collaborating on the development of the company's first design
+                system across mutiple platforms. Subsequently providing support
+                for the teams working on Proviso, Seymour, and other tools.
+              </ResumeItem>
               <ResumeItem
                 icon={brainStationLogo}
                 position="Teaching Assistant - Software Engineering"
                 company="BrainStation"
                 date="Nov 2023 - Feb 2024"
-                desc="Communicated complex development concepts daily to students learning
-          the fundamentals of web development through async and face-to-face
-          channels, resulting in an increase of student confidence and
-          understanding of concepts."
-              ></ResumeItem>
+              >
+                Communicated complex development concepts daily to students
+                learning the fundamentals of web development through async and
+                face-to-face channels, resulting in an increase of student
+                confidence and understanding of concepts.
+              </ResumeItem>
 
               <ResumeItem
                 icon={guustoIcon}
                 position="Junior Designer"
                 company="Guusto"
                 date="Jan 2021 - Jul 2023"
-                desc="Spearheaded the design and development of the company's marketing website by managing multiple stakeholder requests and updating the website to meet business needs. Subsequently utilized custom Javascript to create a tailored platform that communicates the company’s value and acts as the #1 lead generation tool."
-              ></ResumeItem>
+              >
+                Spearheaded the design and development of the company's
+                marketing website by managing multiple stakeholder requests and
+                updating the website to meet business needs. Subsequently
+                utilized custom Javascript to create a tailored platform that
+                communicates the company’s value and acts as the #1 lead
+                generation tool.
+              </ResumeItem>
             </div>
             <Hackathons></Hackathons>
           </div>

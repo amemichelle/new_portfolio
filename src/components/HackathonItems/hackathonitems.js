@@ -9,8 +9,6 @@ function HackathonItems(props) {
     y: 0,
   });
 
-  console.log(mousePosition);
-
   useEffect(() => {
     const mouseMove = (e) => {
       setMousePosition({

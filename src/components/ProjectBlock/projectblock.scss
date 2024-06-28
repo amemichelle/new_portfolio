@@ -20,6 +20,10 @@
     @include breakpoint-min-size($desktop) {
       height: 16rem;
     }
+
+    @include breakpoint-min-size(1600px) {
+      height: 20rem;
+    }
   }
 
   &__group-img {

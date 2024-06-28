@@ -16,7 +16,7 @@ function ResumeItem(props) {
             </div>
           </div>
         </div>
-        <p className="resume__desc">{props.desc}</p>
+        <p className="resume__desc">{props.children}</p>
       </div>
     </>
   );

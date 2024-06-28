@@ -23,8 +23,12 @@
   }
 
   &__icon {
+    display: none;
     width: 40px;
     height: auto;
+    @include breakpoint-min-size(400px) {
+      display: block;
+    }
   }
 
   &__company-date {

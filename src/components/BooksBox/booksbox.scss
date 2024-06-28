@@ -1,0 +1,23 @@
+@import "../../styles/partials/_FontStyles";
+@import "../../styles/partials/_Mixins";
+@import "../../styles/partials/_Variables";
+
+.books {
+  &__container {
+    background-color: $tan-background;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+  }
+
+  &__title {
+    @include m-body-serif;
+  }
+
+  &__author {
+    @include m-body;
+  }
+
+  &__img {
+    height: 12rem;
+  }
+}

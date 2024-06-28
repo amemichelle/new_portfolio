@@ -6,7 +6,7 @@
   @include flex-column;
   align-items: center;
 
-  &__container {
+  &__container--alt {
     margin: 1rem 0;
     width: 90%;
     @include breakpoint-min-size($tablet) {
@@ -19,13 +19,15 @@
   }
 
   &__heading-stack {
-    @include flex-row;
-    align-items: center;
-    gap: 4rem;
+    @include flex-column;
+    align-items: left;
+    gap: 0.5rem;
   }
 
   &__icon-text {
     @include flex-row;
+    padding-left: 1rem;
+    gap: 1rem;
   }
 
   &__title {
@@ -38,4 +40,20 @@
     @include m-serif-lg;
     padding-left: 1rem;
   }
+}
+
+.books {
+  @include flex-row;
+  gap: 1rem;
+  padding: 2rem 1rem;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.page__heading {
+  @include m-bold-heading;
+  padding-left: 1rem;
 }

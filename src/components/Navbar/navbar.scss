@@ -32,15 +32,15 @@
 
   &__links {
     display: none;
-
     @include breakpoint-min-size($tablet) {
       gap: 1rem;
       @include flex-row;
     }
 
     &-item {
-      @include m-nav-links;
-      font-size: 1rem;
+      @include m-body;
+
+      font-size: 1.1rem;
     }
   }
 
@@ -52,7 +52,7 @@
   }
 
   &__logo-img {
-    width: 70%;
+    width: 60%;
   }
 }
 
@@ -76,8 +76,10 @@
   }
 
   &__link {
-    @include m-nav-links;
-    padding: 1rem;
+    @include m-body;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 1.1rem;
     background-color: #f5f0ec;
 
     &:hover {

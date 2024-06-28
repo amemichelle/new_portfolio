@@ -138,7 +138,11 @@
 
 .resume-things {
   @include flex-column;
-  max-width: 60%;
+  max-width: 100%;
+
+  @include breakpoint-min-size($tablet) {
+    max-width: 60%;
+  }
 }
 
 .after-hours {

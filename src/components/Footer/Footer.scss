@@ -67,3 +67,11 @@
     }
   }
 }
+
+.theme-button {
+  display: flex;
+  @include centered;
+  height: 2rem;
+  width: 6rem;
+  background-color: red;
+}

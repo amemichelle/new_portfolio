@@ -3,6 +3,7 @@ import logomark from "../../assets/logomark.svg";
 import mobilemenu from "../../assets/mobile-menu.svg";
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 function Navbar() {
   const [visible, setVisible] = useState(false);
@@ -32,6 +33,16 @@ function Navbar() {
 
   const handleClick = (event) => {
     setVisible((current) => !current);
+  };
+
+  const [hovered, setHovered] = useState(false);
+
+  const mouseEnter = (e) => {
+    setHovered(true);
+  };
+
+  const mouseLeave = (e) => {
+    setHovered(false);
   };
 
   return (

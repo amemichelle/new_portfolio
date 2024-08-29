@@ -7,6 +7,12 @@ import Hackathons from "../../components/Hackathons/hackathons";
 import Activity from "../../components/Activity/activity";
 import CTA from "../../components/CTA/cta";
 import Footer from "../../components/Footer/Footer";
+import ResumeItem from "../../components/ResumeItem/ResumeItem";
+import brainStationLogo from "../../assets/brainstation-logo.svg";
+import freelancePlaceholder from "../../assets/freelance-placeholder.svg";
+import guustoIcon from "../../assets/guusto-icon.svg";
+import deltaTriangle from "../../assets/delta-triangle.svg";
+
 function about() {
   return (
     <>
@@ -15,7 +21,7 @@ function about() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.2 }}
         variants={{
           visible: { opacity: 1 },
           hidden: { opacity: 0 },
@@ -41,36 +47,42 @@ function about() {
         <section className="professional-stuff">
           <div className="professional-stuff__box">
             <div className="resume-things">
-              <h2 className="about__h2">Work</h2>
+              <h2 className="about__h2">Experience</h2>
+              <ResumeItem
+                icon={deltaTriangle}
+                position="Intermediate UI/UX Designer"
+                company="Delta Controls"
+                date="February 2024 - Present"
+              >
+                Collaborating on the development of the company's first design
+                system across mutiple platforms. Subsequently providing support
+                for the teams working on Proviso, Seymour, and other tools.
+              </ResumeItem>
+              <ResumeItem
+                icon={brainStationLogo}
+                position="Teaching Assistant - Software Engineering"
+                company="BrainStation"
+                date="Nov 2023 - Feb 2024"
+              >
+                Communicated complex development concepts daily to students
+                learning the fundamentals of web development through async and
+                face-to-face channels, resulting in an increase of student
+                confidence and understanding of concepts.
+              </ResumeItem>
 
-              <div className="work">
-                <p className="work__header">Education</p>
-                <ul className="work__list">
-                  <li className="work__list-item">
-                    Design @ Simon Fraser University
-                  </li>
-                  <li className="work__list-item">
-                    Development @ Brainstation
-                  </li>
-                </ul>
-
-                <p className="work__header">Key Experiences</p>
-                <ul className="work__list">
-                  <li className="work__list-item">Junior Designer @ Guusto </li>
-                  <li className="work__list-item">
-                    Marketing Director @ SFU Surge
-                  </li>
-                  <li className="work__list-item">
-                    Graphic Design Lead @ YMHA
-                  </li>
-                  <li className="work__list-item">
-                    Marketing Apprentice @ The Forum
-                  </li>
-                  <li className="work__list-item">
-                    Web + Graphic Design Intern @ DSBIA
-                  </li>
-                </ul>
-              </div>
+              <ResumeItem
+                icon={guustoIcon}
+                position="Junior Designer"
+                company="Guusto"
+                date="Jan 2021 - Jul 2023"
+              >
+                Spearheaded the design and development of the company's
+                marketing website by managing multiple stakeholder requests and
+                updating the website to meet business needs. Subsequently
+                utilized custom Javascript to create a tailored platform that
+                communicates the company’s value and acts as the #1 lead
+                generation tool.
+              </ResumeItem>
             </div>
             <Hackathons></Hackathons>
           </div>
@@ -106,8 +118,9 @@ function about() {
         </section>
 
         <CTA></CTA>
-        <Footer></Footer>
       </motion.div>
+
+      <Footer></Footer>
     </>
   );
 }

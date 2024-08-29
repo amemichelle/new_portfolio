@@ -2,6 +2,13 @@
 @import "../../styles/partials/_Mixins";
 @import "../../styles/partials/_Variables";
 
+.page__container {
+  position: relative;
+  z-index: 5;
+  margin-bottom: 8rem;
+  background-color: $white;
+}
+
 .projects-box {
   padding: 1.5rem 1.5rem;
 

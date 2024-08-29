@@ -1,5 +1,6 @@
 import "./projectblock.scss";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 function ProjectBlock(props) {
   const [hovered, setHovered] = useState(false);
@@ -22,10 +23,16 @@ function ProjectBlock(props) {
         className="project"
       >
         <div
-          className="project__img-container"
+          className={"project__img-container"}
           style={{ backgroundColor: props.bgcolor }}
         >
-          <img src={props.img} className="project__logo" />
+          <motion.img
+            initial={false}
+            animate={{ width: hovered ? "72%" : "70%" }}
+            key="default"
+            src={props.hoverimg}
+            className={"project__logo"}
+          />
         </div>
         <div className="project__info">
           <h2 className="project__title" style={style}>

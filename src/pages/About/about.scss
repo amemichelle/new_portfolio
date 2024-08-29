@@ -2,6 +2,13 @@
 @import "../../styles/partials/_Mixins";
 @import "../../styles/partials/_Variables";
 
+.page__container {
+  position: relative;
+  z-index: 5;
+  margin-bottom: 8rem;
+  background-color: $white;
+}
+
 .about {
   &__top {
     @include flex-row;
@@ -120,6 +127,7 @@
       justify-content: space-between;
       padding: 2rem 0;
       width: 70%;
+      gap: 2rem;
     }
 
     @include breakpoint-min-size($desktop) {
@@ -130,6 +138,11 @@
 
 .resume-things {
   @include flex-column;
+  max-width: 100%;
+
+  @include breakpoint-min-size($tablet) {
+    max-width: 60%;
+  }
 }
 
 .after-hours {

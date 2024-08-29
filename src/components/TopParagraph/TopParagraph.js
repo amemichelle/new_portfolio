@@ -28,9 +28,13 @@ function TopParagrah() {
             <div className="list__item">
               <img src={singlesparkle} className="single-sparkle" />
               <p className="list__desc">
-                Previously designing @
-                <a href="" className="list__inline">
-                  Guusto ↗
+                Currently designing @
+                <a
+                  href="http://deltacontrols.com/"
+                  target="_blank"
+                  class="list__inline"
+                >
+                  Delta Controls ↗
                 </a>
               </p>
             </div>

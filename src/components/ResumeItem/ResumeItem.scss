@@ -1,0 +1,63 @@
+@import "../../styles/partials/_FontStyles";
+@import "../../styles/partials/_Mixins";
+@import "../../styles/partials/_Variables";
+
+.resume {
+  &__item-box {
+    padding-top: 1rem;
+    max-width: 90%;
+  }
+
+  &__heading-items {
+    @include flex-row;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  &__position {
+    @include m-body;
+    @include removeMargin;
+    font-weight: 600;
+    font-size: 1rem;
+    padding-bottom: 0.2rem;
+  }
+
+  &__icon {
+    display: none;
+    width: 40px;
+    height: auto;
+    @include breakpoint-min-size(400px) {
+      display: block;
+    }
+  }
+
+  &__company-date {
+    @include flex-row;
+    gap: 0.6rem;
+  }
+
+  &__company {
+    @include removeMargin;
+    @include m-body;
+    font-size: 0.8rem;
+  }
+
+  &__date {
+    @include removeMargin;
+    @include m-body;
+    font-size: 0.8rem;
+  }
+
+  &__top-text {
+    @include flex-column;
+  }
+
+  &__divider {
+    width: 12px;
+  }
+
+  &__desc {
+    @include m-body;
+    font-size: 0.9rem;
+  }
+}

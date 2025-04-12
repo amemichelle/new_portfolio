@@ -3,6 +3,8 @@
 @import "../../styles/partials/_Variables";
 
 .project {
+  position: relative;
+
   @include breakpoint-min-size($desktop) {
     margin-bottom: 3rem;
     max-width: 100%;
@@ -64,5 +66,17 @@
     @include breakpoint-min-size($desktop) {
       font-size: 1.1rem;
     }
+  }
+
+  &__accent-top {
+    position: absolute;
+    left: -1rem;
+    top: -1rem;
+  }
+
+  &__accent-bottom {
+    position: absolute;
+    bottom: 0rem;
+    right: -1rem;
   }
 }

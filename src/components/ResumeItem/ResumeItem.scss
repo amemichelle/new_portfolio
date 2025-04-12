@@ -4,28 +4,52 @@
 
 .resume {
   &__item-box {
-    padding-top: 1rem;
-    max-width: 90%;
+    @include flex-column;
+    padding: 1.4rem;
+    max-width: 100%;
+    border-radius: 8px;
+    gap: 0.5rem;
+    border: 1px solid #b2c5f3;
+    background: linear-gradient(
+      180deg,
+      rgba(250, 252, 255, 1) 0%,
+      rgba(219, 230, 255, 0.2) 100%
+    );
+
+    @include breakpoint-min-size($tablet) {
+      width: 100%;
+    }
   }
 
+  &__item {
+    border: 1px dashed #b2c5f3;
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    background-color: $white;
+  }
+
+  &__divider {
+    width: 16px;
+  }
   &__heading-items {
     @include flex-row;
-    gap: 1rem;
     align-items: center;
+    gap: 0.5rem;
   }
 
   &__position {
     @include m-body;
     @include removeMargin;
-    font-weight: 600;
-    font-size: 1rem;
+    font-weight: 500;
+    font-size: 0.9rem;
     padding-bottom: 0.2rem;
   }
 
   &__icon {
     display: none;
-    width: 40px;
+    width: 56px;
     height: auto;
+    filter: drop-shadow(0px 4px 12px rgba(196, 213, 251, 0.25));
     @include breakpoint-min-size(400px) {
       display: block;
     }
@@ -33,31 +57,81 @@
 
   &__company-date {
     @include flex-row;
-    gap: 0.6rem;
+    gap: 0.5rem;
+    align-items: center;
   }
 
   &__company {
     @include removeMargin;
     @include m-body;
     font-size: 0.8rem;
+    color: #535353;
   }
 
   &__date {
     @include removeMargin;
     @include m-body;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+    color: #535353;
   }
 
   &__top-text {
     @include flex-column;
+    width: 100%;
+    padding-bottom: 0.5rem;
   }
 
   &__divider {
     width: 12px;
   }
 
-  &__desc {
-    @include m-body;
-    font-size: 0.9rem;
+  &__actions {
+    @include flex-row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #b2c5f3;
+    margin-bottom: 0.5rem;
+
+    &-header {
+      @include m-captions;
+      font-size: 0.8rem;
+      @include removeMargin;
+    }
+
+    &-button {
+      @include flex-row;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      // border: 1px solid #b2c5f3;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: background-color 1s ease 0s;
+
+      &:hover .resume__actions-text {
+        transition: color 0s ease 0s;
+        color: #b2c5f3;
+      }
+
+      &:hover .resume__actions-arrow {
+        transition: color 0s ease 0s;
+        color: #b2c5f3;
+      }
+    }
+
+    &-text {
+      @include m-captions;
+      @include removeMargin;
+      color: $blue;
+      font-size: 0.8rem;
+    }
+
+    &-arrow {
+      width: 24px;
+      height: auto;
+      color: $blue;
+    }
   }
 }

@@ -1,4 +1,6 @@
 import "./hackathons.scss";
+import { useState } from "react";
+import singleSparkle from "../../assets/singlesparkle.svg";
 import cfcImg from "../../assets/cfc-img.jpg";
 import stllspaceImg from "../../assets/stillspace-img.jpg";
 import rebuildImg from "../../assets/rebuild-img.jpg";
@@ -9,100 +11,136 @@ import reviveImg from "../../assets/revive-img.jpg";
 import vaccineInfoImg from "../../assets/vaccineinfo-img.jpg";
 import textSafeImg from "../../assets/textsafe-img.jpg";
 import vizitImg from "../../assets/vizit-img.jpg";
-import HackathonItem from "../HackathonItems/hackathonitems";
+import { ReactComponent as ArrowLeft } from "../../assets/slideshowArrowLeft.svg";
+import { ReactComponent as ArrowRight } from "../../assets/slideshowArrowRight.svg";
 
 function Hackathons() {
+  const [projCount, setProjCount] = useState(0);
+
+  const projectArray = [
+    {
+      img: vizitImg,
+      project: "Vizit",
+      event: "Sparks Designathon",
+      year: "2023",
+    },
+    {
+      img: textSafeImg,
+      project: "Text Safe",
+      event: "Elle Hacks",
+      year: "2022",
+    },
+    {
+      img: vaccineInfoImg,
+      project: "Vaccine Info",
+      event: "TOHacks",
+      year: "2021",
+    },
+    {
+      img: vaccineInfoImg,
+      project: "what did we make?? ",
+      event: "Adobe x Target Creative Jam",
+      year: "2021",
+    },
+    {
+      img: reviveImg,
+      project: "99Dresses",
+      event: "Revive",
+      year: "2021",
+    },
+    {
+      img: reviveImg,
+      project: "Polar Plunge",
+      event: "BC Game Jam",
+      year: "2020",
+    },
+    {
+      img: genNowImg,
+      project: "Gen Now",
+      event: "Just Design",
+      year: "2020",
+    },
+    {
+      img: amplifyImg,
+      project: "Amplify",
+      event: "cmd+f",
+      year: "2020",
+    },
+    {
+      img: genNowImg,
+      project: "also don't remember??",
+      event: "Adobe x Netflix Creative Jam",
+      year: "2020",
+    },
+    {
+      img: snapfoodImg,
+      project: "Snapfood",
+      event: "SystemHacks",
+      year: "2020",
+    },
+    {
+      img: rebuildImg,
+      project: "Rebuild",
+      event: "NWHacks",
+      year: "2020",
+    },
+    {
+      img: stllspaceImg,
+      project: "StillSpace",
+      event: "PenApps XX",
+      year: "2019",
+    },
+    {
+      img: cfcImg,
+      project: "Carbon Footprint Calculator",
+      event: "Hacking for Humanity",
+      year: "2019",
+    },
+  ];
+
+  const increaseCount = () => {
+    setProjCount((projCount) => {
+      if (projCount > projectArray.length - 2) {
+        return 0;
+      } else {
+        return projCount + 1;
+      }
+    });
+  };
+
+  const decreaseCount = () => {
+    setProjCount((projCount) => {
+      if (projCount === 0) {
+        return projectArray.length - 1;
+      } else {
+        return projCount - 1;
+      }
+    });
+  };
+
   return (
     <>
       <div className="hackathon">
-        <h2 className="hackathon__header">Hackathon History</h2>
-        <p className="hackathon__subheader">
-          View my projects for many of these events on{" "}
-          <a
-            href="https://devpost.com/michelle_swolfs?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav"
-            target="_blank"
-            className="devpost"
-          >
-            Devpost ↗
-          </a>
-        </p>
+        <img className="hackathon__img" src={projectArray[projCount].img} />
 
-        <HackathonItem
-          name="Hacking for Humanity"
-          date="2019"
-          award={false}
-          img={cfcImg}
-        ></HackathonItem>
-        <HackathonItem
-          name="PennApps XX"
-          date="2019"
-          award={false}
-          img={stllspaceImg}
-        ></HackathonItem>
-        <HackathonItem
-          name="nwHacks"
-          date="2020"
-          award={true}
-          img={rebuildImg}
-        ></HackathonItem>
-        <HackathonItem
-          name="SystemHacks"
-          date="2020"
-          award={true}
-          img={snapfoodImg}
-        ></HackathonItem>
-        <HackathonItem
-          name="Adobe x Netflix Creative Jam"
-          date="2020"
-          award={false}
-        ></HackathonItem>
-        <HackathonItem
-          name="cmd+F"
-          date="2020"
-          award={false}
-          img={amplifyImg}
-        ></HackathonItem>
-        <HackathonItem
-          name="Just Design"
-          date="2020"
-          award={true}
-          img={genNowImg}
-        ></HackathonItem>
-        <HackathonItem
-          name="BC Game Jam"
-          date="2020"
-          award={true}
-        ></HackathonItem>
-        <HackathonItem
-          name="Revive"
-          date="2021"
-          award={false}
-          img={reviveImg}
-        ></HackathonItem>
-        <HackathonItem
-          name="Adobe x Target Creative Jam"
-          date="2021"
-          award={true}
-        ></HackathonItem>
-
-        <HackathonItem
-          name="TOHacks"
-          date="2021"
-          award={true}
-          img={vaccineInfoImg}
-        ></HackathonItem>
-        <HackathonItem
-          name="ElleHacks"
-          date="2022"
-          award={false}
-          img={textSafeImg}
-        ></HackathonItem>
-        <HackathonItem
-          name="Sparks Designathon"
-          date="2023"
-          award={true}
-          img={vizitImg}
-        ></HackathonItem>
+        <div className="hackathon__container">
+          <div className="hackathon__container-left">
+            <p className="hackathon__project">
+              {projectArray[projCount].project}
+            </p>
+            <div className="hackathon__container-info">
+              <p className="hackathon__event">
+                {projectArray[projCount].event}
+              </p>
+              <img className="hackathon__divider" src={singleSparkle} />
+              <p className="hackathon__year">{projectArray[projCount].year}</p>
+            </div>
+          </div>
+          <div className="hackathon__container-right">
+            <ArrowLeft className="arrow__left" onClick={decreaseCount} />
+            <ArrowRight className="arrow__right" onClick={increaseCount} />
+          </div>
+        </div>
       </div>
     </>
   );

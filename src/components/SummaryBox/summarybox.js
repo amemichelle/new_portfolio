@@ -9,17 +9,17 @@ function SummaryBox() {
     <>
       <div className="summary-box">
         <div className="summary-box__container">
-          <p className="summary-box__title">tl;dr</p>
+          {/* <p className="summary-box__title">tl;dr</p> */}
           <div className="summary-box__items">
             <SummaryItem
               icon={bookIcon}
               title="Previously"
-              desc="Leading volunteer teams through marketing + strategy for online events. "
+              desc="Executing on all things design and implementation over at Guusto."
             />
             <SummaryItem
               icon={pinIcon}
-              title="Most Recently"
-              desc="Executing on all things design and implementation over at Guusto."
+              title="Currently"
+              desc="Working on..R"
             />
             <SummaryItem
               icon={pencilIcon}

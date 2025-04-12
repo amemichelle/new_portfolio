@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Navbar from "../../components/Navbar/navbar";
 import TopParagrah from "../../components/TopParagraph/TopParagraph";
 import ProjectBlock from "../../components/ProjectBlock/projectblock";
+import Recommendations from "../../components/rec/rec";
 import Footer from "../../components/Footer/Footer";
 import guustologo from "../../assets/guusto.svg";
 import boxpalslogo from "../../assets/boxpals.svg";
@@ -61,6 +62,9 @@ function Home() {
               ></ProjectBlock>
             </Link>
           </div>
+        </section>
+        <section className="recommendations__box">
+          <Recommendations></Recommendations>
         </section>
       </motion.div>
       <Footer></Footer>

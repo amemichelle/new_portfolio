@@ -10,22 +10,36 @@
 }
 
 .about {
+  &__card {
+    background-color: $white;
+    border-radius: 16px;
+    border: solid 1px #b2c5f3;
+    filter: drop-shadow(0px 4px 12px #c4d5fb);
+    @include flex-row;
+    @include centered;
+    gap: 2rem;
+    padding: 2rem;
+
+    &-right {
+      @include flex-column;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+  }
+
   &__top {
     @include flex-row;
     justify-content: center;
     padding-bottom: 2.5rem;
 
-    @include breakpoint-min-size($tablet) {
-      padding-bottom: 0rem;
-    }
-
-    @include breakpoint-min-size($desktop) {
-      margin-bottom: 2rem;
-    }
-
     &-container {
       @include flex-column;
-      padding: 1.5rem;
+      box-sizing: border-box;
+      padding: 4rem;
+      margin-top: 1rem;
+      background-color: #dbe6ff;
+      border-radius: 16px;
+      width: 100%;
 
       @include breakpoint-min-size($tablet) {
         width: 70%;
@@ -38,44 +52,6 @@
         width: 60%;
       }
     }
-
-    &-content {
-      order: 1;
-
-      @include breakpoint-min-size($desktop) {
-        order: 2;
-      }
-    }
-  }
-
-  &__photo {
-    order: 2;
-    width: 100%;
-    max-width: 20rem;
-
-    @include breakpoint-min-size($tablet) {
-      height: 13rem;
-    }
-
-    @include breakpoint-min-size($desktop) {
-      height: 13rem;
-      order: 1;
-    }
-  }
-
-  &__header {
-    @include m-h1-style;
-    margin-block-end: 0;
-    padding-bottom: 0.5rem;
-  }
-
-  &__desc {
-    @include m-serif-lg;
-    margin-block-start: 0;
-
-    @include breakpoint-min-size($desktop) {
-      width: 100%;
-    }
   }
 
   &__h2 {
@@ -84,6 +60,59 @@
     @include breakpoint-min-size($desktop) {
       padding-left: 0;
     }
+  }
+}
+
+.card {
+  &__name {
+    @include m-serif-lg;
+    @include removeMargin;
+    font-weight: 700;
+    font-size: 2rem;
+  }
+
+  &__desc {
+    @include m-body;
+    @include removeMargin;
+    font-weight: 600;
+  }
+
+  &__item-list {
+    list-style: none;
+    padding-inline-start: 0;
+    @include flex-column;
+    gap: 0.5rem;
+  }
+
+  &__item {
+    @include flex-row;
+    align-items: center;
+    gap: 0.5rem;
+
+    &-text {
+      @include m-body;
+      @include removeMargin;
+      font-size: 14px;
+    }
+  }
+
+  &__caption {
+    @include m-captions;
+    color: #89898e;
+    font-size: 0.65rem;
+    font-weight: 500;
+  }
+
+  &__photo {
+    max-width: 175px;
+    position: relative;
+  }
+
+  &__sparkles {
+    z-index: 2;
+    position: absolute;
+    left: 1;
+    top: 1;
   }
 }
 
@@ -112,37 +141,55 @@
   @include flex-row;
   justify-content: left;
   padding-bottom: 2.5rem;
+  gap: 1rem;
 
   @include breakpoint-min-size($tablet) {
     padding-bottom: 0;
     justify-content: center;
+    width: 60%;
+  }
+
+  &__left {
+    width: 55%;
+  }
+
+  &__right {
+    width: 45%;
   }
 
   &__box {
-    padding: 0 1rem;
     @include flex-column;
-
-    @include breakpoint-min-size($tablet) {
-      @include flex-row;
-      justify-content: space-between;
-      padding: 2rem 0;
-      width: 70%;
-      gap: 2rem;
-    }
-
-    @include breakpoint-min-size($desktop) {
-      width: 60%;
-    }
+    width: 100%;
+    gap: 1rem;
   }
 }
 
 .resume-things {
   @include flex-column;
   max-width: 100%;
+  width: 100%;
+  gap: 1rem;
 
   @include breakpoint-min-size($tablet) {
-    max-width: 60%;
+    @include flex-row;
   }
+}
+
+.hackathon-things {
+  width: 100%;
+}
+
+.story-things {
+  box-sizing: border-box;
+  border: 1px solid #b2c5f3;
+  border-radius: 8px;
+  padding: 1.4rem;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(250, 252, 255, 1) 0%,
+    rgba(219, 230, 255, 0.2) 100%
+  );
 }
 
 .after-hours {
@@ -192,5 +239,14 @@
   &__subheader {
     @include m-body-serif;
     @include removeMargin;
+  }
+}
+
+.summary {
+  &__heading {
+    @include m-body;
+    @include removeMargin;
+    color: #5e5e5e;
+    font-size: 0.8rem;
   }
 }

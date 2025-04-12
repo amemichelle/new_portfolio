@@ -19,7 +19,6 @@
   }
 
   &__container {
-    border: solid 4px #4069cc;
     border-radius: 16px;
     padding: 0rem 2rem;
 
@@ -37,8 +36,8 @@
     @include flex-column;
     @include breakpoint-min-size($desktop) {
       @include flex-row;
+      gap: 1rem;
       justify-content: space-evenly;
-      padding: 0.25rem;
     }
   }
 

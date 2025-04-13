@@ -1,5 +1,4 @@
 import "./navbar.scss";
-import logomark from "../../assets/logomark.svg";
 import mobilemenu from "../../assets/mobile-menu.svg";
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -45,6 +44,23 @@ function Navbar() {
     setHovered(false);
   };
 
+  const bgVariants = {
+    rest: {
+      width: "0%",
+      transition: {
+        duration: 0.3,
+        ease: "easeOut",
+      },
+    },
+    hover: {
+      width: "100%",
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
     <>
       <nav className="nav">
@@ -72,7 +88,7 @@ function Navbar() {
                       duration: 2,
                       ease: "easeInOut",
                       delay: 0.5,
-                      repeat: 0, // or Infinity for loop
+                      repeat: 0,
                     }}
                   />
                 </motion.svg>
@@ -82,26 +98,47 @@ function Navbar() {
 
           <div className="nav__right-container">
             <div className="nav__links">
-              <NavLink reloadDocument to="/" className="nav__links-item">
-                Work
-              </NavLink>
-              <NavLink
-                reloadDocument
-                to="/marketing-projects"
-                className="nav__links-item"
+              <motion.a
+                className="nav__link"
+                href="/"
+                initial="rest"
+                whileHover="hover"
+                animate="rest"
               >
-                Graphics
-              </NavLink>
-              <NavLink reloadDocument to="/about" className="nav__links-item">
-                About
-              </NavLink>
-              <NavLink
-                to="https://drive.google.com/file/d/1wfEGLT4n4xeaODvOHWjHYeNA15IRBg2y/view?usp=sharing"
-                target="_blank"
-                className="nav__links-item"
+                <motion.span className="nav__bg" variants={bgVariants} />
+                <span className="nav__text">Work</span>
+              </motion.a>
+
+              <motion.a
+                className="nav__link"
+                href="/marketing-projects"
+                initial="rest"
+                whileHover="hover"
+                animate="rest"
               >
-                Resume
-              </NavLink>
+                <motion.span className="nav__bg" variants={bgVariants} />
+                <span className="nav__text">Graphics</span>
+              </motion.a>
+              <motion.a
+                className="nav__link"
+                href="/about"
+                initial="rest"
+                whileHover="hover"
+                animate="rest"
+              >
+                <motion.span className="nav__bg" variants={bgVariants} />
+                <span className="nav__text">About</span>
+              </motion.a>
+              <motion.a
+                className="nav__link"
+                href="https://drive.google.com/file/d/1wfEGLT4n4xeaODvOHWjHYeNA15IRBg2y/view?usp=sharing"
+                initial="rest"
+                whileHover="hover"
+                animate="rest"
+              >
+                <motion.span className="nav__bg" variants={bgVariants} />
+                <span className="nav__text">Resume</span>
+              </motion.a>
             </div>
             <div className="nav__mobile-menu" onClick={handleClick}>
               <img src={mobilemenu} className="mobile-menu" />

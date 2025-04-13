@@ -2,17 +2,36 @@
 @import "../../styles/partials/_Mixins";
 @import "../../styles/partials/_Variables";
 
-.nav__links > a {
-  text-decoration: none;
-
-  &:hover {
-    background-color: $tan-background;
-  }
-}
-
 .nav {
   @include flex-row;
   justify-content: center;
+
+  &__link {
+    @include m-body;
+    font-size: 1.1rem;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    text-decoration: none;
+  }
+
+  &__text {
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    @include m-body;
+    color: black;
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: $tan-background;
+    z-index: 1;
+  }
 
   &__container {
     @include flex-row;
@@ -35,12 +54,6 @@
     @include breakpoint-min-size($tablet) {
       gap: 1rem;
       @include flex-row;
-    }
-
-    &-item {
-      @include m-body;
-
-      font-size: 1.1rem;
     }
   }
 

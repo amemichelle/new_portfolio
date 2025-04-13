@@ -28,9 +28,9 @@ function ProjectBlock(props) {
           className={"project__img-container"}
           style={{ backgroundColor: props.bgcolor }}
         >
-          {hovered === true && (
+          {/* {hovered === true && (
             <img className="project__accent-top" src={accentTop} />
-          )}
+          )} */}
           <motion.img
             initial={false}
             animate={{ width: hovered ? "72%" : "70%" }}
@@ -39,9 +39,9 @@ function ProjectBlock(props) {
             className={"project__logo"}
           />
 
-          {hovered === true && (
+          {/* {hovered === true && (
             <img className="project__accent-bottom" src={accentBottom} />
-          )}
+          )} */}
         </div>
         <div className="project__info">
           <h2 className="project__title" style={style}>

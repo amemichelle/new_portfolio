@@ -1,5 +1,6 @@
 import "./navbar.scss";
 import mobilemenu from "../../assets/mobile-menu.svg";
+import MotionLink from "../MotionLink/motionlink";
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
@@ -98,47 +99,13 @@ function Navbar() {
 
           <div className="nav__right-container">
             <div className="nav__links">
-              <motion.a
-                className="nav__link"
-                href="/"
-                initial="rest"
-                whileHover="hover"
-                animate="rest"
-              >
-                <motion.span className="nav__bg" variants={bgVariants} />
-                <span className="nav__text">Work</span>
-              </motion.a>
-
-              <motion.a
-                className="nav__link"
-                href="/marketing-projects"
-                initial="rest"
-                whileHover="hover"
-                animate="rest"
-              >
-                <motion.span className="nav__bg" variants={bgVariants} />
-                <span className="nav__text">Graphics</span>
-              </motion.a>
-              <motion.a
-                className="nav__link"
-                href="/about"
-                initial="rest"
-                whileHover="hover"
-                animate="rest"
-              >
-                <motion.span className="nav__bg" variants={bgVariants} />
-                <span className="nav__text">About</span>
-              </motion.a>
-              <motion.a
-                className="nav__link"
-                href="https://drive.google.com/file/d/1wfEGLT4n4xeaODvOHWjHYeNA15IRBg2y/view?usp=sharing"
-                initial="rest"
-                whileHover="hover"
-                animate="rest"
-              >
-                <motion.span className="nav__bg" variants={bgVariants} />
-                <span className="nav__text">Resume</span>
-              </motion.a>
+              <MotionLink link="/" label="Work" />
+              <MotionLink link="/marketing-projects" label="Graphics" />
+              <MotionLink link="/about" label="About" />
+              <MotionLink
+                link="https://drive.google.com/file/d/1wfEGLT4n4xeaODvOHWjHYeNA15IRBg2y/view?usp=sharing"
+                label="Resume"
+              />
             </div>
             <div className="nav__mobile-menu" onClick={handleClick}>
               <img src={mobilemenu} className="mobile-menu" />

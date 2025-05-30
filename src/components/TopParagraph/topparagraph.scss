@@ -65,6 +65,10 @@
   }
 }
 
+.single-sparkle {
+  height: 1.5rem;
+}
+
 .list {
   &__container {
     padding-left: 1rem;
@@ -78,7 +82,8 @@
   &__desc {
     @include removeMargin;
     @include m-body;
-
+    @include flex-row;
+    align-items: center;
     @include breakpoint-min-size($desktop) {
       font-size: 1.1rem;
     }

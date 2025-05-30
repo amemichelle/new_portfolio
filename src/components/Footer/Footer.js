@@ -1,6 +1,7 @@
 import "./Footer.scss";
 import singlesparkle from "../../assets/singlesparkle.svg";
 import { motion } from "framer-motion";
+import MotionLink from "../MotionLink/motionlink";
 
 function Footer() {
   return (
@@ -22,28 +23,22 @@ function Footer() {
             </div>
 
             <div className="footer__right">
-              <a
-                href="mailto:swolfsmichelle8@gmail.com"
-                className="footer__link"
-              >
-                Email ↗
-              </a>
+              <MotionLink
+                link="mailto:swolfsmichelle8@gmail.com"
+                label="Email ↗"
+              />
+
               <img className="footer__sparkle" src={singlesparkle} />
-              <a
-                href="https://www.linkedin.com/in/michelleswolfs/"
-                target="_blank"
-                className="footer__link"
-              >
-                Linkedin ↗
-              </a>
+              <MotionLink
+                link="https://www.linkedin.com/in/michelleswolfs/"
+                label=" Linkedin ↗"
+              />
+
               <img className="footer__sparkle" src={singlesparkle} />
-              <a
-                href="https://github.com/amemichelle"
-                target="_blank"
-                className="footer__link"
-              >
-                Github ↗
-              </a>
+              <MotionLink
+                link="https://github.com/amemichelle"
+                label="Github ↗"
+              />
             </div>
           </div>
         </footer>

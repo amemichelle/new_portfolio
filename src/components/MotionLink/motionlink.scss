@@ -1,0 +1,31 @@
+@import "../../styles/partials/_FontStyles";
+@import "../../styles/partials/_Mixins";
+@import "../../styles/partials/_Variables";
+
+.link {
+  @include m-body;
+  font-size: 1.1rem;
+  position: relative;
+  display: inline-block;
+  align-items: center;
+  overflow: hidden;
+  text-decoration: none;
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: $tan-background;
+    z-index: 1;
+  }
+
+  &__text {
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    @include m-body;
+    color: black;
+  }
+}

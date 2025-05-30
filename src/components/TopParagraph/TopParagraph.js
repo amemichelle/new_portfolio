@@ -1,8 +1,27 @@
 import "./topparagraph.scss";
 import sparklegroup from "../../assets/sparklegroup.svg";
 import singlesparkle from "../../assets/singlesparkle.svg";
+import { motion } from "framer-motion";
+import MotionLink from "../MotionLink/motionlink";
 
 function TopParagrah() {
+  const bgVariants = {
+    rest: {
+      width: "0%",
+      transition: {
+        duration: 0.3,
+        ease: "easeOut",
+      },
+    },
+    hover: {
+      width: "100%",
+      transition: {
+        duration: "0.3",
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
     <>
       <div className="top-paragraph">
@@ -27,16 +46,11 @@ function TopParagrah() {
 
             <div className="list__item">
               <img src={singlesparkle} className="single-sparkle" />
-              <p className="list__desc">
-                Currently designing @
-                <a
-                  href="http://deltacontrols.com/"
-                  target="_blank"
-                  class="list__inline"
-                >
-                  Delta Controls ↗
-                </a>
-              </p>
+              <p className="list__desc">Currently designing @</p>
+              <MotionLink
+                link="http://deltacontrols.com/"
+                label=" Delta Controls ↗"
+              />
             </div>
 
             <div className="list__item">

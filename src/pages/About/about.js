@@ -130,7 +130,14 @@ function About() {
           <div className="professional-stuff">
             <div className="professional-stuff__left">
               <div className="story-things">
-                <p className="summary__heading">SUMMARY</p>
+                <div className="summary">
+                  <p className="summary__heading">SUMMARY</p>
+                  <p className="summary__content">
+                    Hey there! I’m a Product Designer with 4+ years of
+                    experience, bringing value to both startups and larger
+                    companies through design and code.
+                  </p>
+                </div>
               </div>
             </div>
             <div className="professional-stuff__right">

@@ -66,7 +66,7 @@
 }
 
 .single-sparkle {
-  height: 1.5rem;
+  height: 1rem;
 }
 
 .list {
@@ -93,6 +93,7 @@
     @include flex-row;
     gap: 0.5rem;
     padding-bottom: 0.5rem;
+    align-items: center;
   }
 
   &__inline {

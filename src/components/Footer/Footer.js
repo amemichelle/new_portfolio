@@ -19,7 +19,7 @@ function Footer() {
         <footer className="footer">
           <div className="footer__container">
             <div className="footer__left">
-              <p className="footer__copyright">© Michelle Swolfs 2023</p>
+              <p className="footer__copyright">© Michelle Swolfs 2025</p>
             </div>
 
             <div className="footer__right">

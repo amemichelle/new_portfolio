@@ -11,20 +11,14 @@
   }
 
   &__container {
-    border: 4px dotted $blue;
     border-radius: 16px;
     width: 100%;
     position: relative;
     padding-top: 4rem;
     padding-bottom: 5rem;
     min-height: 300px;
-    @include breakpoint-min-size($tablet) {
-      width: 70%;
-    }
-
-    @include breakpoint-min-size($desktop) {
-      width: 60%;
-    }
+    @include flex-column;
+    justify-content:center;
   }
 
   &__content {

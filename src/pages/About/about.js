@@ -1,92 +1,25 @@
 import "./about.scss";
-import { motion } from "framer-motion";
-import { useState, useEffect, useRef } from "react";
-import Navbar from "../../components/Navbar/navbar";
 import Hackathons from "../../components/Hackathons/hackathons";
-import Activity from "../../components/Activity/activity";
-import CTA from "../../components/CTA/cta";
-import Footer from "../../components/Footer/Footer";
 import ResumeItem from "../../components/ResumeItem/ResumeItem";
-
+import Recommendations from "../../components/rec/rec";
 import clock from "../../assets/clock.svg";
 import headphones from "../../assets/headset.svg";
 import circleQuestion from "../../assets/circlequestion.svg";
 import configPhoto from "../../assets/configphoto.jpg";
-import sparkleSticker from "../../assets/sparklesticker.svg";
-import movieSticker from "../../assets/moviesticker.svg";
-import musicSticker from "../../assets/musicsticker.svg";
-import heartSticker from "../../assets/heartsticker.svg";
+
 
 function About() {
-  const [positions, setPositions] = useState([]);
-  const containerRef = useRef(null);
 
-  const stickerOptions = [
-    sparkleSticker,
-    movieSticker,
-    musicSticker,
-    heartSticker,
-  ];
 
-  useEffect(() => {
-    const genRandomPos = () => {
-      const containerRect = containerRef.current.getBoundingClientRect();
-      const containerW = containerRect.width;
-      const containerH = containerRect.height;
 
-      if (containerRef.current) {
-        const positions = stickerOptions.map(() => {
-          const randomX = Math.random() * 100;
-          const randomY = Math.random() * 100;
-          const adjustedX = randomX > 100 - 10 ? 100 - 10 : randomX;
-          const adjustedY = randomY > 100 - 10 ? 100 - 10 : randomY;
-          return { x: adjustedX, y: adjustedY };
-        });
-
-        setPositions(positions);
-      }
-    };
-    genRandomPos();
-  }, []);
 
   return (
     <>
-      <motion.div
-        className="page__container"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        transition={{ duration: 0.2 }}
-        variants={{
-          visible: { opacity: 1 },
-          hidden: { opacity: 0 },
-        }}
-      >
-        <Navbar></Navbar>
-
-        <section className="about__top">
+        <div className="about__top">
+          <div className="about__top-card">
           <div
             className="about__top-container"
-            ref={containerRef}
-            style={{ position: "relative" }}
           >
-            {positions.map((pos, index) => (
-              <motion.img
-                key={index}
-                src={stickerOptions[index % stickerOptions.length]}
-                alt={`svg-${index}`}
-                style={{
-                  zIndex: "2",
-                  position: "absolute",
-                  top: `${pos.y}%`,
-                  left: `${pos.x}%`,
-                }}
-                drag
-                dragElastic={0.2}
-                dragMomentum={false}
-                dragConstraints={containerRef}
-              />
-            ))}
 
             <div className="about__card" style={{ zIndex: "1" }}>
               <div className="about__card-left">
@@ -124,35 +57,36 @@ function About() {
               </div>
             </div>
           </div>
-        </section>
-
-        <section className="about__top">
-          <div className="professional-stuff">
-            <div className="professional-stuff__left">
-              <div className="story-things">
-                <div className="summary">
-                  <p className="summary__heading">SUMMARY</p>
+                 <blockquote className="indent">
                   <p className="summary__content">
                     Hey there! I’m a Product Designer with 4+ years of
                     experience, bringing value to both startups and larger
                     companies through design and code.
                   </p>
-                </div>
-              </div>
-            </div>
-            <div className="professional-stuff__right">
-              <div className="professional-stuff__box">
+                  </blockquote>
+
+          </div>
+
+          <div className="horizontal">
+
                 <div className="resume-things">
                   <ResumeItem />
                 </div>
+
                 <div className="hackathon-things">
                   <Hackathons />
                 </div>
-              </div>
             </div>
-          </div>
-        </section>
-      </motion.div>
+
+     
+
+        <div className="rec-container">
+        <Recommendations/>
+        </div>
+        
+      </div>
+
+    
     </>
   );
 }

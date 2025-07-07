@@ -31,10 +31,12 @@ function Recommendations() {
   return (
     <div className="recommendations__container">
       <div className="recommendations__content">
+      <blockquote className="indent">
         <p className="recommendations__message">{recs[recCount].message}</p>
         <p className="recommendations__attribution">
           — {recs[recCount].attribution}
         </p>
+      </blockquote>
       </div>
       <div className="recommendations__bottom">
         <div className="recommendations__info">

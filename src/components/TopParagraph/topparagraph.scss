@@ -2,24 +2,36 @@
 @import "../../styles/partials/_Mixins";
 @import "../../styles/partials/_Variables";
 
-.top-paragraph {
-  @include breakpoint-min-size($tablet) {
+.nav-row{
+  @include flex-row;
+  gap:0.5rem;
+
+  &__item{
+    background-color:$tan-background;
+    border-radius: 8px;
+    width:2.5rem;
     @include flex-row;
+    align-items: center;
     justify-content: center;
-    padding: 2em 0rem;
+    aspect-ratio: 1 / 1; 
   }
+}
 
-  &__container {
-    margin: 1rem 0;
-    width: 90%;
-    @include breakpoint-min-size($tablet) {
-      width: 70%;
-    }
+.top-paragraph {
+  @include flex-column;
+  position:fixed;
+  width:auto;
+  gap:1rem;
+  padding-left: 2rem;
 
-    @include breakpoint-min-size($desktop) {
-      width: 61%;
-    }
-  }
+  
+
+&__img{ 
+
+  height:200px;
+  border-radius:8px;
+  background-color:$tan-background;
+}
 }
 
 .big {
@@ -30,24 +42,21 @@
   }
 
   &__title {
-    @include m-h1-style;
     @include removeMargin;
-    padding-left: 1rem;
+    font-family: "Uncut Sans", sans-serif;
+    font-size:1rem;
+    padding-bottom: 0.5rem;
 
-    @include breakpoint-min-size($desktop) {
-      font-size: 2.5rem;
-    }
+
   }
 
   &__desc {
-    @include removeMargin;
-    @include m-serif-lg;
-    padding: 1rem;
+  @include removeMargin;
+  font-family: "Uncut Sans", sans-serif;
+  font-weight:300;
+  font-size:1.1rem;
 
-    @include breakpoint-min-size($desktop) {
-      font-size: 1.7rem;
-      max-width: 86%;
-    }
+
   }
 
   &__sparkle-container {

@@ -10,13 +10,7 @@ function ResumeItem() {
   return (
     <>
       <div className="resume__item-box">
-        <div className="resume__actions">
-          <p className="resume__actions-header">RECENT EXPERIENCE</p>
-          <Link className="resume__actions-button">
-            <p className="resume__actions-text">View All</p>
-            <ArrowRight className="resume__actions-arrow" />
-          </Link>
-        </div>
+
         <div className="resume__item">
           <div className="resume__heading-items">
             <img className="resume__icon" src={deltaTriangle} />
@@ -60,6 +54,13 @@ function ResumeItem() {
             </div>
           </div>
         </div>
+
+        <div className="resume__link">
+            <p className="resume__actions-text">View my</p>
+          <Link className="resume__actions-button">
+          resume
+          </Link>
+          </div>
       </div>
     </>
   );

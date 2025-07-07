@@ -5,7 +5,6 @@
 .page__container {
   position: relative;
   z-index: 5;
-  margin-bottom: 8rem;
   background-color: $white;
 }
 
@@ -28,29 +27,25 @@
   }
 
   &__top {
-    @include flex-row;
-    justify-content: center;
-    padding-bottom: 2.5rem;
+    padding:6rem;
+    @include flex-column;
+    gap:2rem;
 
     &-container {
       @include flex-column;
       box-sizing: border-box;
-      padding: 4rem;
+      padding: 4rem 9rem;
+
       margin-top: 1rem;
       background-color: #dbe6ff;
       border-radius: 16px;
       width: 100%;
+    }
 
-      @include breakpoint-min-size($tablet) {
-        width: 70%;
-        @include flex-row;
-        @include centered;
-        gap: 3rem;
-      }
-
-      @include breakpoint-min-size($desktop) {
-        width: 60%;
-      }
+    &-card{
+      background-color: #fff;
+      padding: 1rem 2rem;
+      border-radius:8px;
     }
   }
 
@@ -146,6 +141,10 @@
   @include breakpoint-min-size($tablet) {
     padding-bottom: 0;
     justify-content: center;
+    width: 70%;
+  }
+
+    @include breakpoint-min-size($desktop) {
     width: 60%;
   }
 
@@ -169,10 +168,6 @@
   max-width: 100%;
   width: 100%;
   gap: 1rem;
-
-  @include breakpoint-min-size($tablet) {
-    @include flex-row;
-  }
 }
 
 .hackathon-things {
@@ -254,8 +249,20 @@
   }
 
   &__content {
+    font-family: "Uncut Sans", sans-serif;
+    font-size:1.2rem;
+    padding: 1rem 0rem;
+    color:$black;
     @include removeMargin;
-    @include m-serif-lg;
-    font-size: 1.4rem;
   }
+}
+
+
+.horizontal{
+  @include flex-row;
+  gap:2rem;
+}
+
+.rec-container{
+  background-color: #fff;
 }

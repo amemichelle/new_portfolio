@@ -5,6 +5,7 @@ import Boxpals from "./pages/Project/boxpals";
 import Guusto from "./pages/Project/guusto";
 import Cultivate from "./pages/Project/cultivate";
 import MarketingProject from "./pages/MarketingProject/marketingproject";
+import FixedSidebarLayout from "./components/FixedSidebarLayout/fixedsidebarlayout";
 import ScrollToTop from "./components/ScrollToTop/scrolltotop";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 function App() {
@@ -13,8 +14,8 @@ function App() {
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/about" element={<About />}></Route>
+          <Route path="/" element={<FixedSidebarLayout><Home/></FixedSidebarLayout>}></Route>
+          <Route path="/about" element={<FixedSidebarLayout><About /></FixedSidebarLayout>}></Route>
           <Route path="/boxpals" element={<Boxpals />}></Route>
           <Route path="/guusto" element={<Guusto />}></Route>
           <Route path="/cultivate" element={<Cultivate />}></Route>

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import accentTop from "../../assets/tl.svg";
 import accentBottom from "../../assets/br.svg";
+import workIcon from "../../assets/work.svg";
 
 function ProjectBlock(props) {
   const [hovered, setHovered] = useState(false);
@@ -24,13 +25,18 @@ function ProjectBlock(props) {
         onMouseLeave={mouseLeave}
         className="project"
       >
+             <div className="project__top-bit">
+          <div className="project__icon">
+            <img src={workIcon}/>
+          </div>
+          <p className="project__location">{props.location}</p>
+        </div>
         <div
           className={"project__img-container"}
           style={{ backgroundColor: props.bgcolor }}
         >
-          {/* {hovered === true && (
-            <img className="project__accent-top" src={accentTop} />
-          )} */}
+
+
           <motion.img
             initial={false}
             animate={{ width: hovered ? "72%" : "70%" }}
@@ -39,15 +45,15 @@ function ProjectBlock(props) {
             className={"project__logo"}
           />
 
-          {/* {hovered === true && (
-            <img className="project__accent-bottom" src={accentBottom} />
-          )} */}
+
         </div>
         <div className="project__info">
           <h2 className="project__title" style={style}>
             {props.title}
           </h2>
-          <p className="project__desc">{props.desc}</p>
+        <div className="project__skills">
+        <p className="project__desc">{props.desc}</p>
+        </div>
         </div>
       </div>
     </>

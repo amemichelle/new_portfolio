@@ -1,11 +1,7 @@
 import "./home.scss";
+import { useRef, useLayoutEffect, useState } from 'react';
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import Navbar from "../../components/Navbar/navbar";
-import TopParagrah from "../../components/TopParagraph/TopParagraph";
 import ProjectBlock from "../../components/ProjectBlock/projectblock";
-import Recommendations from "../../components/rec/rec";
-import Footer from "../../components/Footer/Footer";
 import guustologo from "../../assets/guusto.svg";
 import boxpalslogo from "../../assets/boxpals.svg";
 import cultivateLogo from "../../assets/cultivate_logo.svg";
@@ -13,23 +9,30 @@ import boxpalsGroup from "../../assets/boxpals_group.png";
 import guustoGroup from "../../assets/guusto_group.png";
 import cultivateGroup from "../../assets/cultivate_group.png";
 
+
+
 function Home() {
+
+  const leftRef = useRef(null);
+  const [leftWidth, setLeftWidth] = useState(0);
+
+  useLayoutEffect(() => {
+    function updateWidth() {
+      if (leftRef.current) {
+        setLeftWidth(leftRef.current.offsetWidth);
+      }
+    }
+
+    updateWidth();
+    window.addEventListener('resize', updateWidth);
+    return () => window.removeEventListener('resize', updateWidth);
+  }, []);
+
   return (
     <>
-      <motion.div
-        className="page__container"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        transition={{ duration: 0.3 }}
-        variants={{
-          visible: { opacity: 1 },
-          hidden: { opacity: 0 },
-        }}
-      >
-        <Navbar></Navbar>
 
-        <TopParagrah></TopParagrah>
+                
+        <div className="projects-container" style={{ marginLeft: `${leftWidth}px` }}>
         <section className="projects-box">
           <div className="projects-box__container">
             <Link className="projects-box__link" to="/boxpals">
@@ -37,17 +40,19 @@ function Home() {
                 img={boxpalslogo}
                 hoverimg={boxpalsGroup}
                 title="Helping individuals save money through group order management"
-                desc="Product design, web development — Capstone project @ BrainStation"
+                location="Capstone project @ BrainStation"
+                desc="Product design, web development"
                 bgcolor="#004921"
               ></ProjectBlock>
             </Link>
 
             <Link className="projects-box__link" to="/guusto">
               <ProjectBlock
-                img={guustologo}
+               img={guustologo}
                 hoverimg={guustoGroup}
                 title="Reimagining what employee recognition looks like in today's workforce"
-                desc="Product design, branding & identity, web development — Employment @ Guusto"
+                location="Employment @ Guusto"
+                desc="Product design, branding & identity, web development"
                 bgcolor="#22315c"
               ></ProjectBlock>
             </Link>
@@ -57,17 +62,15 @@ function Home() {
                 img={cultivateLogo}
                 hoverimg={cultivateGroup}
                 title="Connecting employers, employment agencies, and individuals with barriers to employment through micro-jobs"
-                desc="Service design, product design, branding & identity - Final Project @ Civic Innovation Change Lab"
+                location="Final Project @ Civic Innovation Change Lab"
+                desc="Service design, product design, branding & identity"
                 bgcolor="#e3d7cc"
               ></ProjectBlock>
             </Link>
           </div>
         </section>
-        <section className="recommendations__box">
-          <Recommendations></Recommendations>
-        </section>
-      </motion.div>
-      <Footer></Footer>
+
+        </div>
     </>
   );
 }

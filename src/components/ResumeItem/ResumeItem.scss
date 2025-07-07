@@ -9,16 +9,14 @@
     max-width: 100%;
     border-radius: 8px;
     gap: 0.5rem;
-    border: 1px solid #b2c5f3;
-    background: linear-gradient(
-      180deg,
-      rgba(250, 252, 255, 1) 0%,
-      rgba(219, 230, 255, 0.2) 100%
-    );
+    background: #fff;
 
-    @include breakpoint-min-size($tablet) {
-      width: 100%;
-    }
+  }
+
+  &__link{
+    @include flex-row;
+    gap:0.3rem;
+    color:$blue;
   }
 
   &__item {
@@ -105,33 +103,21 @@
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
-      // border: 1px solid #b2c5f3;
+      font-family: "Uncut Sans", sans-serif;
+      font-size:1rem;
       border-radius: 100px;
       text-decoration: none;
       transition: background-color 1s ease 0s;
-
-      &:hover .resume__actions-text {
-        transition: color 0s ease 0s;
-        color: #b2c5f3;
-      }
-
-      &:hover .resume__actions-arrow {
-        transition: color 0s ease 0s;
-        color: #b2c5f3;
-      }
+      color:$blue;
     }
 
     &-text {
-      @include m-captions;
+      font-family: "Uncut Sans", sans-serif;
+      color:$black;
+      font-size:1rem;      
       @include removeMargin;
-      color: $blue;
-      font-size: 0.8rem;
     }
 
-    &-arrow {
-      width: 24px;
-      height: auto;
-      color: $blue;
-    }
+
   }
 }

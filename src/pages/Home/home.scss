@@ -45,7 +45,12 @@
 }
 
 .projects-box {
-  padding: 1.5rem 6rem;
+
+@include breakpoint-min-size($desktop) {
+    padding: 1.5rem 6rem;
+
+}
+
 
   &__container {
     @include flex-column;

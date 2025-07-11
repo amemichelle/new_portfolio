@@ -13,12 +13,14 @@
   }
 
   &__arrow {
-    height: 3.5rem;
     margin-left: 1rem;
+    height:3rem;
+    stroke: white;
+    transition: stroke 0.3s ease-in;
 
     &:hover {
-      filter: invert(38%) sepia(70%) saturate(680%) hue-rotate(186deg)
-        brightness(92%) contrast(91%);
+      stroke: $blue;
+ 
     }
 
     &-div {

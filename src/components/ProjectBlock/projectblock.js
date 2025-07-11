@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import accentTop from "../../assets/tl.svg";
 import accentBottom from "../../assets/br.svg";
-import workIcon from "../../assets/work.svg";
+import { ReactComponent as WorkIcon } from "../../assets/work.svg";
 
 function ProjectBlock(props) {
   const [hovered, setHovered] = useState(false);
@@ -27,7 +27,7 @@ function ProjectBlock(props) {
       >
              <div className="project__top-bit">
           <div className="project__icon">
-            <img src={workIcon}/>
+            <WorkIcon className="project__ic" />
           </div>
           <p className="project__location">{props.location}</p>
         </div>

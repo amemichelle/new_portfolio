@@ -7,14 +7,31 @@
   gap:0.5rem;
 
   &__item{
-    background-color:$tan-background;
+    background-color: #F6F6F6;
     border-radius: 8px;
     width:2.5rem;
     @include flex-row;
     align-items: center;
     justify-content: center;
     aspect-ratio: 1 / 1; 
+    border: 1px solid #CDCDCD;
+    transition: background-color 0.3s ease;
+
+
+    &:hover{
+      background-color:#DBE6FF;
+
+      .nav-row__icon{
+        stroke: $blue;
+      }
+    }
   }
+
+  &__icon{
+    stroke: $black;
+  }
+
+
 }
 
 .top-paragraph {
@@ -28,9 +45,11 @@
 
 &__img{ 
 
+  @include flex-row;
+  @include centered;
   height:200px;
   border-radius:8px;
-  background-color:$tan-background;
+  background-color:#DBE6FF;
 }
 }
 

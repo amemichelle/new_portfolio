@@ -36,7 +36,7 @@
     padding:1rem;
 
     @include breakpoint-min-size($desktop){
-      padding:6rem;
+      padding:3.5rem 8rem;
     }
 
     &-container {
@@ -50,7 +50,7 @@
 
 
       @include breakpoint-min-size($desktop) {
-        padding: 4rem 9rem;
+        padding: 3rem 6rem;
       }
     }
 
@@ -188,6 +188,7 @@
 }
 
 .hackathon-things {
+  max-width: 100%;
   width: 100%;
 }
 
@@ -281,9 +282,11 @@
 
   @include breakpoint-min-size($desktop) {
     @include flex-row;
+     align-items: stretch;
   }
 }
 
 .rec-container{
   background-color: #fff;
+  border-radius: 16px;
 }

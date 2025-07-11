@@ -11,7 +11,6 @@
   }
 
   &__container {
-    border-radius: 16px;
     width: 100%;
     position: relative;
     padding-top: 4rem;
@@ -46,6 +45,7 @@
 
   &__actions {
     @include flex-row;
+    align-items: center;
   }
 
   &__number {
@@ -55,7 +55,7 @@
   }
 
   &__message {
-    @include m-body-serif;
+    font-family: "Uncut Sans", sans-serif;
     @include removeMargin;
     font-size: 1.1rem;
   }
@@ -69,11 +69,11 @@
 
 .arrow__right,
 .arrow__left {
-  fill: $blue;
-  transition: fill 0.3s ease;
+  stroke: $blue;
+  transition: stroke 0.3s ease;
 }
 
 .arrow__right:hover,
 .arrow__left:hover {
-  fill: #e1e6f3;
+  stroke: #e1e6f3;
 }

@@ -1,11 +1,12 @@
 import './fixedsidebarlayout.scss';
 import { useRef, useState, useLayoutEffect } from 'react';
 import { LayoutContext } from '../../context/leftpanelcontext';
-import LeftFixedPanel from "../LeftFixedPanel/leftfixedpanel"
+import Navbar from "../Navbar/navbar";
+import LeftFixedPanel from "../LeftFixedPanel/leftfixedpanel";
 
 function FixedSidebarLayout({ children }) {
-  const containerRef = useRef(null); // ✅ real ref
-  const leftRef = useRef(null);      // ✅ real ref
+  const containerRef = useRef(null); 
+  const leftRef = useRef(null);      
   const [leftWidth, setLeftWidth] = useState(0);
   const [leftOffset, setLeftOffset] = useState(0);
 
@@ -24,6 +25,8 @@ function FixedSidebarLayout({ children }) {
   }, []);
 
   return (
+    <>
+    <Navbar/>
     <LayoutContext.Provider
       value={{ containerRef, leftRef, leftWidth, leftOffset }}
     >
@@ -34,6 +37,7 @@ function FixedSidebarLayout({ children }) {
             <div className="right-stuff" style={{ marginLeft: leftWidth + leftOffset }}>{children}</div>
         </div>
     </LayoutContext.Provider>
+    </>
   );
 }
 

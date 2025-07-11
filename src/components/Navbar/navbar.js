@@ -26,7 +26,7 @@ function Navbar() {
   }, []);
 
   useEffect(() => {
-    if (viewport.width > 768) {
+    if (viewport.width > 1280) {
       setVisible(false);
     }
   }, [viewport.width]);
@@ -98,15 +98,6 @@ function Navbar() {
           </div>
 
           <div className="nav__right-container">
-            <div className="nav__links">
-              <MotionLink link="/" label="Work" />
-              <MotionLink link="/marketing-projects" label="Graphics" />
-              <MotionLink link="/about" label="About" />
-              <MotionLink
-                link="https://drive.google.com/file/d/1wfEGLT4n4xeaODvOHWjHYeNA15IRBg2y/view?usp=sharing"
-                label="Resume"
-              />
-            </div>
             <div className="nav__mobile-menu" onClick={handleClick}>
               <img src={mobilemenu} className="mobile-menu" />
             </div>

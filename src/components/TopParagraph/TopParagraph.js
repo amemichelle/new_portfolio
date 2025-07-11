@@ -1,10 +1,14 @@
 import "./topparagraph.scss";
-import homeIcon from "../../assets/home.svg";
-import workIcon from "../../assets/work.svg";
-import aboutIcon from "../../assets/about.svg";
-import resumeIcon from "../../assets/resume.svg"
+
+import { Link } from "react-router-dom";
+
+import { ReactComponent as WorkIcon } from "../../assets/work.svg";
+import {ReactComponent as AboutIcon} from "../../assets/about.svg";
+import {ReactComponent as ResumeIcon} from "../../assets/resume.svg";
+import sparkleSticker from "../../assets/sparklesticker.svg";
 
 function TopParagrah() {
+
   const bgVariants = {
     rest: {
       width: "0%",
@@ -26,20 +30,23 @@ function TopParagrah() {
     <>
       <div className="top-paragraph">
         <div className="nav-row">
+          <Link to="/">
           <div className="nav-row__item">
-            <img src={homeIcon}/>
+            <WorkIcon className="nav-row__icon" />
           </div>
+          </Link>
+          <Link to="/about">
           <div className="nav-row__item">
-            <img src={workIcon}/>
+            <AboutIcon className="nav-row__icon" />
           </div>
+          </Link>
           <div className="nav-row__item">
-            <img src={aboutIcon}/>
-          </div>
-          <div className="nav-row__item">
-            <img src={resumeIcon}/>
+            <ResumeIcon className="nav-row__icon" />
           </div>
         </div>
-        <div className="top-paragraph__img"></div>
+        <div className="top-paragraph__img">
+          <img src={sparkleSticker} />
+          </div>
         <div className="top-paragraph__container">
           <div className="big__container">
             <h1 className="big__title">Hiya, I’m Michelle! </h1>

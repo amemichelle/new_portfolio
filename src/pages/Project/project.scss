@@ -19,18 +19,22 @@ iframe {
   }
 
   &__summary {
-    @include m-bold-story-heading;
+    font-family: "Uncut Sans", sans-serif;
+    font-size:2rem;
+    font-weight:800;
     @include removeMargin;
     padding: 3rem 0;
   }
 
   &__story-heading {
-    @include m-bold-story-heading;
+    font-family: "Uncut Sans", sans-serif;
+    font-size:2rem;
     @include removeMargin;
     padding-bottom: 1rem;
 
     &-main {
-      @include m-bold-story-heading;
+          font-family: "Uncut Sans", sans-serif;
+    font-size:2rem;
       @include removeMargin;
       padding: 1rem 0;
       width: 86%;
@@ -86,7 +90,8 @@ iframe {
   }
 
   &__section-heading {
-    @include m-bold-heading;
+    font-family: "Uncut Sans", sans-serif;
+    font-size:2rem;
     @include removeMargin;
     padding-bottom: 0.5rem;
   }
@@ -211,7 +216,10 @@ iframe {
 }
 
 .divider {
-  @include m-divider;
+  @include removeMargin;
+  font-family:"Space Mono";
+  font-weight:600;
+  color:$blue;
   border-bottom: 1px solid $blue;
   padding-bottom: 0.2rem;
   margin-bottom: 2rem;

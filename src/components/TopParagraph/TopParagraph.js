@@ -30,19 +30,25 @@ function TopParagrah() {
     <>
       <div className="top-paragraph">
         <div className="nav-row">
-          <Link to="/">
+          <Link className="nav-row__link" to="/">
           <div className="nav-row__item">
             <WorkIcon className="nav-row__icon" />
+            <p className="nav-row__text">Work</p>
           </div>
           </Link>
-          <Link to="/about">
+          <Link className="nav-row__link" to="/about">
           <div className="nav-row__item">
             <AboutIcon className="nav-row__icon" />
+            <p className="nav-row__text">About</p>
+
           </div>
           </Link>
+          <Link className="nav-row__link" to="/">
           <div className="nav-row__item">
             <ResumeIcon className="nav-row__icon" />
+            <p className="nav-row__text">Resume</p>
           </div>
+          </Link>
         </div>
         <div className="top-paragraph__img">
           <img src={sparkleSticker} />

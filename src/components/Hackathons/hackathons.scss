@@ -6,6 +6,8 @@
   border-radius: 8px;
   padding: 1.4rem;
   background:#fff;
+  height: 100%;
+  box-sizing: border-box;
   @include flex-column;
   justify-content: space-between;
   &__img {

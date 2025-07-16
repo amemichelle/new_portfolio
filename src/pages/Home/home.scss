@@ -6,38 +6,6 @@
   background-color: #FAFAFA;
 }
 
-.two-col-page__container {
-  position: relative;
-  z-index: 5;
-}
-
-.paragraph-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh; /* Take full viewport height */
-  display: flex;
-  align-items: center; /* Horizontal centering (if needed) */
-  justify-content: center; /* ❗Vertically center the inner content */
-  flex-direction: column;
-  width: clamp(150px, 30vw, 400px);
-  box-sizing: border-box;
-  z-index: 10;
-  opacity:0.7;
-  transition: opacity 0.3s ease;
-
-
-  &:hover{
-    opacity:1;
-
-  }
-}
-
-.two-column { 
-  position: relative;
-  min-height: 100vh;
-}
-
 .projects-container{
   padding: 2rem;
   min-height: 100vh;

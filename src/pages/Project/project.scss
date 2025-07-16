@@ -12,7 +12,7 @@ iframe {
 }
 
 .content {
-  padding: 1.5rem 1.5rem;
+  padding: 3.5rem 8rem;
   @include breakpoint-min-size($tablet) {
     @include flex-row;
     justify-content: center;
@@ -42,13 +42,8 @@ iframe {
   }
 
   &__box {
-    @include breakpoint-min-size($tablet) {
-      width: 70%;
-    }
+    width:100%;
 
-    @include breakpoint-min-size($desktop) {
-      width: 60%;
-    }
   }
 
   &__bg {
@@ -223,33 +218,6 @@ iframe {
   border-bottom: 1px solid $blue;
   padding-bottom: 0.2rem;
   margin-bottom: 2rem;
-}
-
-.project-link {
-  @include flex-row;
-  align-items: center;
-  gap: 1rem;
-  padding-bottom: 0.5rem;
-
-  &:hover {
-    background-color: $tan-background;
-  }
-
-  &__tag {
-    text-decoration: none;
-  }
-}
-
-.coming-soon {
-  background-color: $blue;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-
-  &__tag {
-    @include m-body;
-    @include removeMargin;
-    color: $white;
-  }
 }
 
 .context__container {

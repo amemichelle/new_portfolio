@@ -2,12 +2,6 @@
 @import "../../styles/partials/_Mixins";
 @import "../../styles/partials/_Variables";
 
-.page__container {
-  position: relative;
-  z-index: 5;
-  background-color: $white;
-}
-
 .about {
   &__card {
     background-color: $white;
@@ -128,58 +122,6 @@
   }
 }
 
-.work {
-  &__header {
-    @include m-body-serif;
-    margin-block-end: 0;
-  }
-
-  &__list {
-    padding-inline-start: 0;
-    margin-block-start: 0.5rem;
-
-    &-item {
-      list-style: none;
-      padding-bottom: 0.5rem;
-      @include m-body;
-
-      @include breakpoint-min-size($desktop) {
-      }
-    }
-  }
-}
-
-.professional-stuff {
-  @include flex-row;
-  justify-content: left;
-  padding-bottom: 2.5rem;
-  gap: 1rem;
-
-  @include breakpoint-min-size($tablet) {
-    padding-bottom: 0;
-    justify-content: center;
-    width: 70%;
-  }
-
-    @include breakpoint-min-size($desktop) {
-    width: 60%;
-  }
-
-  &__left {
-    width: 55%;
-  }
-
-  &__right {
-    width: 45%;
-  }
-
-  &__box {
-    @include flex-column;
-    width: 100%;
-    gap: 1rem;
-  }
-}
-
 .resume-things {
   @include flex-column;
   max-width: 100%;
@@ -191,90 +133,6 @@
   max-width: 100%;
   width: 100%;
 }
-
-.story-things {
-  box-sizing: border-box;
-  border: 1px solid #b2c5f3;
-  border-radius: 8px;
-  padding: 1.4rem;
-  background: linear-gradient(
-    180deg,
-    rgba(250, 252, 255, 1) 0%,
-    rgba(219, 230, 255, 0.2) 100%
-  );
-}
-
-.after-hours {
-  padding: 0 1rem;
-  padding-bottom: 2.5rem;
-
-  @include breakpoint-min-size($tablet) {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 1.5rem;
-  }
-
-  &__container {
-    @include breakpoint-min-size($tablet) {
-      width: 70%;
-    }
-
-    @include breakpoint-min-size($desktop) {
-      width: 61%;
-    }
-  }
-
-  &__titles {
-    @include breakpoint-min-size($desktop) {
-      @include flex-row;
-      align-items: flex-end;
-      width: 66%;
-      justify-content: flex-start;
-      gap: 3rem;
-    }
-  }
-
-  &__grid {
-    @include breakpoint-min-size($desktop) {
-      @include flex-row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 0.5rem;
-    }
-  }
-
-  &__header {
-    @include m-bold-heading-large;
-    margin-block-end: 0;
-  }
-
-  &__subheader {
-    @include m-body-serif;
-    @include removeMargin;
-  }
-}
-
-.summary {
-  @include flex-column;
-  justify-content: space-between;
-  gap: 1.5rem;
-
-  &__heading {
-    @include m-body;
-    @include removeMargin;
-    color: #5e5e5e;
-    font-size: 0.8rem;
-  }
-
-  &__content {
-    font-family: "Uncut Sans", sans-serif;
-    font-size:1.2rem;
-    padding: 1rem 0rem;
-    color:$black;
-    @include removeMargin;
-  }
-}
-
 
 .horizontal{
   @include flex-column;

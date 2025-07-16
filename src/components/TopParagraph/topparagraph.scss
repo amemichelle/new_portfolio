@@ -2,6 +2,20 @@
 @import "../../styles/partials/_Mixins";
 @import "../../styles/partials/_Variables";
 
+
+.img-file {
+  max-width:80%;
+}
+
+.bg-main{
+    background-color:#DBE6FF;
+}
+
+.bg-boxpals {
+  background-color:#8FBAA3;
+}
+
+
 .nav-row{
   @include flex-row;
   gap:0.5rem;
@@ -60,7 +74,6 @@
   @include centered;
   height:200px;
   border-radius:8px;
-  background-color:#DBE6FF;
 }
 }
 

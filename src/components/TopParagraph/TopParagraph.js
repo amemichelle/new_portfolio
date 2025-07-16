@@ -1,13 +1,15 @@
 import "./topparagraph.scss";
 
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import { ReactComponent as WorkIcon } from "../../assets/work.svg";
 import {ReactComponent as AboutIcon} from "../../assets/about.svg";
 import {ReactComponent as ResumeIcon} from "../../assets/resume.svg";
 import sparkleSticker from "../../assets/sparklesticker.svg";
-
+import boxpalsSticker from "../../assets/boxpalssticker.svg";
 function TopParagrah() {
+
+  const location = useLocation();
 
   const bgVariants = {
     rest: {
@@ -25,6 +27,42 @@ function TopParagrah() {
       },
     },
   };
+
+  const getSidebarContent = () => { 
+    switch(location.pathname) { 
+        case "/":
+          return {
+            img: sparkleSticker,
+            title: "Hiya, I’m Michelle!",
+            desc: "I’m a spirited Product Designer creating inviting spaces on the internet by blending cross-disciplinary knowledge with a passion for customer advocacy.",
+            bgClass: "bg-main"
+          };
+
+                  case "/about":
+          return {
+            img: sparkleSticker,
+            title: "Hiya, I’m Michelle!",
+            desc: "I’m a spirited Product Designer creating inviting spaces on the internet by blending cross-disciplinary knowledge with a passion for customer advocacy.",
+            bgClass: "bg-main"
+          };
+
+        case "/boxpals":
+          return { 
+            img: boxpalsSticker,
+            title: "Boxpals",
+            desc: "Boxpals is a group order management solution that allows people in the same locale to benefit from the economic and environmental benefits of ordering from retailers together (as opposed to individually)",
+            bgClass: "bg-boxpals"
+          }
+
+
+    }
+  }
+
+
+  const { img, title, desc, bgClass } = getSidebarContent();
+
+
+
 
   return (
     <>
@@ -50,17 +88,15 @@ function TopParagrah() {
           </div>
           </Link>
         </div>
-        <div className="top-paragraph__img">
-          <img src={sparkleSticker} />
+        <div className={`top-paragraph__img ${bgClass}`}>
+          <img className="img-file" src={img} />
           </div>
         <div className="top-paragraph__container">
           <div className="big__container">
-            <h1 className="big__title">Hiya, I’m Michelle! </h1>
+            <h1 className="big__title">{title}</h1>
           </div>
           <p className="big__desc">
-            I’m a spirited Product Designer creating inviting spaces on the
-            internet by blending cross-disciplinary knowledge with a passion for
-            customer advocacy.
+            {desc}
           </p>
 
 

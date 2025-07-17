@@ -14,11 +14,25 @@ function App() {
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
-          <Route path="/" element={<FixedSidebarLayout><Home/></FixedSidebarLayout>}></Route>
-          <Route path="/about" element={<FixedSidebarLayout><About /></FixedSidebarLayout>}></Route>
-          <Route path="/boxpals" element={<FixedSidebarLayout><Boxpals /></FixedSidebarLayout>}></Route>
-          <Route path="/guusto" element={<FixedSidebarLayout><Guusto /></FixedSidebarLayout>}></Route>
-          <Route path="/cultivate" element={<FixedSidebarLayout><Cultivate /></FixedSidebarLayout>}></Route>
+          <Route
+            path="/"
+            element={
+              <FixedSidebarLayout>
+                <Home />
+              </FixedSidebarLayout>
+            }
+          ></Route>
+          <Route
+            path="/about"
+            element={
+              <FixedSidebarLayout>
+                <About />
+              </FixedSidebarLayout>
+            }
+          ></Route>
+          <Route path="/boxpals" element={<Boxpals />}></Route>
+          <Route path="/guusto" element={<Guusto />}></Route>
+          <Route path="/cultivate" element={<Cultivate />}></Route>
           <Route
             path="/marketing-projects"
             element={<MarketingProject />}

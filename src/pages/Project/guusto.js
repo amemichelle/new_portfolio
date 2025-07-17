@@ -23,9 +23,19 @@ function Guusto() {
           hidden: { opacity: 0 },
         }}
       >
+        <ProjectHeader img={guustogroup} bgcolor="#717FAE"></ProjectHeader>
+
         <div className="content">
           <div className="content__box">
-            <ProjectHeader img={guustogroup} bgcolor="#717FAE"></ProjectHeader>
+            <div className="content__group">
+              <p className="content__summary">
+                Guusto is a B2B company that provides employee recognition and
+                customer rewards solutions through both monetary and
+                non-monetary recognition.
+              </p>
+            </div>
+
+            <p className="divider">Key Information</p>
 
             <div className="content__group-main">
               <p className="content__body">

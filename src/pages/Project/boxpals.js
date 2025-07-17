@@ -27,18 +27,18 @@ function Boxpals() {
           hidden: { opacity: 0 },
         }}
       >
+        <ProjectHeader img={boxpalsgroup} bgcolor="#8FBAA3" />
+
         <div className="content">
           <div className="content__box">
-              <ProjectHeader img={boxpalsgroup} bgcolor="#8FBAA3" />
-{/* 
             <p className="content__summary">
               Boxpals is a group order management solution that allows people in
               the same locale to benefit from the economic and environmental
               benefits of ordering from retailers together (as opposed to
               individually).
-            </p> */}
+            </p>
 
-            {/* <p className="divider">Key Information</p> */}
+            <p className="divider">Key Information</p>
             <div className="context__container">
               <div className="content__group" id="context">
                 <p className="content__story-heading">

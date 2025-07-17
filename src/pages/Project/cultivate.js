@@ -23,17 +23,9 @@ function Cultivate() {
           hidden: { opacity: 0 },
         }}
       >
-        <ProjectHeader img={cultivateGroup} bgcolor="#8EAF6E" />
-
         <div className="content">
           <div className="content__box">
-            <p className="content__summary">
-              Cultivate Inclusivity is a web platform that helps to faciliate
-              the connection between employers, employment agencies, and those
-              with barriers to employment.
-            </p>
-
-            <p className="divider">Key Information</p>
+            <ProjectHeader img={cultivateGroup} bgcolor="#8EAF6E" />
 
             <div className="context__container">
               <div classsName="content__group" id="context">

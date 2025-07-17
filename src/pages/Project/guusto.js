@@ -2,7 +2,6 @@ import "./project.scss";
 import { motion } from "framer-motion";
 import ProjectHeader from "../../components/ProjectHeader/projectheader";
 import ModalImage from "react-modal-image";
-import Footer from "../../components/Footer/Footer";
 import guustogroup from "../../assets/guusto_group.png";
 import guustomobilebefore from "../../assets/guusto_mobile-before.png";
 import guustomobileafter from "../../assets/guusto_mobile-after.png";
@@ -24,18 +23,9 @@ function Guusto() {
           hidden: { opacity: 0 },
         }}
       >
-        <ProjectHeader img={guustogroup} bgcolor="#717FAE"></ProjectHeader>
         <div className="content">
           <div className="content__box">
-            <div className="content__group">
-              <p className="content__summary">
-                Guusto is a B2B company that provides employee recognition and
-                customer rewards solutions through both monetary and
-                non-monetary recognition.
-              </p>
-            </div>
-
-            <p className="divider">Key Information</p>
+            <ProjectHeader img={guustogroup} bgcolor="#717FAE"></ProjectHeader>
 
             <div className="content__group-main">
               <p className="content__body">
@@ -171,8 +161,6 @@ function Guusto() {
             </div>
           </div>
         </div>
-
-        <Footer />
       </motion.div>
     </>
   );

@@ -6,19 +6,19 @@
   &__header {
     width: 100%;
     @include flex-column;
-    border-radius:1rem;
-    padding-top:3rem;
+    border-radius: 1rem;
+    padding-top: 3rem;
+    margin-bottom: 2rem;
   }
 
   &__arrow {
     margin-left: 1rem;
-    height:3rem;
+    height: 3rem;
     stroke: white;
     transition: stroke 0.3s ease-in;
 
     &:hover {
       stroke: $blue;
- 
     }
 
     &-div {

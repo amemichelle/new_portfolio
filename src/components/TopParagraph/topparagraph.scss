@@ -2,79 +2,79 @@
 @import "../../styles/partials/_Mixins";
 @import "../../styles/partials/_Variables";
 
-
 .img-file {
-  max-width:80%;
+  max-width: 80%;
 }
 
-.bg-main{
-    background-color:#DBE6FF;
+.bg-main {
+  background-color: #dbe6ff;
 }
 
 .bg-boxpals {
-  background-color:#8FBAA3;
+  background-color: #8fbaa3;
 }
 
+.bg-guusto {
+  background-color: #717fae;
+}
 
-.nav-row{
+.bg-cultivate {
+  background-color: #8eaf6e;
+}
+
+.nav-row {
   @include flex-row;
-  gap:0.5rem;
+  gap: 0.5rem;
 
-    &__text{ 
-    font-family: 'Uncut Sans';
-    font-size:1rem;
+  &__text {
+    font-family: "Uncut Sans";
+    font-size: 1rem;
     color: $black;
     @include removeMargin;
   }
 
-  &__link{ 
-      text-decoration: none;
+  &__link {
+    text-decoration: none;
   }
 
-  &__item{
-    background-color: #F6F6F6;
+  &__item {
+    background-color: #f6f6f6;
     border-radius: 8px;
     @include flex-row;
     align-items: center;
     justify-content: center;
-    border: 1px solid #CDCDCD;
+    border: 1px solid #cdcdcd;
     transition: background-color 0.3s ease;
-    padding:0.25rem 0.75rem;
-    gap:0.5rem;
+    padding: 0.25rem 0.75rem;
+    gap: 0.5rem;
 
+    &:hover {
+      background-color: #dbe6ff;
 
-    &:hover{
-      background-color:#DBE6FF;
-
-      .nav-row__icon{
+      .nav-row__icon {
         stroke: $blue;
       }
     }
   }
 
-  &__icon{
+  &__icon {
     stroke: $black;
   }
-
-
 }
 
 .top-paragraph {
   @include flex-column;
-  position:fixed;
-  width:auto;
-  gap:1rem;
+  position: fixed;
+  width: auto;
+  gap: 1rem;
   padding-left: 2rem;
 
-  
-
-&__img{ 
-
-  @include flex-row;
-  @include centered;
-  height:200px;
-  border-radius:8px;
-}
+  &__img {
+    @include flex-row;
+    @include centered;
+    height: 200px;
+    border-radius: 8px;
+  }
 }
 
 .big {
@@ -87,19 +87,15 @@
   &__title {
     @include removeMargin;
     font-family: "Uncut Sans", sans-serif;
-    font-size:1rem;
+    font-size: 1rem;
     padding-bottom: 0.5rem;
-
-
   }
 
   &__desc {
-  @include removeMargin;
-  font-family: "Uncut Sans", sans-serif;
-  font-weight:300;
-  font-size:1.1rem;
-
-
+    @include removeMargin;
+    font-family: "Uncut Sans", sans-serif;
+    font-weight: 300;
+    font-size: 1.1rem;
   }
 
   &__sparkle-container {

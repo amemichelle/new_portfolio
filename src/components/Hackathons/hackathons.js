@@ -36,12 +36,12 @@ function Hackathons() {
       event: "TOHacks",
       year: "2021",
     },
-    {
-      img: vaccineInfoImg,
-      project: "what did we make?? ",
-      event: "Adobe x Target Creative Jam",
-      year: "2021",
-    },
+    // {
+    //   img: vaccineInfoImg,
+    //   project: "what did we make?? ",
+    //   event: "Adobe x Target Creative Jam",
+    //   year: "2021",
+    // },
     {
       img: reviveImg,
       project: "99Dresses",
@@ -66,12 +66,12 @@ function Hackathons() {
       event: "cmd+f",
       year: "2020",
     },
-    {
-      img: genNowImg,
-      project: "also don't remember??",
-      event: "Adobe x Netflix Creative Jam",
-      year: "2020",
-    },
+    // {
+    //   img: genNowImg,
+    //   project: "also don't remember??",
+    //   event: "Adobe x Netflix Creative Jam",
+    //   year: "2020",
+    // },
     {
       img: snapfoodImg,
       project: "Snapfood",

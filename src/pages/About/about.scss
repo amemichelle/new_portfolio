@@ -3,6 +3,27 @@
 @import "../../styles/partials/_Variables";
 
 .about {
+  &__content {
+    font-size: 1.2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    line-height: 1.6rem;
+    font-weight: 600;
+  }
+  &__bullet-list {
+    @include flex-column;
+    gap: 0.8rem;
+    margin-block-start: 0;
+    margin-block-end: 0rem;
+    padding-inline-start: 2rem;
+    padding-bottom: 1rem;
+
+    &--item {
+      font-size: 0.9rem;
+      padding-left: 0.5rem;
+      max-width: 90%;
+    }
+  }
   &__card {
     background-color: $white;
     border-radius: 16px;
@@ -12,9 +33,9 @@
     gap: 2rem;
     padding: 2rem;
 
-    @include breakpoint-min-size($desktop){
-    @include flex-row;
-    @include centered;
+    @include breakpoint-min-size($desktop) {
+      @include flex-row;
+      @include centered;
     }
 
     &-right {
@@ -26,11 +47,11 @@
 
   &__top {
     @include flex-column;
-    gap:2rem;
-    padding:1rem;
+    gap: 2rem;
+    padding: 1rem;
 
-    @include breakpoint-min-size($desktop){
-      padding:3.5rem 8rem;
+    @include breakpoint-min-size($desktop) {
+      padding: 3.5rem 4rem;
     }
 
     &-container {
@@ -42,20 +63,20 @@
       width: 100%;
       padding: 1rem;
 
-
       @include breakpoint-min-size($desktop) {
-        padding: 3rem 6rem;
+        padding: 3rem 5rem;
       }
     }
 
-    &-card{
+    &-card {
       background-color: #fff;
-      border-radius:8px;
-      padding:1rem;
+      border-radius: 8px;
+      padding: 1rem;
+      max-width: 80%;
+      box-sizing: border-box;
 
       @include breakpoint-min-size($desktop) {
         padding: 1rem 2rem;
-
       }
     }
   }
@@ -134,17 +155,22 @@
   width: 100%;
 }
 
-.horizontal{
+.horizontal {
   @include flex-column;
-  gap:2rem;
+  gap: 2rem;
 
   @include breakpoint-min-size($desktop) {
     @include flex-row;
-     align-items: stretch;
+    align-items: stretch;
+    max-width: 80%;
   }
 }
 
-.rec-container{
+.rec-container {
   background-color: #fff;
   border-radius: 16px;
+
+  @include breakpoint-min-size($desktop) {
+    max-width: 80%;
+  }
 }

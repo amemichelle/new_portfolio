@@ -10,7 +10,6 @@ function ResumeItem() {
   return (
     <>
       <div className="resume__item-box">
-
         <div className="resume__item">
           <div className="resume__heading-items">
             <img className="resume__icon" src={deltaTriangle} />
@@ -29,9 +28,7 @@ function ResumeItem() {
           <div className="resume__heading-items">
             <img className="resume__icon" src={brainStationLogo} />
             <div className="resume__top-text">
-              <p className="resume__position">
-                Teaching Assistant - Software Eng.
-              </p>
+              <p className="resume__position">Teaching Assistant - SW Eng.</p>
               <div className="resume__company-date">
                 <p className="resume__company">BrainStation</p>
                 <img src={singleSparkle} className="resume__divider" />
@@ -56,11 +53,9 @@ function ResumeItem() {
         </div>
 
         <div className="resume__link">
-            <p className="resume__actions-text">View my</p>
-          <Link className="resume__actions-button">
-          resume
-          </Link>
-          </div>
+          <p className="resume__actions-text">View my</p>
+          <Link className="resume__actions-button">resume</Link>
+        </div>
       </div>
     </>
   );

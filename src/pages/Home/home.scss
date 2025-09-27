@@ -2,27 +2,25 @@
 @import "../../styles/partials/_Mixins";
 @import "../../styles/partials/_Variables";
 
-#root{
-  background-color: #FAFAFA;
+#root {
+  background-color: #fafafa;
 }
 
-.projects-container{
-  padding: 2rem;
+.projects-container {
+  padding: 2rem 0rem;
   min-height: 100vh;
   box-sizing: border-box;
 }
 
 .projects-box {
-
-@include breakpoint-min-size($desktop) {
-    padding: 1.5rem 6rem;
-
-}
-
+  @include breakpoint-min-size($desktop) {
+    padding: 1.5rem 4rem;
+  }
 
   &__container {
     @include flex-column;
-    gap:2rem;
+    gap: 2rem;
+    width: 80%;
   }
 
   &__link {

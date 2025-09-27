@@ -35,7 +35,11 @@ function App() {
           <Route path="/cultivate" element={<Cultivate />}></Route>
           <Route
             path="/marketing-projects"
-            element={<MarketingProject />}
+            element={
+              <FixedSidebarLayout>
+                <MarketingProject />
+              </FixedSidebarLayout>
+            }
           ></Route>
         </Routes>
       </BrowserRouter>

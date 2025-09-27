@@ -3,15 +3,10 @@
 @import "../../styles/partials/_Variables";
 
 .container {
-  padding: 1.5rem;
   width: 100%;
 
-  @include breakpoint-min-size($tablet) {
-    width: 70%;
-  }
-
   @include breakpoint-min-size($desktop) {
-    width: 60%;
+    width: 80%;
   }
 
   &__graphics {
@@ -36,6 +31,11 @@
   &__box {
     @include flex-column;
     align-items: center;
+
+    @include breakpoint-min-size($desktop) {
+      padding: 3.5rem 4rem;
+      align-items: flex-start;
+    }
   }
 }
 

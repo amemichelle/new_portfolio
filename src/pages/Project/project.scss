@@ -220,9 +220,12 @@ iframe {
 }
 
 .divider {
-  @include m-divider;
+  font-family: "Commit Mono";
+  font-weight: 700;
+  color: $blue;
+  padding-bottom: 0.5rem;
+  font-size: 1rem;
   border-bottom: 1px solid $blue;
-  padding-bottom: 0.2rem;
   margin-bottom: 2rem;
 }
 

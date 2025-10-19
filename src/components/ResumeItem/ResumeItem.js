@@ -4,8 +4,7 @@ import brainStationLogo from "../../assets/brainstation-logo.svg";
 import guustoIcon from "../../assets/guusto-icon.svg";
 import deltaTriangle from "../../assets/delta-triangle.svg";
 import singleSparkle from "../../assets/singlesparkle.svg";
-import { ReactComponent as ArrowRight } from "../../assets/arrowrightoutline.svg";
-
+import { ReactComponent as ResumeTitled } from "../../assets/resume-tilted.svg";
 function ResumeItem() {
   return (
     <>
@@ -52,10 +51,12 @@ function ResumeItem() {
           </div>
         </div>
 
-        <div className="resume__link">
-          <p className="resume__actions-text">View my</p>
-          <Link className="resume__actions-button">resume</Link>
-        </div>
+        <Link className="resume__actions-button">
+          Download Resume
+          <div className="resume__actions-text">
+            <ResumeTitled />
+          </div>
+        </Link>
       </div>
     </>
   );

@@ -49,6 +49,7 @@
     @include flex-column;
     gap: 2rem;
     padding: 1rem;
+    padding-top: 3rem;
 
     @include breakpoint-min-size($desktop) {
       padding: 3.5rem 4rem;
@@ -69,11 +70,15 @@
     }
 
     &-card {
+      max-width: 100%;
       background-color: #fff;
       border-radius: 8px;
       padding: 1rem;
-      max-width: 80%;
       box-sizing: border-box;
+
+      @include breakpoint-min-size($tablet) {
+        max-width: 80%;
+      }
 
       @include breakpoint-min-size($desktop) {
         padding: 1rem 2rem;

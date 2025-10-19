@@ -47,7 +47,6 @@ function MarketingProject() {
           hidden: { opacity: 0 },
         }}
       >
-        <Navbar />
         <div className="container__box">
           <div className="container">
             <h2 className="graphics__header">

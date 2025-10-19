@@ -39,13 +39,17 @@
   }
 
   &__img-container {
-    height: 12rem;
+    height: 7rem;
     width: 100%;
     border-radius: 8px;
     @include flex-row;
     align-items: flex-end;
     justify-content: center;
     overflow: hidden;
+
+    @include breakpoint-min-size($tablet) {
+      height: 16rem;
+    }
 
     @include breakpoint-min-size($desktop) {
       height: 16rem;

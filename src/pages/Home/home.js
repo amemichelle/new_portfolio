@@ -39,6 +39,17 @@ function Home() {
           hidden: { opacity: 0 },
         }}
       >
+        <div className="mobile-container">
+          <div className="mobile-container__summary">
+            <p className="mobile-container__title"> Hiya, I’m Michelle! </p>
+            <p className="mobile-container__desc">
+              I’m a spirited Product Designer creating inviting spaces on the
+              internet by blending cross-disciplinary knowledge with a passion
+              for customer advocacy.
+            </p>
+          </div>
+        </div>
+
         <div
           className="projects-container"
           style={{ marginLeft: `${leftWidth}px` }}

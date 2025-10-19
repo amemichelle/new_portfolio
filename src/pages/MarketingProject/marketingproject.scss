@@ -4,20 +4,26 @@
 
 .container {
   width: 100%;
+  padding-top: 5rem;
 
   @include breakpoint-min-size($desktop) {
+    padding-top: 1rem;
     width: 80%;
   }
 
   &__graphics {
     @include flex-column;
-    padding-bottom: 4%;
-    padding-left: 1.5rem;
+    padding: 2rem;
     gap: 1rem;
 
     @include breakpoint-min-size($tablet) {
       @include flex-row;
       flex-wrap: wrap;
+    }
+
+    @include breakpoint-min-size($desktop) {
+      padding-bottom: 4%;
+      padding-left: 1.5rem;
     }
 
     & > div {

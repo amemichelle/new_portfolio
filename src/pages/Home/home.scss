@@ -7,14 +7,22 @@
 }
 
 .projects-container {
-  padding: 2rem 0rem;
   min-height: 100vh;
   box-sizing: border-box;
+  padding: 2rem 0rem;
+
+  @include breakpoint-min-size($desktop) {
+    padding: 2rem 0rem;
+  }
 }
 
 .projects-box {
+  @include flex-column;
+  align-items: center;
+
   @include breakpoint-min-size($desktop) {
     padding: 1.5rem 4rem;
+    align-items: flex-start;
   }
 
   &__container {
@@ -25,5 +33,25 @@
 
   &__link {
     text-decoration: none;
+  }
+}
+
+.mobile-container {
+  @include flex-column;
+  align-items: center;
+  padding-top: 5rem;
+
+  @include breakpoint-min-size($desktop) {
+    display: none;
+  }
+
+  &__summary {
+    width: 80%;
+  }
+
+  &__title {
+    font-family: "Uncut Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
   }
 }

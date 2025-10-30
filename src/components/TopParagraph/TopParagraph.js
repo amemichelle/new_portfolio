@@ -5,6 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 import { ReactComponent as WorkIcon } from "../../assets/work.svg";
 import { ReactComponent as AboutIcon } from "../../assets/about.svg";
 import { ReactComponent as ResumeIcon } from "../../assets/resume.svg";
+import { ReactComponent as GraphicsIcon } from "../../assets/graphics.svg";
 import sparkleSticker from "../../assets/sparklesticker.svg";
 
 function TopParagrah() {
@@ -50,7 +51,7 @@ function TopParagrah() {
             </Link>
             <Link className="nav-row__link" to="/marketing-projects">
               <div className="nav-row__item">
-                <WorkIcon className="nav-row__icon" />
+                <GraphicsIcon className="nav-row__icon" />
                 <p className="nav-row__text">Graphics</p>
               </div>
             </Link>

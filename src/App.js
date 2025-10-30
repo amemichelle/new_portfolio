@@ -8,7 +8,10 @@ import MarketingProject from "./pages/MarketingProject/marketingproject";
 import FixedSidebarLayout from "./components/FixedSidebarLayout/fixedsidebarlayout";
 import ScrollToTop from "./components/ScrollToTop/scrolltotop";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
+import { useTheme } from "./context/themecontext";
 function App() {
+  const { theme } = useTheme;
+
   return (
     <>
       <BrowserRouter>

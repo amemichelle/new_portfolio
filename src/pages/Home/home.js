@@ -8,8 +8,8 @@ import cultivateLogo from "../../assets/cultivate_logo.svg";
 import boxpalsGroup from "../../assets/boxpals_group.png";
 import guustoGroup from "../../assets/guusto_group.png";
 import cultivateGroup from "../../assets/cultivate_group.png";
+import ThemeToggle from "../../components/ThemeToggle/themetoggle";
 import { motion } from "framer-motion";
-
 function Home() {
   const leftRef = useRef(null);
   const [leftWidth, setLeftWidth] = useState(0);
@@ -54,6 +54,8 @@ function Home() {
           className="projects-container"
           style={{ marginLeft: `${leftWidth}px` }}
         >
+          <ThemeToggle />
+
           <section className="projects-box">
             <div className="projects-box__container">
               <Link className="projects-box__link" to="/boxpals">

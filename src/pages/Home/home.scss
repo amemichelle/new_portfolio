@@ -1,10 +1,7 @@
 @import "../../styles/partials/_FontStyles";
 @import "../../styles/partials/_Mixins";
 @import "../../styles/partials/_Variables";
-
-#root {
-  background-color: #fafafa;
-}
+@import "../../styles/partials/_ThemeColors";
 
 .projects-container {
   min-height: 100vh;
@@ -29,6 +26,7 @@
     @include flex-column;
     gap: 2rem;
     width: 80%;
+    max-width: 1160px;
   }
 
   &__link {
@@ -53,5 +51,20 @@
     font-family: "Uncut Sans", sans-serif;
     font-size: 1rem;
     font-weight: 600;
+  }
+}
+
+.moon-button {
+  position: absolute;
+  right: 4rem;
+  top: 3.5rem;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #f0f0f0;
+  stroke: $black;
+
+  &:hover {
+    background-color: $blue-highlight;
   }
 }

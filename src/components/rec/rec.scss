@@ -1,6 +1,7 @@
 @import "../../styles/partials/_FontStyles";
 @import "../../styles/partials/_Mixins";
 @import "../../styles/partials/_Variables";
+@import "../../styles/partials/_ThemeColors";
 
 .recommendations {
   &__box {
@@ -17,7 +18,7 @@
     padding-bottom: 5rem;
     min-height: 300px;
     @include flex-column;
-    justify-content:center;
+    justify-content: center;
   }
 
   &__content {
@@ -51,7 +52,9 @@
   &__number {
     @include m-body;
     font-weight: 600;
-    color: #6c6c6c;
+    @include themed() {
+      color: t("secondary-text");
+    }
   }
 
   &__message {
@@ -64,6 +67,9 @@
     @include m-body;
     font-size: 0.8rem;
     font-weight: 700;
+    @include themed() {
+      color: t("secondary-text");
+    }
   }
 }
 

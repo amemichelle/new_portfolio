@@ -1,14 +1,19 @@
 @import "../../styles/partials/_FontStyles";
 @import "../../styles/partials/_Mixins";
 @import "../../styles/partials/_Variables";
+@import "../../styles/partials/_ThemeColors";
 
 .hackathon {
   border-radius: 8px;
   padding: 1.4rem;
-  background: #fff;
   height: 100%;
   box-sizing: border-box;
   justify-content: center;
+
+  @include themed() {
+    background-color: t("card");
+  }
+
   @include flex-column;
   &__img {
     width: 100%;
@@ -18,20 +23,27 @@
   &__project {
     @include removeMargin;
     @include m-body;
+    @include themed() {
+      color: t("text");
+    }
   }
 
   &__year {
     @include removeMargin;
     @include m-body;
     font-size: 0.8rem;
-    color: #535353;
+    @include themed() {
+      color: t("secondary-text");
+    }
   }
 
   &__event {
     @include removeMargin;
     @include m-body;
     font-size: 0.8rem;
-    color: #535353;
+    @include themed() {
+      color: t("secondary-text");
+    }
   }
 
   &__divider {

@@ -1,8 +1,9 @@
+import "./themetoggle.scss";
 import { ReactComponent as Moon } from "../../assets/moon.svg";
 import { useTheme } from "../../context/themecontext";
 
 function ThemeToggle() {
-  const { theme, toggleTheme } = useTheme();
+  const { dark, toggleTheme } = useTheme();
 
   return <Moon className="moon-button" onClick={toggleTheme} />;
 }

@@ -1,6 +1,7 @@
 @import "../../styles/partials/_FontStyles";
 @import "../../styles/partials/_Mixins";
 @import "../../styles/partials/_Variables";
+@import "../../styles/partials/_ThemeColors";
 
 .resume {
   &__item-box {
@@ -9,7 +10,9 @@
     max-width: 100%;
     border-radius: 8px;
     gap: 0.5rem;
-    background: #fff;
+    @include themed() {
+      background-color: t("card");
+    }
   }
 
   &__link {
@@ -20,10 +23,12 @@
   }
 
   &__item {
-    border: 1px dashed #b2c5f3;
     border-radius: 8px;
     padding: 0.4rem;
-    background-color: $white;
+    @include themed() {
+      background-color: t("bg");
+      border: 1px dashed t("moon-stroke");
+    }
   }
 
   &__divider {
@@ -41,6 +46,9 @@
     font-weight: 500;
     font-size: 0.9rem;
     padding-bottom: 0.2rem;
+    @include themed() {
+      color: t("text");
+    }
   }
 
   &__icon {
@@ -63,14 +71,18 @@
     @include removeMargin;
     @include m-body;
     font-size: 0.8rem;
-    color: #535353;
+    @include themed() {
+      color: t("secondary-text");
+    }
   }
 
   &__date {
     @include removeMargin;
     @include m-body;
     font-size: 0.7rem;
-    color: #535353;
+    @include themed() {
+      color: t("secondary-text");
+    }
   }
 
   &__top-text {
@@ -99,7 +111,6 @@
     }
 
     &-button {
-      background-color: #fafafa;
       @include flex-row;
       align-items: center;
       justify-content: center;
@@ -112,8 +123,14 @@
       color: $blue;
       padding: 0.5rem;
 
+      @include themed() {
+        background-color: t("button");
+      }
+
       &:hover {
-        background-color: #dbe6ff;
+        @include themed() {
+          background-color: t("moon-hover");
+        }
       }
     }
 

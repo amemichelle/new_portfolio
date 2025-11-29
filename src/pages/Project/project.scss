@@ -1,6 +1,7 @@
 @import "../../styles/partials/_FontStyles";
 @import "../../styles/partials/_Mixins";
 @import "../../styles/partials/_Variables";
+@import "../../styles/partials/_ThemeColors";
 
 iframe {
   width: 70%;
@@ -24,12 +25,19 @@ iframe {
     font-weight: 600;
     @include removeMargin;
     padding: 2rem 0;
+    @include themed() {
+      color: t("text");
+    }
   }
 
   &__story-heading {
     font-family: "Uncut Sans", sans-serif;
     font-size: 1.6rem;
     font-weight: 600;
+
+    @include themed() {
+      color: t("text");
+    }
 
     @include removeMargin;
     padding-bottom: 1rem;
@@ -41,6 +49,10 @@ iframe {
       @include removeMargin;
       padding: 1rem 0;
       width: 86%;
+
+      @include themed() {
+        color: t("text");
+      }
     }
   }
 
@@ -104,6 +116,9 @@ iframe {
     @include m-body;
     @include removeMargin;
     padding-bottom: 0.5rem;
+    @include themed() {
+      color: t("text");
+    }
 
     @include breakpoint-min-size($desktop) {
       font-size: 1.1rem;
@@ -113,6 +128,9 @@ iframe {
   &__hl {
     @include m-body;
     font-weight: 700;
+    @include themed() {
+      color: t("text");
+    }
   }
 
   &__inline-link {
@@ -164,6 +182,9 @@ iframe {
     @include m-body;
     @include removeMargin;
     font-weight: 700;
+    @include themed() {
+      color: t("text");
+    }
   }
 
   &__list {
@@ -176,13 +197,17 @@ iframe {
     @include m-body;
     @include removeMargin;
     width: 100%;
-    color: #616161;
-
+    @include themed() {
+      color: t("text");
+    }
     &-insights {
       @include m-body;
       @include removeMargin;
       width: 100%;
       padding-bottom: 0.5rem;
+      @include themed() {
+        color: t("text");
+      }
     }
   }
 
@@ -193,12 +218,13 @@ iframe {
 }
 
 .pull-quote {
-  background-color: $tan-background;
   padding: 2rem;
   border-left: 4px solid $blue;
+  @include themed() {
+    background-color: t("icon-bg");
+  }
 
   &__highlight {
-    background-color: $blue-highlight;
     margin: 0rem 0.2rem;
     font-weight: 700;
   }
@@ -208,6 +234,9 @@ iframe {
     padding-bottom: 1rem;
     font-size: 1.2rem;
     width: 86%;
+    @include themed() {
+      color: t("text");
+    }
   }
 }
 

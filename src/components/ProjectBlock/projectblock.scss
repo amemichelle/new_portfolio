@@ -1,15 +1,20 @@
 @import "../../styles/partials/_FontStyles";
 @import "../../styles/partials/_Mixins";
 @import "../../styles/partials/_Variables";
+@import "../../styles/partials/_ThemeColors";
 
 .project {
   position: relative;
-  background-color: #fff;
   padding: 1.5rem;
   border-radius: 8px;
+  @include themed() {
+    background: t("card");
+  }
 
   &__ic {
-    stroke: $black;
+    @include themed() {
+      stroke: t("icon-stroke");
+    }
   }
 
   &__top-bit,
@@ -32,10 +37,12 @@
     aspect-ratio: 1/1;
     width: 2rem;
     @include flex-column;
-    background-color: $tan-background;
     border-radius: 4px;
     align-items: center;
     justify-content: center;
+    @include themed() {
+      background: t("icon-bg");
+    }
   }
 
   &__img-container {
@@ -66,7 +73,9 @@
     font-weight: 400;
     font-size: 0.8rem;
     text-decoration: none;
-    color: $black;
+    @include themed() {
+      color: t("text");
+    }
   }
 
   &__group-img {
@@ -91,14 +100,19 @@
     font-family: "Uncut Sans", sans-serif;
     font-size: 1.5rem;
     padding-bottom: 2rem;
-    color: $black;
     @include removeMargin;
+    @include themed() {
+      color: t("text");
+    }
   }
 
   &__desc {
     @include removeMargin;
     @include m-body;
-    color: #808080;
+
+    @include themed() {
+      color: t("secondary-text");
+    }
 
     @include breakpoint-min-size($desktop) {
       font-size: 0.9rem;

@@ -1,6 +1,7 @@
 @import "../../styles/partials/_FontStyles";
 @import "../../styles/partials/_Mixins";
 @import "../../styles/partials/_Variables";
+@import "../../styles/partials/_ThemeColors";
 
 .img-file {
   max-width: 60%;
@@ -14,8 +15,10 @@
   &__text {
     font-family: "Uncut Sans";
     font-size: 1rem;
-    color: $black;
     @include removeMargin;
+    @include themed() {
+      color: t("text");
+    }
   }
 
   &__link {
@@ -43,7 +46,9 @@
   }
 
   &__icon {
-    stroke: $black;
+    @include themed() {
+      stroke: t("icon-stroke");
+    }
   }
 }
 

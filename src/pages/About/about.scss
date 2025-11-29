@@ -1,6 +1,7 @@
 @import "../../styles/partials/_FontStyles";
 @import "../../styles/partials/_Mixins";
 @import "../../styles/partials/_Variables";
+@import "../../styles/partials/_ThemeColors";
 
 .about {
   &__content {
@@ -33,7 +34,7 @@
     gap: 2rem;
     padding: 2rem;
 
-    @include breakpoint-min-size($desktop) {
+    @include breakpoint-min-size($tablet) {
       @include flex-row;
       @include centered;
       max-width: 500px;
@@ -66,20 +67,18 @@
       width: 100%;
       padding: 1rem;
 
-      @include breakpoint-min-size($desktop) {
+      @include breakpoint-min-size($tablet) {
         padding: 3rem 5rem;
       }
     }
 
     &-card {
       max-width: 100%;
-      background-color: #fff;
       border-radius: 8px;
       padding: 1rem;
       box-sizing: border-box;
-
-      @include breakpoint-min-size($tablet) {
-        max-width: 80%;
+      @include themed() {
+        background-color: t("card");
       }
 
       @include breakpoint-min-size($desktop) {
@@ -176,9 +175,11 @@
 }
 
 .rec-container {
-  background-color: #fff;
   border-radius: 16px;
 
+  @include themed() {
+    background-color: t("card");
+  }
   @include breakpoint-min-size($desktop) {
     max-width: 80%;
     max-width: 1160px;

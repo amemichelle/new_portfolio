@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { LayoutContext } from "../../context/leftpanelcontext";
 import Navbar from "../Navbar/navbar";
 import LeftFixedPanel from "../LeftFixedPanel/leftfixedpanel";
+import ThemeToggle from "../ThemeToggle/themetoggle";
 
 function FixedSidebarLayout({ children }) {
   const containerRef = useRef(null);
@@ -50,6 +51,7 @@ function FixedSidebarLayout({ children }) {
               className="right-stuff"
               style={{ marginLeft: leftWidth + leftOffset }}
             >
+              <ThemeToggle />
               {children}
             </div>
           </div>

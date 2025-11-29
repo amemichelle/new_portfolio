@@ -1,6 +1,7 @@
 @import "../../styles/partials/_FontStyles";
 @import "../../styles/partials/_Mixins";
 @import "../../styles/partials/_Variables";
+@import "../../styles/partials/_ThemeColors";
 
 .nav {
   @include flex-row;
@@ -48,6 +49,10 @@
     background-color: $tan-background;
     position: fixed;
     z-index: 10;
+
+    @include themed() {
+      background-color: t("menu-bar");
+    }
   }
 
   &__links {
@@ -78,7 +83,6 @@
   width: 80%;
   margin: auto;
   height: fit-content;
-  background-color: #f5f0ec;
   margin-bottom: 2rem;
   border-radius: 16px;
   position: fixed;
@@ -88,6 +92,9 @@
   right: 0;
   margin: 0 auto;
   overflow: hidden;
+  @include themed() {
+    background-color: t("button");
+  }
 
   @include breakpoint-min-size($desktop) {
     display: none;
@@ -102,11 +109,14 @@
     font-weight: 600;
     text-decoration: none;
     padding: 1.1rem;
-    background-color: #f5f0ec;
-
+    @include themed() {
+      background-color: t("button");
+      color: t("text");
+    }
     &:hover {
-      background-color: $blue;
-      color: white;
+      @include themed() {
+        background-color: t("moon-hover");
+      }
     }
   }
 }

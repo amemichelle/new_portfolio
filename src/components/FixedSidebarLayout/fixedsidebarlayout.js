@@ -51,7 +51,7 @@ function FixedSidebarLayout({ children }) {
               className="right-stuff"
               style={{ marginLeft: leftWidth + leftOffset }}
             >
-              <ThemeToggle />
+              {/* <ThemeToggle /> */}
               {children}
             </div>
           </div>

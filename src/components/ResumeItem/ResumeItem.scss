@@ -10,9 +10,12 @@
     max-width: 100%;
     border-radius: 8px;
     gap: 0.5rem;
-    @include themed() {
-      background-color: t("card");
-    }
+    height: 100%;
+    border: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.3);
+    // @include themed() {
+    //   background-color: t("card");
+    // }
   }
 
   &__link {
@@ -25,6 +28,9 @@
   &__item {
     border-radius: 8px;
     padding: 0.4rem;
+    flex: 1;
+    padding-left: 1.2rem;
+    justify-content: center;
     @include themed() {
       background-color: t("bg");
       border: 1px dashed t("moon-stroke");
@@ -37,7 +43,9 @@
   &__heading-items {
     @include flex-row;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
+    height: 100%;
   }
 
   &__position {
@@ -88,7 +96,6 @@
   &__top-text {
     @include flex-column;
     width: 100%;
-    padding-bottom: 0.5rem;
   }
 
   &__divider {

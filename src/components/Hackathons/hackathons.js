@@ -48,12 +48,12 @@ function Hackathons() {
       event: "Revive",
       year: "2021",
     },
-    {
-      img: reviveImg,
-      project: "Polar Plunge",
-      event: "BC Game Jam",
-      year: "2020",
-    },
+    // {
+    //   img: reviveImg,
+    //   project: "Polar Plunge",
+    //   event: "BC Game Jam",
+    //   year: "2020",
+    // },
     {
       img: genNowImg,
       project: "Gen Now",

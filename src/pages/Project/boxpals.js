@@ -179,7 +179,6 @@ function Boxpals() {
                   alt="Group order organized through spreadsheet"
                   className="content__images"
                 />
-                ;
               </div>
 
               <div className="content__bg">

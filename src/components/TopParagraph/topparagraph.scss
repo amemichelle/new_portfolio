@@ -35,7 +35,9 @@
     align-items: center;
 
     &:hover {
-      background-color: #dbe6ff;
+      @include themed() {
+        background-color: t("moon-hover");
+      }
       .nav-row__text {
         color: $blue;
       }

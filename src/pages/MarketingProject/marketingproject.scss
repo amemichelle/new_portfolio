@@ -6,17 +6,25 @@
 .container {
   width: 100%;
   padding-top: 5rem;
+  gap: 2rem;
+  @include flex-column;
 
   @include breakpoint-min-size($desktop) {
     padding-top: 1rem;
     width: 80%;
     max-width: 1160px;
+
+    &__card {
+      background-color: rgba(255, 255, 255, 0.3);
+      border: 1px solid white;
+      border-radius: 8px;
+      padding: 1rem;
+    }
   }
 
   &__graphics {
     @include flex-column;
-    padding: 2rem;
-    gap: 1rem;
+    gap: rem;
 
     @include breakpoint-min-size($tablet) {
       @include flex-row;
@@ -25,14 +33,7 @@
 
     @include breakpoint-min-size($desktop) {
       padding-bottom: 4%;
-      padding-left: 1.5rem;
-    }
-
-    & > div {
-      width: 100%;
-      @include breakpoint-min-size($tablet) {
-        width: 30%;
-      }
+      gap: 1rem;
     }
   }
 
@@ -41,7 +42,7 @@
     align-items: center;
 
     @include breakpoint-min-size($desktop) {
-      padding: 3.5rem 4rem;
+      padding: 4rem 4rem;
       align-items: flex-start;
     }
   }
@@ -59,6 +60,16 @@
 
   &__img {
     width: 100%;
+
+    @include breakpoint-min-size($tablet) {
+      flex-grow: 1;
+      width: fill;
+      max-width: 31.6%;
+    }
+
+    @include breakpoint-min-size($desktop) {
+      max-width: 31.6%;
+    }
   }
 }
 

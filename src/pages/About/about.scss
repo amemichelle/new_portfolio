@@ -22,7 +22,7 @@
     &--item {
       font-size: 0.9rem;
       padding-left: 0.5rem;
-      max-width: 90%;
+      max-width: 85%;
     }
   }
   &__card {
@@ -77,9 +77,11 @@
       border-radius: 8px;
       padding: 1rem;
       box-sizing: border-box;
-      @include themed() {
-        background-color: t("card");
-      }
+      border: 1px solid white;
+      background-color: rgba(255, 255, 255, 0.3);
+      // @include themed() {
+      //   background-color: t("card");
+      // }
 
       @include breakpoint-min-size($desktop) {
         padding: 1rem 2rem;
@@ -175,11 +177,13 @@
 }
 
 .rec-container {
-  border-radius: 16px;
+  border-radius: 8px;
+  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.3);
 
-  @include themed() {
-    background-color: t("card");
-  }
+  // @include themed() {
+  //   background-color: t("card");
+  // }
   @include breakpoint-min-size($desktop) {
     max-width: 80%;
     max-width: 1160px;

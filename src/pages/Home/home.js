@@ -62,6 +62,7 @@ function Home() {
                   title="Helping individuals save money through group order management"
                   location="Capstone project @ BrainStation"
                   desc="Product design, web development"
+                  tags={["PRODUCT DESIGN", "WEB DEVELOPMENT"]}
                   bgcolor="#004921"
                 ></ProjectBlock>
               </Link>
@@ -74,6 +75,11 @@ function Home() {
                   location="Employment @ Guusto"
                   desc="Product design, branding & identity, web development"
                   bgcolor="#22315c"
+                  tags={[
+                    "PRODUCT DESIGN",
+                    "BRANDING & IDENTITY",
+                    "WEB DEVELOPMENT",
+                  ]}
                 ></ProjectBlock>
               </Link>
 
@@ -85,6 +91,11 @@ function Home() {
                   location="Final Project @ Civic Innovation Change Lab"
                   desc="Service design, product design, branding & identity"
                   bgcolor="#e3d7cc"
+                  tags={[
+                    "SERVICE DESIGN",
+                    "BRANDING & IDENTITY",
+                    "PRODUCT DESIGN",
+                  ]}
                 ></ProjectBlock>
               </Link>
             </div>

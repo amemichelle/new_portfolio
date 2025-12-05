@@ -17,6 +17,7 @@ function ProjectBlock(props) {
   };
 
   const style = hovered ? { color: "#4069cc" } : {};
+  const tags = props.tags;
 
   return (
     <>
@@ -25,7 +26,7 @@ function ProjectBlock(props) {
         onMouseLeave={mouseLeave}
         className="project"
       >
-             <div className="project__top-bit">
+        <div className="project__top-bit">
           <div className="project__icon">
             <WorkIcon className="project__ic" />
           </div>
@@ -35,8 +36,6 @@ function ProjectBlock(props) {
           className={"project__img-container"}
           style={{ backgroundColor: props.bgcolor }}
         >
-
-
           <motion.img
             initial={false}
             animate={{ width: hovered ? "72%" : "70%" }}
@@ -44,16 +43,20 @@ function ProjectBlock(props) {
             src={props.hoverimg}
             className={"project__logo"}
           />
-
-
         </div>
         <div className="project__info">
           <h2 className="project__title" style={style}>
             {props.title}
           </h2>
-        <div className="project__skills">
-        <p className="project__desc">{props.desc}</p>
-        </div>
+          <div className="project__skills">
+            {/* <p className="project__desc">{props.desc}</p> */}
+            {tags.map((tag) => (
+              <p className="project__desc">
+                <span className="hashtag"># </span>
+                {tag}
+              </p>
+            ))}
+          </div>
         </div>
       </div>
     </>

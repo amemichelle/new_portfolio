@@ -68,13 +68,14 @@ iframe {
 
   &__bg {
     flex-grow: 1;
-    background-color: $tan-background;
     @include flex-column;
     align-items: center;
     justify-content: center;
     padding: 4rem 1rem;
     border-radius: 24px;
     margin-bottom: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid white;
 
     @include breakpoint-min-size($desktop) {
       width: fit-content;
@@ -84,7 +85,8 @@ iframe {
       width: 100%;
       @include flex-column;
       @include centered;
-      background-color: $tan-background;
+      background-color: rgba(255, 255, 255, 0.3);
+      border: 1px solid white;
       padding: 4rem 0;
       border-radius: 24px;
       margin-bottom: 2rem;
@@ -176,6 +178,7 @@ iframe {
 
   &__box {
     padding-bottom: 2rem;
+    flex-grow: 1;
   }
 
   &__heading {
@@ -219,11 +222,12 @@ iframe {
 
 .pull-quote {
   padding: 2rem;
-  border-left: 4px solid $blue;
-  @include themed() {
-    background-color: t("icon-bg");
-  }
-
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 1px solid white;
+  border-radius: 8px;
+  // @include themed() {
+  //   background-color: t("icon-bg");
+  // }
   &__highlight {
     margin: 0rem 0.2rem;
     font-weight: 700;
@@ -249,7 +253,7 @@ iframe {
 }
 
 .divider {
-  font-family: "Commit Mono";
+  @include m-body;
   font-weight: 700;
   color: $blue;
   padding-bottom: 0.5rem;
@@ -302,13 +306,16 @@ iframe {
 #context-bullets {
   padding-top: 2rem;
   justify-content: flex-start;
+  @include flex-column;
 
   @include breakpoint-min-size($tablet) {
     padding-top: 2rem;
+    @include flex-row;
+    flex-grow: 1;
   }
   @include breakpoint-min-size($desktop) {
     padding-top: 0rem;
-
+    @include flex-column;
     width: 25%;
   }
 }

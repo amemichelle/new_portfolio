@@ -30,7 +30,61 @@
   }
 }
 
+// COMMON STYLING
+@mixin card-background {
+  border-radius: 8px;
+  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+@mixin centered {
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin removeMargin {
+  margin-block-end: 0;
+  margin-block-start: 0;
+}
+
 // FONT STYLES - MOBILE
+
+@mixin m-h1-style {
+  font-family: "Uncut Sans", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: $black;
+}
+
+@mixin m-h2-style {
+  font-family: "Uncut Sans", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: $black;
+}
+
+@mixin m-body {
+  font-family: "Uncut Sans";
+  font-weight: 500;
+  font-size: 1rem;
+  color: $black;
+}
+
+@mixin m-bold-heading-large {
+  font-family: "Uncut Sans", sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: $black;
+}
+
+@mixin m-captions {
+  font-family: "Uncut Sans", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #5e5e5e;
+}
+
+// THE GAP
 
 @mixin m-nav-links {
   font-family: "Fraunces";
@@ -38,13 +92,6 @@
   font-size: 1.2rem;
   color: $blue;
   text-decoration: none;
-}
-
-@mixin m-h1-style {
-  font-family: "Fraunces", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: $black;
 }
 
 @mixin m-serif-lg {
@@ -61,31 +108,10 @@
   color: $black;
 }
 
-@mixin m-bold-heading-large {
-  font-family: "Fraunces";
-  font-weight: 700;
-  font-size: 1.6rem;
-  color: $black;
-}
-
 @mixin m-bold-heading {
   font-family: "Fraunces";
   font-weight: 600;
   font-size: 1.6rem;
-  color: $black;
-}
-
-@mixin m-captions {
-  font-family: "Uncut Sans", sans-serif;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #5e5e5e;
-}
-
-@mixin m-body {
-  font-family: "Uncut Sans";
-  font-weight: 500;
-  font-size: 1rem;
   color: $black;
 }
 
@@ -101,6 +127,7 @@
   font-weight: 600;
   font-size: 1rem;
   color: $blue;
+  text-decoration: none;
 }
 
 @mixin m-divider {
@@ -108,15 +135,4 @@
   font-weight: 700;
   font-size: 0.8rem;
   color: $blue;
-}
-
-// COMMON STUFF
-@mixin centered {
-  justify-content: center;
-  align-items: center;
-}
-
-@mixin removeMargin {
-  margin-block-end: 0;
-  margin-block-start: 0;
 }

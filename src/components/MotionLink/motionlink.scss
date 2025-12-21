@@ -26,6 +26,6 @@
     transition: color 0.3s ease;
     text-decoration: none;
     @include m-body;
-    color: black;
+    color: $black;
   }
 }

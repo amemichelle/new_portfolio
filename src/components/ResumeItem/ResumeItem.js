@@ -51,7 +51,11 @@ function ResumeItem() {
           </div>
         </div>
 
-        <Link className="resume__actions-button">
+        <Link
+          className="resume__actions-button"
+          to="https://drive.google.com/file/d/1q-qAXsGjh-USntfhrxIp_uQ7rI_WjZ-i/view?usp=sharing"
+          target="_blank"
+        >
           Download Resume
           <div className="resume__actions-text">
             <ResumeTitled />

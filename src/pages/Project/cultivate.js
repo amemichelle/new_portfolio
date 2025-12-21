@@ -320,7 +320,7 @@ function Cultivate() {
                     that, this collaboration could be a real win-win!”
                   </p>
 
-                  <p className="content__body">
+                  <p className="pull-quote__attribution">
                     — Social Programs Coordinator @ Potluck Cafe
                   </p>
                 </div>

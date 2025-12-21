@@ -4,13 +4,11 @@
 @import "../../styles/partials/_ThemeColors";
 
 .hackathon {
-  border-radius: 8px;
+  @include card-background;
   padding: 1.4rem;
   height: 100%;
   box-sizing: border-box;
   justify-content: center;
-  border: 1px solid white;
-  background-color: rgba(255, 255, 255, 0.3);
 
   // @include themed() {
   //   background-color: t("card");
@@ -25,27 +23,30 @@
   &__project {
     @include removeMargin;
     @include m-body;
-    @include themed() {
-      color: t("text");
-    }
+    color: $black;
+    // @include themed() {
+    //   color: t("text");
+    // }
   }
 
   &__year {
     @include removeMargin;
     @include m-body;
     font-size: 0.8rem;
-    @include themed() {
-      color: t("secondary-text");
-    }
+    color: $grey;
+    // @include themed() {
+    //   color: t("secondary-text");
+    // }
   }
 
   &__event {
     @include removeMargin;
     @include m-body;
     font-size: 0.8rem;
-    @include themed() {
-      color: t("secondary-text");
-    }
+    color: $grey;
+    // @include themed() {
+    //   color: t("secondary-text");
+    // }
   }
 
   &__divider {

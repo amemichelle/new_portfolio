@@ -6,7 +6,6 @@
 iframe {
   width: 70%;
   height: 12rem;
-
   @include breakpoint-min-size($desktop) {
     height: 24rem;
   }
@@ -20,39 +19,31 @@ iframe {
   }
 
   &__summary {
-    font-family: "Uncut Sans", sans-serif;
-    font-size: 2rem;
-    font-weight: 600;
-    @include removeMargin;
+    max-width: 90%;
     padding: 2rem 0;
-    @include themed() {
-      color: t("text");
-    }
+    @include m-h1-style;
+    @include removeMargin;
+    // @include themed() {
+    //   color: t("text");
+    // }
   }
 
   &__story-heading {
-    font-family: "Uncut Sans", sans-serif;
-    font-size: 1.6rem;
-    font-weight: 600;
-
-    @include themed() {
-      color: t("text");
-    }
-
-    @include removeMargin;
     padding-bottom: 1rem;
+    @include removeMargin;
+    @include m-h2-style;
+    @include removeMargin;
+    // @include themed() {
+    //   color: t("text");
+    // }
 
     &-main {
-      font-family: "Uncut Sans", sans-serif;
-      font-size: 1.6rem;
-      font-weight: 600;
-      @include removeMargin;
       padding: 1rem 0;
-      width: 86%;
-
-      @include themed() {
-        color: t("text");
-      }
+      @include m-h2-style;
+      @include removeMargin;
+      // @include themed() {
+      //   color: t("text");
+      // }
     }
   }
 
@@ -67,29 +58,23 @@ iframe {
   }
 
   &__bg {
-    flex-grow: 1;
-    @include flex-column;
-    align-items: center;
-    justify-content: center;
     padding: 4rem 1rem;
-    border-radius: 24px;
+    flex-grow: 1;
     margin-bottom: 0.5rem;
-    background-color: rgba(255, 255, 255, 0.3);
-    border: 1px solid white;
-
+    @include flex-column;
+    @include centered;
+    @include card-background;
     @include breakpoint-min-size($desktop) {
       width: fit-content;
     }
 
     &-max {
       width: 100%;
+      padding: 4rem 0;
+      margin-bottom: 2rem;
       @include flex-column;
       @include centered;
-      background-color: rgba(255, 255, 255, 0.3);
-      border: 1px solid white;
-      padding: 4rem 0;
-      border-radius: 24px;
-      margin-bottom: 2rem;
+      @include card-background;
     }
   }
 
@@ -99,7 +84,6 @@ iframe {
     &-main {
       width: 100%;
       padding-bottom: 2rem;
-
       @include breakpoint-min-size($desktop) {
         width: 72%;
       }
@@ -107,38 +91,35 @@ iframe {
   }
 
   &__section-heading {
-    font-family: "Uncut Sans", sans-serif;
-    font-size: 1.2rem;
-    font-weight: 600;
-    @include removeMargin;
     padding-bottom: 0.5rem;
+    @include m-bold-heading-large;
+    @include removeMargin;
   }
 
   &__body {
+    padding-bottom: 0.5rem;
     @include m-body;
     @include removeMargin;
-    padding-bottom: 0.5rem;
-    @include themed() {
-      color: t("text");
-    }
-
     @include breakpoint-min-size($desktop) {
       font-size: 1.1rem;
     }
+    // @include themed() {
+    //   color: t("text");
+    // }
   }
 
   &__hl {
-    @include m-body;
     font-weight: 700;
-    @include themed() {
-      color: t("text");
-    }
+    @include m-body;
+    // @include themed() {
+    //   color: t("text");
+    // }
   }
 
   &__inline-link {
-    @include m-text-link;
     padding-left: 0.2rem;
     padding-right: 0.2rem;
+    @include m-text-link;
 
     &:hover {
       background-color: $tan-background;
@@ -146,8 +127,8 @@ iframe {
   }
 
   &__examples {
-    @include flex-column;
     padding-top: 1.5rem;
+    @include flex-column;
 
     @include breakpoint-min-size($desktop) {
       @include flex-row;
@@ -182,9 +163,9 @@ iframe {
   }
 
   &__heading {
+    font-weight: 700;
     @include m-body;
     @include removeMargin;
-    font-weight: 700;
     @include themed() {
       color: t("text");
     }
@@ -197,20 +178,22 @@ iframe {
   }
 
   &__text {
+    width: 100%;
     @include m-body;
     @include removeMargin;
-    width: 100%;
-    @include themed() {
-      color: t("text");
-    }
+    // @include themed() {
+    //   color: t("text");
+    // }
+
     &-insights {
-      @include m-body;
-      @include removeMargin;
       width: 100%;
       padding-bottom: 0.5rem;
-      @include themed() {
-        color: t("text");
-      }
+      @include m-body;
+      @include removeMargin;
+      font-size: 1.1rem;
+      // @include themed() {
+      //   color: t("text");
+      // }
     }
   }
 
@@ -222,9 +205,7 @@ iframe {
 
 .pull-quote {
   padding: 2rem;
-  background-color: rgba(255, 255, 255, 0.3);
-  border: 1px solid white;
-  border-radius: 8px;
+  @include card-background;
   // @include themed() {
   //   background-color: t("icon-bg");
   // }
@@ -233,14 +214,20 @@ iframe {
     font-weight: 700;
   }
   &__body {
-    @include m-body;
-    @include removeMargin;
     padding-bottom: 1rem;
-    font-size: 1.2rem;
     width: 86%;
-    @include themed() {
-      color: t("text");
-    }
+    line-height: 1.6rem;
+    @include m-body;
+    font-size: 1.2rem;
+    @include removeMargin;
+    // @include themed() {
+    //   color: t("text");
+    // }
+  }
+
+  &__attribution {
+    @include m-body;
+    font-size: 0.9rem;
   }
 }
 
@@ -257,7 +244,7 @@ iframe {
   font-weight: 700;
   color: $blue;
   padding-bottom: 0.5rem;
-  font-size: 1rem;
+  font-size: 0.8rem;
   border-bottom: 1px solid $blue;
   margin-bottom: 2rem;
 }
@@ -300,6 +287,7 @@ iframe {
 #context {
   @include breakpoint-min-size($desktop) {
     width: 68%;
+    padding-right: 4rem;
   }
 }
 
@@ -316,7 +304,7 @@ iframe {
   @include breakpoint-min-size($desktop) {
     padding-top: 0rem;
     @include flex-column;
-    width: 25%;
+    width: fit-content;
   }
 }
 
@@ -359,8 +347,8 @@ div:has(> img.project__img) {
 }
 
 .people {
-  @include flex-column;
   padding-bottom: 2rem;
+  @include flex-column;
   @include breakpoint-min-size($tablet) {
     @include flex-row;
     justify-content: space-between;

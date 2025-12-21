@@ -26,12 +26,6 @@ function ProjectBlock(props) {
         onMouseLeave={mouseLeave}
         className="project"
       >
-        <div className="project__top-bit">
-          <div className="project__icon">
-            <WorkIcon className="project__ic" />
-          </div>
-          <p className="project__location">{props.location}</p>
-        </div>
         <div
           className={"project__img-container"}
           style={{ backgroundColor: props.bgcolor }}
@@ -45,11 +39,12 @@ function ProjectBlock(props) {
           />
         </div>
         <div className="project__info">
+          <p className="project__location">{props.location}</p>
+
           <h2 className="project__title" style={style}>
             {props.title}
           </h2>
           <div className="project__skills">
-            {/* <p className="project__desc">{props.desc}</p> */}
             {tags.map((tag) => (
               <p className="project__desc">
                 <span className="hashtag"># </span>

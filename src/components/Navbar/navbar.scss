@@ -28,7 +28,7 @@
     transition: color 0.3s ease;
     text-decoration: none;
     @include m-body;
-    color: black;
+    color: $black;
   }
 
   &__bg {
@@ -50,9 +50,9 @@
     position: fixed;
     z-index: 10;
 
-    @include themed() {
-      background-color: t("menu-bar");
-    }
+    // @include themed() {
+    //   background-color: t("menu-bar");
+    // }
   }
 
   &__links {
@@ -84,7 +84,6 @@
   margin: auto;
   height: fit-content;
   margin-bottom: 2rem;
-  border-radius: 16px;
   position: fixed;
   z-index: 4;
   top: 0;
@@ -92,9 +91,10 @@
   right: 0;
   margin: 0 auto;
   overflow: hidden;
-  @include themed() {
-    background-color: t("button");
-  }
+  @include card-background;
+  // @include themed() {
+  //   background-color: t("button");
+  // }
 
   @include breakpoint-min-size($desktop) {
     display: none;

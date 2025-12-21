@@ -51,161 +51,178 @@ function MarketingProject() {
           <div className="container">
             <div className="container__card">
               <div className="container__graphics">
-                <img
-                  className="graphics__img"
-                  src={blogpost1}
-                  alt="vector graphic of a file folder container a calculator, tablet, and sheets of paper."
-                />
-                <img
-                  className="graphics__img"
-                  src={blogpost2}
-                  alt="vector graphic of a laptop of a couch, with negative iconography inside of bubbles coming from it."
-                />
-                <img
-                  className="graphics__img"
-                  src={blogpost3}
-                  alt="vector graphic of a clipboard with a sheet of paper and a post it note reading your points program inside of a trash can."
-                />
-                <img
-                  className="graphics__img"
-                  src={ytthumb1}
-                  alt="graphic of the open drop representative and the founder of Guusto next to the one drop logo."
-                />
-                <img
-                  className="graphics__img"
-                  src={ytthumb2}
-                  alt="graphic of the founder of Guusto with a venn diagram representing their ace culture model in the background."
-                />
-                <img
-                  className="graphics__img"
-                  src={ytthumb3}
-                  alt="graphic of the Guusto platform with an image of a Guusto gift card in the background."
-                />
-
-                <img
-                  className="graphics__img"
-                  src={amabanner3}
-                  alt="Graphic for an event titled Equitable Framework for Recognition, with photos of Noah Warder and Shelley Dacosta on it."
-                />
-                <img
-                  className="graphics__img"
-                  src={amabanner1}
-                  alt="Graphic for an event titled Is Your Team Really Engaged? with photos of Joe Facciolo and Kwesi Thomas on it."
-                />
-                <img
-                  className="graphics__img"
-                  src={amabanner2}
-                  alt="Alternative graphic for an event titled Is Your Team Really Engaged."
-                />
+                <div className="container__row">
+                  <img
+                    className="graphics__img"
+                    src={blogpost1}
+                    alt="vector graphic of a file folder container a calculator, tablet, and sheets of paper."
+                  />
+                  <img
+                    className="graphics__img"
+                    src={blogpost2}
+                    alt="vector graphic of a laptop of a couch, with negative iconography inside of bubbles coming from it."
+                  />
+                  <img
+                    className="graphics__img"
+                    src={blogpost3}
+                    alt="vector graphic of a clipboard with a sheet of paper and a post it note reading your points program inside of a trash can."
+                  />
+                </div>
+                <div className="container__row">
+                  <img
+                    className="graphics__img"
+                    src={ytthumb1}
+                    alt="graphic of the open drop representative and the founder of Guusto next to the one drop logo."
+                  />
+                  <img
+                    className="graphics__img"
+                    src={ytthumb2}
+                    alt="graphic of the founder of Guusto with a venn diagram representing their ace culture model in the background."
+                  />
+                  <img
+                    className="graphics__img"
+                    src={ytthumb3}
+                    alt="graphic of the Guusto platform with an image of a Guusto gift card in the background."
+                  />
+                </div>
+                <div className="container__row">
+                  <img
+                    className="graphics__img"
+                    src={amabanner3}
+                    alt="Graphic for an event titled Equitable Framework for Recognition, with photos of Noah Warder and Shelley Dacosta on it."
+                  />
+                  <img
+                    className="graphics__img"
+                    src={amabanner1}
+                    alt="Graphic for an event titled Is Your Team Really Engaged? with photos of Joe Facciolo and Kwesi Thomas on it."
+                  />
+                  <img
+                    className="graphics__img"
+                    src={amabanner2}
+                    alt="Alternative graphic for an event titled Is Your Team Really Engaged."
+                  />
+                </div>
               </div>
-
-              <h2 className="graphics__header">
-                <span>Guusto</span> - Blog Post Graphics, Video Thumbnails,
-                Webinar Graphics
-              </h2>
+              <div className="graphics__info">
+                <p className="graphics__org">Guusto</p>
+                <p className="graphics__header">
+                  Blog Post Graphics, Video Thumbnails, Webinar Graphics
+                </p>
+              </div>
             </div>
 
             <div className="container__card">
               <div className="container__graphics">
-                <img
-                  className="graphics__img"
-                  src={stormhacks22post1}
-                  alt="Vector graphic of an otter and papaer craft animals in the sky, for Heroku Workshop and Team formation events."
-                />
-                <img
-                  className="graphics__img"
-                  src={stormhacks22post2}
-                  alt="Vector graphic of two otters inside of a present box, on a graphic regarding the winners of a social media giveaway."
-                />
-                <img
-                  className="graphics__img"
-                  src={stormhacks22post3}
-                  alt="Vecotr graphic of two otters on a cloud surrounded by papercraft animals, with the text What did we dream up together? above it."
-                />
-
-                <img
-                  className="graphics__img"
-                  src={stormhacks22story1}
-                  alt="Instagram story version of the Heroku Workshop and Team Formation social events"
-                />
-                <img
-                  className="graphics__img"
-                  src={stormhacks22story2}
-                  alt="Instagram story version of the social media winner graphic."
-                />
-                <img
-                  className="graphics__img"
-                  src={stormhacks22story3}
-                  alt="Instagram story of an otter with a reminder notification, reminding participants that they are running out of time to RSVP for StormHacks."
-                />
+                <div className="container__row">
+                  <img
+                    className="graphics__img"
+                    src={stormhacks22post1}
+                    alt="Vector graphic of an otter and papaer craft animals in the sky, for Heroku Workshop and Team formation events."
+                  />
+                  <img
+                    className="graphics__img"
+                    src={stormhacks22post2}
+                    alt="Vector graphic of two otters inside of a present box, on a graphic regarding the winners of a social media giveaway."
+                  />
+                  <img
+                    className="graphics__img"
+                    src={stormhacks22post3}
+                    alt="Vecotr graphic of two otters on a cloud surrounded by papercraft animals, with the text What did we dream up together? above it."
+                  />
+                </div>
+                <div className="container__row">
+                  <img
+                    className="graphics__img"
+                    src={stormhacks22story1}
+                    alt="Instagram story version of the Heroku Workshop and Team Formation social events"
+                  />
+                  <img
+                    className="graphics__img"
+                    src={stormhacks22story2}
+                    alt="Instagram story version of the social media winner graphic."
+                  />
+                  <img
+                    className="graphics__img"
+                    src={stormhacks22story3}
+                    alt="Instagram story of an otter with a reminder notification, reminding participants that they are running out of time to RSVP for StormHacks."
+                  />
+                </div>
               </div>
 
-              <h2 className="graphics__header">
-                <span>SFU Surge</span> - Stormhacks '22 Content
-              </h2>
+              <div className="graphics__info">
+                <p className="graphics__org">SFU Surge</p>
+                <p className="graphics__header">Stormhacks '22 Content</p>
+              </div>
             </div>
 
             <div className="container__card">
               <div className="container__graphics">
-                <img
-                  className="graphics__img"
-                  src={stormhacks21post1}
-                  alt="Vector graphic of a hologram otter, displaying information about a AR/VR workshop powered byh echoAR"
-                />
-                <img
-                  className="graphics__img"
-                  src={stormhacks21post2}
-                  alt="Vector graphic  of a browser and numerous otters, also displaying the information of how to enter a social media giveaway."
-                />
-                <img
-                  className="graphics__img"
-                  src={stormhacks21post3}
-                  alt="Vector graphic representing an excel spreadsheet listing out the reasons of why to apply to StormHacks."
-                />
-
-                <img
-                  className="graphics__img"
-                  src={stormhacks21story1}
-                  alt="Instagram story version of the AR/VR event graphic."
-                />
-                <img
-                  className="graphics__img"
-                  src={stormhacks21story2}
-                  alt="Instagram story version of the graphic instructing people how to enter the social media giveaway."
-                />
-                <img
-                  className="graphics__img"
-                  src={stormhacks21story3}
-                  alt="Instagram story of the StormHacks 2021 Instagram tag challenge"
-                />
+                <div className="container__row">
+                  <img
+                    className="graphics__img"
+                    src={stormhacks21post1}
+                    alt="Vector graphic of a hologram otter, displaying information about a AR/VR workshop powered byh echoAR"
+                  />
+                  <img
+                    className="graphics__img"
+                    src={stormhacks21post2}
+                    alt="Vector graphic  of a browser and numerous otters, also displaying the information of how to enter a social media giveaway."
+                  />
+                  <img
+                    className="graphics__img"
+                    src={stormhacks21post3}
+                    alt="Vector graphic representing an excel spreadsheet listing out the reasons of why to apply to StormHacks."
+                  />
+                </div>
+                <div className="container__row">
+                  <img
+                    className="graphics__img"
+                    src={stormhacks21story1}
+                    alt="Instagram story version of the AR/VR event graphic."
+                  />
+                  <img
+                    className="graphics__img"
+                    src={stormhacks21story2}
+                    alt="Instagram story version of the graphic instructing people how to enter the social media giveaway."
+                  />
+                  <img
+                    className="graphics__img"
+                    src={stormhacks21story3}
+                    alt="Instagram story of the StormHacks 2021 Instagram tag challenge"
+                  />
+                </div>
               </div>
-              <h2 className="graphics__header">
-                <span>SFU Surge</span> - Stormhacks '21 Content
-              </h2>
+              <div className="graphics__info">
+                <p className="graphics__org">SFU Surge</p>
+                <p className="graphics__header">Stormhacks '21 Content</p>
+              </div>
             </div>
 
             <div className="container__card">
               <div className="container__graphics">
-                <img
-                  className="graphics__img"
-                  src={ymhaevent1}
-                  alt="Facebook event graphic for the Youth Mental Health Association's event on COVID-19 and it's impact on mental health services."
-                />
-                <img
-                  className="graphics__img"
-                  src={ymhaevent2}
-                  alt="Facebook event graphic for the Youth Metal Health Association's event on maintaining your mental health in university."
-                />
-                <img
-                  className="graphics__img"
-                  src={ymhaevent3}
-                  alt="Facebook event graphic for the Youth Mental Health Association's event on how nutrition and food impact mental health."
-                />
+                <div className="container__row">
+                  <img
+                    className="graphics__img"
+                    src={ymhaevent1}
+                    alt="Facebook event graphic for the Youth Mental Health Association's event on COVID-19 and it's impact on mental health services."
+                  />
+                  <img
+                    className="graphics__img"
+                    src={ymhaevent2}
+                    alt="Facebook event graphic for the Youth Metal Health Association's event on maintaining your mental health in university."
+                  />
+                  <img
+                    className="graphics__img"
+                    src={ymhaevent3}
+                    alt="Facebook event graphic for the Youth Mental Health Association's event on how nutrition and food impact mental health."
+                  />
+                </div>
               </div>
-              <h2 className="graphics__header">
-                <span>Youth Mental Health Association</span> - Facebook Event
-                Graphics
-              </h2>
+
+              <div className="graphics__info">
+                <p className="graphics__org">Youth Mental Health Association</p>
+                <p className="graphics__header">Facebook Event Graphics</p>
+              </div>
             </div>
           </div>
         </div>

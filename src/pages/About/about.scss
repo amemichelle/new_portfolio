@@ -5,19 +5,17 @@
 
 .about {
   &__content {
-    font-size: 1.2rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    line-height: 1.6rem;
-    font-weight: 600;
+    line-height: 2.2rem;
+    @include m-h2-style;
   }
   &__bullet-list {
-    @include flex-column;
     gap: 0.8rem;
-    margin-block-start: 0;
-    margin-block-end: 0rem;
     padding-inline-start: 2rem;
     padding-bottom: 1rem;
+    @include flex-column;
+    @include removeMargin;
 
     &--item {
       font-size: 0.9rem;
@@ -30,42 +28,42 @@
     border-radius: 16px;
     border: solid 1px #b2c5f3;
     filter: drop-shadow(0px 4px 12px #c4d5fb);
-    @include flex-column;
     gap: 2rem;
     padding: 2rem;
-
+    @include flex-column;
     @include breakpoint-min-size($tablet) {
+      max-width: 500px;
       @include flex-row;
       @include centered;
-      max-width: 500px;
     }
 
     &-right {
-      @include flex-column;
       justify-content: space-between;
       gap: 0.5rem;
+      @include flex-column;
     }
   }
 
   &__top {
-    @include flex-column;
     gap: 2rem;
     padding: 1rem;
     padding-top: 3rem;
+    @include flex-column;
 
     @include breakpoint-min-size($desktop) {
       padding: 3.5rem 4rem;
+      max-width: 70%;
     }
 
     &-container {
-      @include flex-column;
       align-items: center;
       box-sizing: border-box;
       margin-top: 1rem;
-      background-color: #dbe6ff;
+      background-color: $blue-accent;
       border-radius: 16px;
       width: 100%;
       padding: 1rem;
+      @include flex-column;
 
       @include breakpoint-min-size($tablet) {
         padding: 3rem 5rem;
@@ -143,20 +141,13 @@
     max-width: 175px;
     position: relative;
   }
-
-  &__sparkles {
-    z-index: 2;
-    position: absolute;
-    left: 1;
-    top: 1;
-  }
 }
 
 .resume-things {
-  @include flex-column;
   max-width: 100%;
   width: 100%;
   gap: 1rem;
+  @include flex-column;
 }
 
 .hackathon-things {
@@ -165,9 +156,8 @@
 }
 
 .horizontal {
-  @include flex-column;
   gap: 2rem;
-
+  @include flex-column;
   @include breakpoint-min-size($desktop) {
     @include flex-row;
     align-items: stretch;
@@ -177,15 +167,12 @@
 }
 
 .rec-container {
-  border-radius: 8px;
-  border: 1px solid white;
-  background-color: rgba(255, 255, 255, 0.3);
-
-  // @include themed() {
-  //   background-color: t("card");
-  // }
+  @include card-background;
   @include breakpoint-min-size($desktop) {
     max-width: 80%;
     max-width: 1160px;
   }
+  // @include themed() {
+  //   background-color: t("card");
+  // }
 }

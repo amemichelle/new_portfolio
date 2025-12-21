@@ -63,7 +63,11 @@ function TopParagrah() {
                 <p className="nav-row__text">About</p>
               </div>
             </Link>
-            <Link className="nav-row__link" to="/">
+            <Link
+              className="nav-row__link"
+              to="https://drive.google.com/file/d/1q-qAXsGjh-USntfhrxIp_uQ7rI_WjZ-i/view?usp=sharing"
+              target="_blank"
+            >
               <div className="nav-row__item">
                 <ResumeIcon className="nav-row__icon" />
                 <p className="nav-row__text">Resume</p>

@@ -7,6 +7,7 @@ import Cultivate from "./pages/Project/cultivate";
 import MarketingProject from "./pages/MarketingProject/marketingproject";
 import ScrollToTop from "./components/ScrollToTop/scrolltotop";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 function App() {
   return (
     <>
@@ -24,6 +25,7 @@ function App() {
           ></Route>
         </Routes>
       </BrowserRouter>
+      <Analytics />
     </>
   );
 }

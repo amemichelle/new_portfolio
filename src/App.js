@@ -6,7 +6,7 @@ import Guusto from "./pages/Project/guusto";
 import Cultivate from "./pages/Project/cultivate";
 import MarketingProject from "./pages/MarketingProject/marketingproject";
 import FixedSidebarLayout from "./components/FixedSidebarLayout/fixedsidebarlayout";
-import ScrollToTop from "./components/ScrollToTop/scrolltotop";
+// import ScrollToTop from "./components/ScrollToTop/scrolltotop";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import { ThemeProvider } from "./context/themecontext";
 function App() {
@@ -14,7 +14,7 @@ function App() {
     <>
       <ThemeProvider>
         <BrowserRouter>
-          <ScrollToTop />
+          {/* <ScrollToTop /> */}
           <Routes>
             <Route
               path="/"

@@ -28,6 +28,7 @@ function Boxpals() {
         }}
       >
         <ProjectHeader img={boxpalsgroup} bgcolor="#8FBAA3" />
+
         <div className="content">
           <div className="content__box">
             <p className="content__summary">
@@ -178,7 +179,6 @@ function Boxpals() {
                   alt="Group order organized through spreadsheet"
                   className="content__images"
                 />
-                ;
               </div>
 
               <div className="content__bg">

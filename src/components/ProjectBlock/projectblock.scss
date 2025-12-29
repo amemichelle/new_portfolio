@@ -1,21 +1,61 @@
 @import "../../styles/partials/_FontStyles";
 @import "../../styles/partials/_Mixins";
 @import "../../styles/partials/_Variables";
+@import "../../styles/partials/_ThemeColors";
 
 .project {
-  @include breakpoint-min-size($desktop) {
-    margin-bottom: 3rem;
-    max-width: 100%;
+  position: relative;
+  padding: 1.5rem;
+  @include card-background;
+  // @include themed() {
+  //   background: t("card");
+  // }
+
+  &__ic {
+    @include themed() {
+      stroke: t("icon-stroke");
+    }
+  }
+
+  &__skills {
+    @include flex-row;
+    align-items: center;
+    gap: 0.5rem;
+    padding-bottom: 1rem;
+  }
+
+  &__skills {
+    @include flex-row;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.6rem 0;
+    border-top: 1px solid $blue;
+  }
+
+  &__icon {
+    aspect-ratio: 1/1;
+    width: 2rem;
+    @include flex-column;
+    @include centered;
+    border-radius: 4px;
+
+    // @include themed() {
+    //   background: t("icon-bg");
+    // }
   }
 
   &__img-container {
-    height: 12rem;
+    height: 7rem;
     width: 100%;
     border-radius: 8px;
     @include flex-row;
     align-items: flex-end;
     justify-content: center;
     overflow: hidden;
+
+    @include breakpoint-min-size($tablet) {
+      height: 16rem;
+    }
 
     @include breakpoint-min-size($desktop) {
       height: 16rem;
@@ -26,13 +66,22 @@
     }
   }
 
+  &__location {
+    @include removeMargin;
+    @include m-body;
+    font-size: 1rem;
+    text-decoration: none;
+    @include themed() {
+      color: t("text");
+    }
+  }
+
   &__group-img {
     width: 73%;
   }
 
   &__info {
-    padding-top: 0.6rem;
-    padding-bottom: 2rem;
+    padding-top: 1.6rem;
 
     @include breakpoint-min-size($desktop) {
       justify-content: space-between;
@@ -46,23 +95,34 @@
   }
 
   &__title {
-    @include m-serif-lg;
+    font-family: "Uncut Sans", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    padding-top: 0.5rem;
+    padding-bottom: 2rem;
     @include removeMargin;
-
-    @include breakpoint-min-size($desktop) {
-      font-size: 2rem;
-      width: 85%;
-      padding-bottom: 0.5rem;
+    @include themed() {
+      color: t("text");
     }
   }
 
   &__desc {
     @include removeMargin;
     @include m-body;
-    padding-top: 0.4rem;
+    font-size: 0.8rem;
 
-    @include breakpoint-min-size($desktop) {
-      font-size: 1.1rem;
+    @include themed() {
+      color: t("secondary-text");
     }
   }
+}
+
+.indent {
+  border-left: 1px solid $blue;
+  margin-left: 0;
+  padding-left: 1rem;
+}
+
+.hashtag {
+  color: $blue;
 }

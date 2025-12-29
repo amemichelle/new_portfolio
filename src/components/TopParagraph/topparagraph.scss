@@ -1,24 +1,73 @@
 @import "../../styles/partials/_FontStyles";
 @import "../../styles/partials/_Mixins";
 @import "../../styles/partials/_Variables";
+@import "../../styles/partials/_ThemeColors";
 
-.top-paragraph {
-  @include breakpoint-min-size($tablet) {
-    @include flex-row;
-    justify-content: center;
-    padding: 2em 0rem;
+.img-file {
+  max-width: 60%;
+}
+
+.nav-row {
+  @include flex-row;
+  justify-content: space-between;
+  margin-left: -0.7rem;
+  max-width: 90%;
+  &__text {
+    font-family: "Uncut Sans";
+    font-size: 1rem;
+    @include removeMargin;
+    @include themed() {
+      color: t("text");
+    }
   }
 
-  &__container {
-    margin: 1rem 0;
-    width: 90%;
-    @include breakpoint-min-size($tablet) {
-      width: 70%;
-    }
+  &__link {
+    text-decoration: none;
+    width: 100%;
+  }
 
-    @include breakpoint-min-size($desktop) {
-      width: 61%;
+  &__item {
+    border-radius: 8px;
+    @include flex-row;
+    transition: background-color 0.3s ease;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    align-items: center;
+
+    &:hover {
+      @include themed() {
+        background-color: t("moon-hover");
+      }
+      .nav-row__text {
+        color: $blue;
+      }
+      .nav-row__icon {
+        stroke: $blue;
+      }
     }
+  }
+
+  &__icon {
+    @include themed() {
+      stroke: t("icon-stroke");
+    }
+  }
+}
+
+.top-paragraph {
+  @include flex-column;
+  position: fixed;
+  width: auto;
+  gap: 1rem;
+  padding-left: 8rem;
+
+  &__img {
+    @include flex-row;
+    @include centered;
+    height: 180px;
+    border-radius: 8px;
+    background-color: #dbe6ff;
+    width: 86%;
   }
 }
 
@@ -30,24 +79,19 @@
   }
 
   &__title {
-    @include m-h1-style;
     @include removeMargin;
-    padding-left: 1rem;
-
-    @include breakpoint-min-size($desktop) {
-      font-size: 2.5rem;
-    }
+    font-family: "Uncut Sans", sans-serif;
+    font-size: 1rem;
+    padding-bottom: 0.5rem;
   }
 
   &__desc {
     @include removeMargin;
-    @include m-serif-lg;
-    padding: 1rem;
-
-    @include breakpoint-min-size($desktop) {
-      font-size: 1.7rem;
-      max-width: 86%;
-    }
+    font-family: "Uncut Sans", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    padding-bottom: 2rem;
+    width: 95%;
   }
 
   &__sparkle-container {
@@ -65,6 +109,10 @@
   }
 }
 
+.single-sparkle {
+  height: 1rem;
+}
+
 .list {
   &__container {
     padding-left: 1rem;
@@ -78,7 +126,8 @@
   &__desc {
     @include removeMargin;
     @include m-body;
-
+    @include flex-row;
+    align-items: center;
     @include breakpoint-min-size($desktop) {
       font-size: 1.1rem;
     }
@@ -88,6 +137,7 @@
     @include flex-row;
     gap: 0.5rem;
     padding-bottom: 0.5rem;
+    align-items: center;
   }
 
   &__inline {

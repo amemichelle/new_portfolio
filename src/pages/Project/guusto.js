@@ -2,7 +2,6 @@ import "./project.scss";
 import { motion } from "framer-motion";
 import ProjectHeader from "../../components/ProjectHeader/projectheader";
 import ModalImage from "react-modal-image";
-import Footer from "../../components/Footer/Footer";
 import guustogroup from "../../assets/guusto_group.png";
 import guustomobilebefore from "../../assets/guusto_mobile-before.png";
 import guustomobileafter from "../../assets/guusto_mobile-after.png";
@@ -25,6 +24,7 @@ function Guusto() {
         }}
       >
         <ProjectHeader img={guustogroup} bgcolor="#717FAE"></ProjectHeader>
+
         <div className="content">
           <div className="content__box">
             <div className="content__group">
@@ -171,8 +171,6 @@ function Guusto() {
             </div>
           </div>
         </div>
-
-        <Footer />
       </motion.div>
     </>
   );

@@ -1,35 +1,62 @@
 @import "../../styles/partials/_FontStyles";
 @import "../../styles/partials/_Mixins";
 @import "../../styles/partials/_Variables";
+@import "../../styles/partials/_ThemeColors";
 
-.page__container {
-  position: relative;
-  z-index: 5;
-  margin-bottom: 8rem;
-  background-color: $white;
+.background {
+  @include themed() {
+    color: t("text");
+    background: t("bg");
+  }
+}
+
+.projects-container {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 2rem 0rem;
+
+  @include breakpoint-min-size($desktop) {
+    padding: 2rem 0rem;
+  }
 }
 
 .projects-box {
-  padding: 1.5rem 1.5rem;
+  @include flex-column;
+  align-items: center;
 
-  @include breakpoint-min-size($tablet) {
-    @include flex-row;
-    justify-content: center;
+  @include breakpoint-min-size($desktop) {
+    padding: 1.5rem 4rem;
+    align-items: flex-start;
   }
 
   &__container {
-    width: 100%;
-
-    @include breakpoint-min-size($tablet) {
-      width: 70%;
-    }
-
-    @include breakpoint-min-size($desktop) {
-      width: 60%;
-    }
+    @include flex-column;
+    gap: 2rem;
+    width: 80%;
+    max-width: 1160px;
   }
 
   &__link {
     text-decoration: none;
+  }
+}
+
+.mobile-container {
+  @include flex-column;
+  align-items: center;
+  padding-top: 5rem;
+
+  @include breakpoint-min-size($desktop) {
+    display: none;
+  }
+
+  &__summary {
+    width: 80%;
+  }
+
+  &__title {
+    font-family: "Uncut Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
   }
 }

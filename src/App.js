@@ -5,7 +5,8 @@ import Boxpals from "./pages/Project/boxpals";
 import Guusto from "./pages/Project/guusto";
 import Cultivate from "./pages/Project/cultivate";
 import MarketingProject from "./pages/MarketingProject/marketingproject";
-import ScrollToTop from "./components/ScrollToTop/scrolltotop";
+import FixedSidebarLayout from "./components/FixedSidebarLayout/fixedsidebarlayout";
+// import ScrollToTop from "./components/ScrollToTop/scrolltotop";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
 function App() {

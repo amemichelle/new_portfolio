@@ -1,22 +1,87 @@
 @import "../../styles/partials/_FontStyles";
 @import "../../styles/partials/_Mixins";
 @import "../../styles/partials/_Variables";
+@import "../../styles/partials/_ThemeColors";
 
 .hackathon {
-  @include breakpoint-min-size($desktop) {
-    @include flex-column;
+  @include card-background;
+  padding: 1.4rem;
+  height: 100%;
+  box-sizing: border-box;
+  justify-content: center;
+
+  // @include themed() {
+  //   background-color: t("card");
+  // }
+
+  @include flex-column;
+  &__img {
+    width: 100%;
+    border-radius: 8px;
   }
 
-  &__header {
+  &__project {
     @include removeMargin;
-    @include m-body-serif;
+    @include m-body;
+    color: $black;
+    // @include themed() {
+    //   color: t("text");
+    // }
+  }
+
+  &__year {
+    @include removeMargin;
+    @include m-body;
+    font-size: 0.8rem;
+    color: $grey;
+    // @include themed() {
+    //   color: t("secondary-text");
+    // }
+  }
+
+  &__event {
+    @include removeMargin;
+    @include m-body;
+    font-size: 0.8rem;
+    color: $grey;
+    // @include themed() {
+    //   color: t("secondary-text");
+    // }
+  }
+
+  &__divider {
+    width: 12px;
+  }
+
+  &__container {
+    padding-top: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    @include flex-row;
+    justify-content: space-between;
+    &-info {
+      @include flex-row;
+      align-items: center;
+      gap: 0.5rem;
+      padding-top: 0.3rem;
+    }
+
+    &-right {
+      @include flex-row;
+      align-items: center;
+      gap: 0.5rem;
+    }
   }
 }
 
-.devpost {
-  @include m-text-link;
+.arrow__right,
+.arrow__left {
+  stroke: $blue;
+  transition: stroke 0.3s ease;
+  width: 32px;
+}
 
-  &:hover {
-    background-color: $tan-background;
-  }
+.arrow__right:hover,
+.arrow__left:hover {
+  stroke: #e1e6f3;
 }

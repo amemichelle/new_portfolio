@@ -1,31 +1,67 @@
 @import "../../styles/partials/_FontStyles";
 @import "../../styles/partials/_Mixins";
 @import "../../styles/partials/_Variables";
+@import "../../styles/partials/_ThemeColors";
 
 .resume {
   &__item-box {
-    padding-top: 1rem;
-    max-width: 90%;
+    @include flex-column;
+    padding: 1.4rem;
+    max-width: 100%;
+    gap: 0.5rem;
+    height: 100%;
+    @include card-background;
+
+    // @include themed() {
+    //   background-color: t("card");
+    // }
   }
 
+  &__link {
+    @include flex-row;
+    align-items: center;
+    gap: 0.3rem;
+    color: $blue;
+  }
+
+  &__item {
+    border-radius: 8px;
+    padding: 0.4rem;
+    flex: 1;
+    padding-left: 1.2rem;
+    justify-content: center;
+    @include themed() {
+      background-color: t("bg");
+      border: 1px dashed t("moon-stroke");
+    }
+  }
+
+  &__divider {
+    width: 16px;
+  }
   &__heading-items {
     @include flex-row;
-    gap: 1rem;
-    align-items: center;
+    @include centered;
+    gap: 0.5rem;
+    height: 100%;
   }
 
   &__position {
     @include m-body;
     @include removeMargin;
-    font-weight: 600;
-    font-size: 1rem;
+    font-weight: 500;
+    font-size: 0.9rem;
     padding-bottom: 0.2rem;
+    @include themed() {
+      color: t("text");
+    }
   }
 
   &__icon {
     display: none;
-    width: 40px;
+    width: 56px;
     height: auto;
+    filter: drop-shadow(0px 4px 12px rgba(196, 213, 251, 0.25));
     @include breakpoint-min-size(400px) {
       display: block;
     }
@@ -33,31 +69,80 @@
 
   &__company-date {
     @include flex-row;
-    gap: 0.6rem;
+    gap: 0.5rem;
+    align-items: center;
   }
 
   &__company {
     @include removeMargin;
     @include m-body;
     font-size: 0.8rem;
+    @include themed() {
+      color: t("secondary-text");
+    }
   }
 
   &__date {
     @include removeMargin;
     @include m-body;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+    @include themed() {
+      color: t("secondary-text");
+    }
   }
 
   &__top-text {
     @include flex-column;
+    width: 100%;
   }
 
   &__divider {
     width: 12px;
   }
 
-  &__desc {
-    @include m-body;
-    font-size: 0.9rem;
+  &__actions {
+    @include flex-row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #b2c5f3;
+    margin-bottom: 0.5rem;
+
+    &-header {
+      @include m-captions;
+      font-size: 0.8rem;
+      @include removeMargin;
+    }
+
+    &-button {
+      @include flex-row;
+      @include m-body;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      transition: background-color 1s ease 0s;
+      color: $blue;
+      padding: 0.5rem;
+
+      @include themed() {
+        background-color: t("button");
+      }
+
+      &:hover {
+        @include themed() {
+          background-color: t("moon-hover");
+        }
+      }
+    }
+
+    &-text {
+      font-family: "Uncut Sans", sans-serif;
+      color: $black;
+      font-size: 1rem;
+      @include flex-column;
+    }
   }
 }

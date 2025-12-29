@@ -1,0 +1,54 @@
+@import "./_Variables";
+
+// Define your themes
+$themes: (
+  default: (
+    bg: $white,
+    text: $black,
+    card: $white-2,
+    secondary-text: $grey,
+    icon-bg: $tan-background,
+    icon-stroke: $black,
+    icon-button: $white,
+    moon-stroke: $grey-2,
+    moon-hover: $blue-highlight,
+    menu-bar: $tan-background,
+    button: $white,
+  ),
+  dark: (
+    bg: $black-5,
+    text: $white,
+    card: $black-2,
+    secondary-text: $grey-2,
+    icon-bg: $black-4,
+    icon-stroke: $white,
+    icon-button: $black-5,
+    moon-stroke: $grey-3,
+    moon-hover: $dark-blue,
+    menu-bar: $blue,
+    button: $black-3,
+  ),
+);
+
+@mixin themed() {
+  @each $theme, $map in $themes {
+    .theme--#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), "#{$key}");
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function t($key) {
+  @return map-get($theme-map, $key);
+}

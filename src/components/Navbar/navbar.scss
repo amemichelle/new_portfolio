@@ -1,33 +1,58 @@
 @import "../../styles/partials/_FontStyles";
 @import "../../styles/partials/_Mixins";
 @import "../../styles/partials/_Variables";
-
-.nav__links > a {
-  text-decoration: none;
-
-  &:hover {
-    background-color: $tan-background;
-  }
-}
+@import "../../styles/partials/_ThemeColors";
 
 .nav {
   @include flex-row;
   justify-content: center;
+  position: relative;
+  height: 48px;
+
+  @include breakpoint-min-size($desktop) {
+    display: none;
+  }
+
+  &__link {
+    @include m-body;
+    font-size: 1.1rem;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    text-decoration: none;
+  }
+
+  &__text {
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    @include m-body;
+    color: $black;
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: $tan-background;
+    z-index: 1;
+  }
 
   &__container {
     @include flex-row;
     align-items: center;
-    justify-content: space-between;
-    padding: 1.5rem 1.5rem;
+    justify-content: center;
+    padding: 0.5rem 3rem;
     width: 100%;
+    background-color: $tan-background;
+    position: fixed;
+    z-index: 10;
 
-    @include breakpoint-min-size($tablet) {
-      width: 69%;
-    }
-
-    @include breakpoint-min-size($desktop) {
-      width: 60%;
-    }
+    // @include themed() {
+    //   background-color: t("menu-bar");
+    // }
   }
 
   &__links {
@@ -36,23 +61,17 @@
       gap: 1rem;
       @include flex-row;
     }
-
-    &-item {
-      @include m-body;
-
-      font-size: 1.1rem;
-    }
   }
 
   &__mobile-menu {
     @include flex-row;
-    @include breakpoint-min-size($tablet) {
+    @include breakpoint-min-size($desktop) {
       display: none;
     }
   }
 
   &__logo-img {
-    width: 60%;
+    width: 70%;
   }
 }
 
@@ -61,11 +80,21 @@
 }
 
 .mobile-nav {
-  width: 100%;
+  width: 80%;
+  margin: auto;
   height: fit-content;
-  background-color: #f5f0ec;
   margin-bottom: 2rem;
-  display: block;
+  position: fixed;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  overflow: hidden;
+  @include card-background;
+  // @include themed() {
+  //   background-color: t("button");
+  // }
 
   @include breakpoint-min-size($desktop) {
     display: none;
@@ -80,11 +109,14 @@
     font-weight: 600;
     text-decoration: none;
     padding: 1.1rem;
-    background-color: #f5f0ec;
-
+    @include themed() {
+      background-color: t("button");
+      color: t("text");
+    }
     &:hover {
-      background-color: $blue;
-      color: white;
+      @include themed() {
+        background-color: t("moon-hover");
+      }
     }
   }
 }

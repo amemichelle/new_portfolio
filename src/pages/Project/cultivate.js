@@ -34,7 +34,6 @@ function Cultivate() {
             </p>
 
             <p className="divider">Key Information</p>
-
             <div className="context__container">
               <div classsName="content__group" id="context">
                 <p className="content__story-heading">
@@ -321,7 +320,7 @@ function Cultivate() {
                     that, this collaboration could be a real win-win!”
                   </p>
 
-                  <p className="content__body">
+                  <p className="pull-quote__attribution">
                     — Social Programs Coordinator @ Potluck Cafe
                   </p>
                 </div>

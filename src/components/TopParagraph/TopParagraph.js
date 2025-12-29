@@ -1,17 +1,40 @@
 import "./topparagraph.scss";
-import sparklegroup from "../../assets/sparklegroup.svg";
-import singlesparkle from "../../assets/singlesparkle.svg";
+
+import { Link, useLocation } from "react-router-dom";
+
+import { ReactComponent as WorkIcon } from "../../assets/work.svg";
+import { ReactComponent as AboutIcon } from "../../assets/about.svg";
+import { ReactComponent as ResumeIcon } from "../../assets/resume.svg";
+import { ReactComponent as GraphicsIcon } from "../../assets/graphics.svg";
+import sparkleSticker from "../../assets/sparklesticker.svg";
 
 function TopParagrah() {
+  const bgVariants = {
+    rest: {
+      width: "0%",
+      transition: {
+        duration: 0.3,
+        ease: "easeOut",
+      },
+    },
+    hover: {
+      width: "100%",
+      transition: {
+        duration: "0.3",
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
     <>
       <div className="top-paragraph">
+        <div className="top-paragraph__img">
+          <img className="img-file" src={sparkleSticker} />
+        </div>
         <div className="top-paragraph__container">
           <div className="big__container">
-            <h1 className="big__title">Hiya, I’m Michelle! </h1>
-            <div className="big__sparkle-container">
-              <img src={sparklegroup} className="sparkle-group" />
-            </div>
+            <h1 className="big__title">Hiya, I’m Michelle!</h1>
           </div>
           <p className="big__desc">
             I’m a spirited Product Designer creating inviting spaces on the
@@ -19,30 +42,37 @@ function TopParagrah() {
             customer advocacy.
           </p>
 
-          <div className="list__container">
-            <div className="list__item">
-              <img src={singlesparkle} className="single-sparkle" />
-              <p className="list__desc">Living in Vancouver, Canada</p>
-            </div>
-
-            <div className="list__item">
-              <img src={singlesparkle} className="single-sparkle" />
-              <p className="list__desc">
-                Currently designing @
-                <a
-                  href="http://deltacontrols.com/"
-                  target="_blank"
-                  class="list__inline"
-                >
-                  Delta Controls ↗
-                </a>
-              </p>
-            </div>
-
-            <div className="list__item">
-              <img src={singlesparkle} className="single-sparkle" />
-              <p className="list__desc">Tinkering with React</p>
-            </div>
+          <div className="nav-row">
+            <Link className="nav-row__link" to="/">
+              <div className="nav-row__item">
+                <WorkIcon className="nav-row__icon" />
+                <p className="nav-row__text">Work</p>
+              </div>
+            </Link>
+            <Link className="nav-row__link" to="/marketing-projects">
+              <div className="nav-row__item">
+                <GraphicsIcon className="nav-row__icon" />
+                <p className="nav-row__text">Graphics</p>
+              </div>
+            </Link>
+          </div>
+          <div className="nav-row">
+            <Link className="nav-row__link" to="/about">
+              <div className="nav-row__item">
+                <AboutIcon className="nav-row__icon" />
+                <p className="nav-row__text">About</p>
+              </div>
+            </Link>
+            <Link
+              className="nav-row__link"
+              to="https://drive.google.com/file/d/1q-qAXsGjh-USntfhrxIp_uQ7rI_WjZ-i/view?usp=sharing"
+              target="_blank"
+            >
+              <div className="nav-row__item">
+                <ResumeIcon className="nav-row__icon" />
+                <p className="nav-row__text">Resume</p>
+              </div>
+            </Link>
           </div>
         </div>
       </div>

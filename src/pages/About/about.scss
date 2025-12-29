@@ -1,80 +1,90 @@
 @import "../../styles/partials/_FontStyles";
 @import "../../styles/partials/_Mixins";
 @import "../../styles/partials/_Variables";
-
-.page__container {
-  position: relative;
-  z-index: 5;
-  margin-bottom: 8rem;
-  background-color: $white;
-}
+@import "../../styles/partials/_ThemeColors";
 
 .about {
-  &__top {
-    @include flex-row;
-    justify-content: center;
-    padding-bottom: 2.5rem;
+  &__content {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    line-height: 2.2rem;
+    @include m-h2-style;
+  }
+  &__bullet-list {
+    gap: 0.8rem;
+    padding-inline-start: 2rem;
+    padding-bottom: 1rem;
+    @include flex-column;
+    @include removeMargin;
 
+    &--item {
+      font-size: 0.9rem;
+      padding-left: 0.5rem;
+      max-width: 85%;
+    }
+  }
+  &__card {
+    background-color: $white;
+    border-radius: 16px;
+    border: solid 1px #b2c5f3;
+    filter: drop-shadow(0px 4px 12px #c4d5fb);
+    gap: 2rem;
+    padding: 2rem;
+    @include flex-column;
     @include breakpoint-min-size($tablet) {
-      padding-bottom: 0rem;
+      max-width: 500px;
+      @include flex-row;
+      @include centered;
     }
 
+    &-right {
+      justify-content: space-between;
+      gap: 0.5rem;
+      @include flex-column;
+    }
+  }
+
+  &__top {
+    gap: 2rem;
+    padding: 1rem;
+    padding-top: 3rem;
+    @include flex-column;
+
     @include breakpoint-min-size($desktop) {
-      margin-bottom: 2rem;
+      padding: 3.5rem 4rem;
+      max-width: 70%;
     }
 
     &-container {
+      align-items: center;
+      box-sizing: border-box;
+      margin-top: 1rem;
+      background-color: $blue-accent;
+      border-radius: 16px;
+      width: 100%;
+      padding: 1rem;
       @include flex-column;
-      padding: 1.5rem;
 
       @include breakpoint-min-size($tablet) {
-        width: 70%;
-        @include flex-row;
-        @include centered;
-        gap: 3rem;
+        padding: 3rem 5rem;
       }
+    }
+
+    &-card {
+      max-width: 100%;
+      border-radius: 8px;
+      padding: 1rem;
+      box-sizing: border-box;
+      border: 1px solid white;
+      background-color: rgba(255, 255, 255, 0.3);
+      // @include themed() {
+      //   background-color: t("card");
+      // }
 
       @include breakpoint-min-size($desktop) {
-        width: 60%;
+        padding: 1rem 2rem;
+        max-width: 1160px;
       }
-    }
-
-    &-content {
-      order: 1;
-
-      @include breakpoint-min-size($desktop) {
-        order: 2;
-      }
-    }
-  }
-
-  &__photo {
-    order: 2;
-    width: 100%;
-    max-width: 20rem;
-
-    @include breakpoint-min-size($tablet) {
-      height: 13rem;
-    }
-
-    @include breakpoint-min-size($desktop) {
-      height: 13rem;
-      order: 1;
-    }
-  }
-
-  &__header {
-    @include m-h1-style;
-    margin-block-end: 0;
-    padding-bottom: 0.5rem;
-  }
-
-  &__desc {
-    @include m-serif-lg;
-    margin-block-start: 0;
-
-    @include breakpoint-min-size($desktop) {
-      width: 100%;
     }
   }
 
@@ -87,110 +97,82 @@
   }
 }
 
-.work {
-  &__header {
-    @include m-body-serif;
-    margin-block-end: 0;
+.card {
+  &__name {
+    @include m-serif-lg;
+    @include removeMargin;
+    font-weight: 700;
+    font-size: 2rem;
   }
 
-  &__list {
+  &__desc {
+    @include m-body;
+    @include removeMargin;
+    font-weight: 600;
+  }
+
+  &__item-list {
+    list-style: none;
     padding-inline-start: 0;
-    margin-block-start: 0.5rem;
-
-    &-item {
-      list-style: none;
-      padding-bottom: 0.5rem;
-      @include m-body;
-
-      @include breakpoint-min-size($desktop) {
-      }
-    }
-  }
-}
-
-.professional-stuff {
-  @include flex-row;
-  justify-content: left;
-  padding-bottom: 2.5rem;
-
-  @include breakpoint-min-size($tablet) {
-    padding-bottom: 0;
-    justify-content: center;
-  }
-
-  &__box {
-    padding: 0 1rem;
     @include flex-column;
+    gap: 0.5rem;
+  }
 
-    @include breakpoint-min-size($tablet) {
-      @include flex-row;
-      justify-content: space-between;
-      padding: 2rem 0;
-      width: 70%;
-      gap: 2rem;
-    }
+  &__item {
+    @include flex-row;
+    align-items: center;
+    gap: 0.5rem;
 
-    @include breakpoint-min-size($desktop) {
-      width: 60%;
+    &-text {
+      @include m-body;
+      @include removeMargin;
+      font-size: 14px;
     }
+  }
+
+  &__caption {
+    @include m-captions;
+    color: #89898e;
+    font-size: 0.65rem;
+    font-weight: 500;
+  }
+
+  &__photo {
+    max-width: 175px;
+    position: relative;
   }
 }
 
 .resume-things {
-  @include flex-column;
   max-width: 100%;
+  width: 100%;
+  gap: 1rem;
+  @include flex-column;
+}
 
-  @include breakpoint-min-size($tablet) {
-    max-width: 60%;
+.hackathon-things {
+  max-width: 100%;
+  width: 100%;
+}
+
+.horizontal {
+  gap: 2rem;
+  @include flex-column;
+  @include breakpoint-min-size($desktop) {
+    @include flex-row;
+    align-items: stretch;
+    max-width: 80%;
+    max-width: 1160px;
   }
 }
 
-.after-hours {
-  padding: 0 1rem;
-  padding-bottom: 2.5rem;
-
-  @include breakpoint-min-size($tablet) {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 1.5rem;
+.rec-container {
+  @include card-background;
+  @include breakpoint-min-size($desktop) {
+    max-width: 80%;
+    max-width: 1160px;
   }
-
-  &__container {
-    @include breakpoint-min-size($tablet) {
-      width: 70%;
-    }
-
-    @include breakpoint-min-size($desktop) {
-      width: 61%;
-    }
-  }
-
-  &__titles {
-    @include breakpoint-min-size($desktop) {
-      @include flex-row;
-      align-items: flex-end;
-      width: 66%;
-      justify-content: flex-start;
-      gap: 3rem;
-    }
-  }
-
-  &__grid {
-    @include breakpoint-min-size($desktop) {
-      @include flex-row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 0.5rem;
-    }
-  }
-
-  &__header {
-    @include m-bold-heading-large;
-    margin-block-end: 0;
-  }
-
-  &__subheader {
-    @include m-body-serif;
-    @include removeMargin;
-  }
+  // @include themed() {
+  //   background-color: t("card");
+  // }
 }

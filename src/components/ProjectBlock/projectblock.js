@@ -1,6 +1,9 @@
 import "./projectblock.scss";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import accentTop from "../../assets/tl.svg";
+import accentBottom from "../../assets/br.svg";
+import { ReactComponent as WorkIcon } from "../../assets/work.svg";
 
 function ProjectBlock(props) {
   const [hovered, setHovered] = useState(false);
@@ -14,6 +17,7 @@ function ProjectBlock(props) {
   };
 
   const style = hovered ? { color: "#4069cc" } : {};
+  const tags = props.tags;
 
   return (
     <>
@@ -35,10 +39,19 @@ function ProjectBlock(props) {
           />
         </div>
         <div className="project__info">
+          <p className="project__location">{props.location}</p>
+
           <h2 className="project__title" style={style}>
             {props.title}
           </h2>
-          <p className="project__desc">{props.desc}</p>
+          <div className="project__skills">
+            {tags.map((tag) => (
+              <p className="project__desc">
+                <span className="hashtag"># </span>
+                {tag}
+              </p>
+            ))}
+          </div>
         </div>
       </div>
     </>

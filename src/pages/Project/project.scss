@@ -1,11 +1,11 @@
 @import "../../styles/partials/_FontStyles";
 @import "../../styles/partials/_Mixins";
 @import "../../styles/partials/_Variables";
+@import "../../styles/partials/_ThemeColors";
 
 iframe {
   width: 70%;
   height: 12rem;
-
   @include breakpoint-min-size($desktop) {
     height: 24rem;
   }
@@ -19,21 +19,31 @@ iframe {
   }
 
   &__summary {
-    @include m-bold-story-heading;
+    max-width: 90%;
+    padding: 2rem 0;
+    @include m-h1-style;
     @include removeMargin;
-    padding: 3rem 0;
+    // @include themed() {
+    //   color: t("text");
+    // }
   }
 
   &__story-heading {
-    @include m-bold-story-heading;
-    @include removeMargin;
     padding-bottom: 1rem;
+    @include removeMargin;
+    @include m-h2-style;
+    @include removeMargin;
+    // @include themed() {
+    //   color: t("text");
+    // }
 
     &-main {
-      @include m-bold-story-heading;
-      @include removeMargin;
       padding: 1rem 0;
-      width: 86%;
+      @include m-h2-style;
+      @include removeMargin;
+      // @include themed() {
+      //   color: t("text");
+      // }
     }
   }
 
@@ -48,27 +58,23 @@ iframe {
   }
 
   &__bg {
-    flex-grow: 1;
-    background-color: $tan-background;
-    @include flex-column;
-    align-items: center;
-    justify-content: center;
     padding: 4rem 1rem;
-    border-radius: 24px;
+    flex-grow: 1;
     margin-bottom: 0.5rem;
-
+    @include flex-column;
+    @include centered;
+    @include card-background;
     @include breakpoint-min-size($desktop) {
       width: fit-content;
     }
 
     &-max {
       width: 100%;
+      padding: 4rem 0;
+      margin-bottom: 2rem;
       @include flex-column;
       @include centered;
-      background-color: $tan-background;
-      padding: 4rem 0;
-      border-radius: 24px;
-      margin-bottom: 2rem;
+      @include card-background;
     }
   }
 
@@ -78,7 +84,6 @@ iframe {
     &-main {
       width: 100%;
       padding-bottom: 2rem;
-
       @include breakpoint-min-size($desktop) {
         width: 72%;
       }
@@ -86,30 +91,35 @@ iframe {
   }
 
   &__section-heading {
-    @include m-bold-heading;
-    @include removeMargin;
     padding-bottom: 0.5rem;
+    @include m-bold-heading-large;
+    @include removeMargin;
   }
 
   &__body {
+    padding-bottom: 0.5rem;
     @include m-body;
     @include removeMargin;
-    padding-bottom: 0.5rem;
-
     @include breakpoint-min-size($desktop) {
       font-size: 1.1rem;
     }
+    // @include themed() {
+    //   color: t("text");
+    // }
   }
 
   &__hl {
-    @include m-body;
     font-weight: 700;
+    @include m-body;
+    // @include themed() {
+    //   color: t("text");
+    // }
   }
 
   &__inline-link {
-    @include m-text-link;
     padding-left: 0.2rem;
     padding-right: 0.2rem;
+    @include m-text-link;
 
     &:hover {
       background-color: $tan-background;
@@ -117,8 +127,8 @@ iframe {
   }
 
   &__examples {
-    @include flex-column;
     padding-top: 1.5rem;
+    @include flex-column;
 
     @include breakpoint-min-size($desktop) {
       @include flex-row;
@@ -149,12 +159,16 @@ iframe {
 
   &__box {
     padding-bottom: 2rem;
+    flex-grow: 1;
   }
 
   &__heading {
+    font-weight: 700;
     @include m-body;
     @include removeMargin;
-    font-weight: 700;
+    @include themed() {
+      color: t("text");
+    }
   }
 
   &__list {
@@ -164,16 +178,22 @@ iframe {
   }
 
   &__text {
+    width: 100%;
     @include m-body;
     @include removeMargin;
-    width: 100%;
-    color: #616161;
+    // @include themed() {
+    //   color: t("text");
+    // }
 
     &-insights {
-      @include m-body;
-      @include removeMargin;
       width: 100%;
       padding-bottom: 0.5rem;
+      @include m-body;
+      @include removeMargin;
+      font-size: 1.1rem;
+      // @include themed() {
+      //   color: t("text");
+      // }
     }
   }
 
@@ -184,21 +204,30 @@ iframe {
 }
 
 .pull-quote {
-  background-color: $tan-background;
   padding: 2rem;
-  border-left: 4px solid $blue;
-
+  @include card-background;
+  // @include themed() {
+  //   background-color: t("icon-bg");
+  // }
   &__highlight {
-    background-color: $blue-highlight;
     margin: 0rem 0.2rem;
     font-weight: 700;
   }
   &__body {
-    @include m-body;
-    @include removeMargin;
     padding-bottom: 1rem;
-    font-size: 1.2rem;
     width: 86%;
+    line-height: 1.6rem;
+    @include m-body;
+    font-size: 1.2rem;
+    @include removeMargin;
+    // @include themed() {
+    //   color: t("text");
+    // }
+  }
+
+  &__attribution {
+    @include m-body;
+    font-size: 0.9rem;
   }
 }
 
@@ -211,9 +240,12 @@ iframe {
 }
 
 .divider {
-  @include m-divider;
+  @include m-body;
+  font-weight: 700;
+  color: $blue;
+  padding-bottom: 0.5rem;
+  font-size: 0.8rem;
   border-bottom: 1px solid $blue;
-  padding-bottom: 0.2rem;
   margin-bottom: 2rem;
 }
 
@@ -255,20 +287,24 @@ iframe {
 #context {
   @include breakpoint-min-size($desktop) {
     width: 68%;
+    padding-right: 4rem;
   }
 }
 
 #context-bullets {
   padding-top: 2rem;
   justify-content: flex-start;
+  @include flex-column;
 
   @include breakpoint-min-size($tablet) {
     padding-top: 2rem;
+    @include flex-row;
+    flex-grow: 1;
   }
   @include breakpoint-min-size($desktop) {
     padding-top: 0rem;
-
-    width: 25%;
+    @include flex-column;
+    width: fit-content;
   }
 }
 
@@ -311,8 +347,8 @@ div:has(> img.project__img) {
 }
 
 .people {
-  @include flex-column;
   padding-bottom: 2rem;
+  @include flex-column;
   @include breakpoint-min-size($tablet) {
     @include flex-row;
     justify-content: space-between;

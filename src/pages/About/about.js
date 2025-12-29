@@ -1,19 +1,13 @@
 import "./about.scss";
-import { motion } from "framer-motion";
-import Navbar from "../../components/Navbar/navbar";
-import mePhoto from "../../assets/me.png";
-import SummaryBox from "../../components/SummaryBox/summarybox";
 import Hackathons from "../../components/Hackathons/hackathons";
-import Activity from "../../components/Activity/activity";
-import CTA from "../../components/CTA/cta";
-import Footer from "../../components/Footer/Footer";
 import ResumeItem from "../../components/ResumeItem/ResumeItem";
-import brainStationLogo from "../../assets/brainstation-logo.svg";
-import freelancePlaceholder from "../../assets/freelance-placeholder.svg";
-import guustoIcon from "../../assets/guusto-icon.svg";
-import deltaTriangle from "../../assets/delta-triangle.svg";
-
-function about() {
+import Recommendations from "../../components/rec/rec";
+import clock from "../../assets/clock.svg";
+import headphones from "../../assets/headset.svg";
+import circleQuestion from "../../assets/circlequestion.svg";
+import configPhoto from "../../assets/configphoto.jpg";
+import { motion } from "framer-motion";
+function About() {
   return (
     <>
       <motion.div
@@ -21,108 +15,100 @@ function about() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        transition={{ duration: 0.2 }}
+        transition={{ duration: 0.6 }}
         variants={{
           visible: { opacity: 1 },
           hidden: { opacity: 0 },
         }}
       >
-        <Navbar></Navbar>
+        <div className="about__top">
+          <div className="about__top-card">
+            <div className="about__top-container">
+              <div className="about__card" style={{ zIndex: "1" }}>
+                <div className="about__card-left">
+                  <div className="card__photo-container">
+                    <img className="card__photo" src={configPhoto} />
+                  </div>
+                </div>
+                <div className="about__card-right">
+                  <div className="card__header">
+                    <p className="card__name">Michelle Swolfs</p>
+                    <p className="card__desc">Designer who ships (sometimes)</p>
+                  </div>
+                  <ul className="card__item-list">
+                    <li className="card__item">
+                      <img src={clock} />
+                      <p className="card__item-text">
+                        Pacific standard time (PST)
+                      </p>
+                    </li>
+                    <li className="card__item">
+                      <img src={headphones} />
+                      <p className="card__item-text">
+                        Often wearing headphones
+                      </p>
+                    </li>
+                    <li className="card__item">
+                      <img src={circleQuestion} />
+                      <p className="card__item-text">
+                        May work faster than anticipated
+                      </p>
+                    </li>
+                  </ul>
 
-        <section className="about__top">
-          <div className="about__top-container">
-            <img src={mePhoto} className="about__photo" />
-            <div className="about__top-content">
-              <h1 className="about__header">Hi again, I’m Michelle! </h1>
-              <p className="about__desc">
-                Beyond Product Design, I’m a maker that enjoys taking things
-                from 0 to 1.
-              </p>
+                  <p className="card__caption">
+                    *Making and breaking things (responsibly) since 2020.
+                  </p>
+                </div>
+              </div>
             </div>
+            <blockquote className="indent">
+              <p className="about__content">
+                Hey there! I’m a Product Designer with 4+ years of experience,
+                bringing value to both startups and larger companies through
+                design and code.
+              </p>
+            </blockquote>
+
+            <ul className="about__bullet-list">
+              <li className="about__bullet-list--item">
+                Whether it was building robot kits, polishing a new Tumblr
+                theme, or crafting my Animal Crossing island, making has been at
+                the heart of what I do as long as I can remember. My hope is
+                that my career in design continues to be an extension of that.
+              </li>
+              <li className="about__bullet-list--item">
+                Inspiration comes to me from many places, whether it be a new
+                design book, the latest physical kpop release, or figuring out
+                how to make a portfolio feel warm without knowing what that
+                really means.
+              </li>
+              <li className="about__bullet-list--item">
+                Outside of work I’ve picked up a number of hobbies including
+                trying to get better at Hollow Knight, keeping my reading streak
+                alive, wandering around a gym, chipping away at a half finished
+                crochet project, and learning how to box.
+              </li>
+            </ul>
           </div>
-        </section>
 
-        <SummaryBox></SummaryBox>
-
-        <section className="professional-stuff">
-          <div className="professional-stuff__box">
+          <div className="horizontal">
             <div className="resume-things">
-              <h2 className="about__h2">Experience</h2>
-              <ResumeItem
-                icon={deltaTriangle}
-                position="Intermediate UI/UX Designer"
-                company="Delta Controls"
-                date="February 2024 - Present"
-              >
-                Collaborating on the development of the company's first design
-                system across mutiple platforms. Subsequently providing support
-                for the teams working on Proviso, Seymour, and other tools.
-              </ResumeItem>
-              <ResumeItem
-                icon={brainStationLogo}
-                position="Teaching Assistant - Software Engineering"
-                company="BrainStation"
-                date="Nov 2023 - Feb 2024"
-              >
-                Communicated complex development concepts daily to students
-                learning the fundamentals of web development through async and
-                face-to-face channels, resulting in an increase of student
-                confidence and understanding of concepts.
-              </ResumeItem>
-
-              <ResumeItem
-                icon={guustoIcon}
-                position="Junior Designer"
-                company="Guusto"
-                date="Jan 2021 - Jul 2023"
-              >
-                Spearheaded the design and development of the company's
-                marketing website by managing multiple stakeholder requests and
-                updating the website to meet business needs. Subsequently
-                utilized custom Javascript to create a tailored platform that
-                communicates the company’s value and acts as the #1 lead
-                generation tool.
-              </ResumeItem>
+              <ResumeItem />
             </div>
-            <Hackathons></Hackathons>
-          </div>
-        </section>
 
-        <section className="after-hours">
-          <div className="after-hours__container">
-            <div className="after-hours__titles">
-              <p className="after-hours__header">
-                After hours you can find me...
-              </p>
-            </div>
-            <div className="after-hours__grid">
-              <Activity
-                title="Walking slower then the average person."
-                desc="When outside, I’m often walking my senior dog Benji around a soccer field, or not walking fast enough to keep up with friends."
-              ></Activity>
-              <Activity
-                title="Sticking my nose in a book."
-                desc="For screen breaks, I’m typically reading something from my book collection for fun, or flipping through a design book for reference."
-              ></Activity>
-
-              <Activity
-                title="Participating in online communities."
-                desc="Whether it be learning from people at Vancouver Design Check-in, or moderating the personal development community for Lavendaire, I’m always trying to frequent spaces that inspire me."
-              ></Activity>
-              <Activity
-                title="Improving my hand-eye coordination."
-                desc="You can catch me trying my best at League of Legends, surviving the night in Don’t Starve Together, or putting the finishing touches on my Animal Crossing island."
-              ></Activity>
+            <div className="hackathon-things">
+              <Hackathons />
             </div>
           </div>
-        </section>
 
-        <CTA></CTA>
+          <div className="rec-container">
+            <Recommendations />
+          </div>
+        </div>
       </motion.div>
-
-      <Footer></Footer>
     </>
   );
 }
 
-export default about;
+export default About;

@@ -1,9 +1,8 @@
 import "./navbar.scss";
-import logomark from "../../assets/logomark.svg";
+import { AnimatePresence, motion } from "framer-motion";
 import mobilemenu from "../../assets/mobile-menu.svg";
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 
 function Navbar() {
   const [visible, setVisible] = useState(false);
@@ -26,7 +25,7 @@ function Navbar() {
   }, []);
 
   useEffect(() => {
-    if (viewport.width > 768) {
+    if (viewport.width > 1280) {
       setVisible(false);
     }
   }, [viewport.width]);
@@ -45,74 +44,83 @@ function Navbar() {
     setHovered(false);
   };
 
+  const bgVariants = {
+    rest: {
+      width: "0%",
+      transition: {
+        duration: 0.3,
+        ease: "easeOut",
+      },
+    },
+    hover: {
+      width: "100%",
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+      },
+    },
+  };
+
+  useEffect(() => {
+    if (visible) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [visible]);
+
   return (
     <>
       <nav className="nav">
-        <div className="nav__container">
-          <div className="nav__left-container">
-            <div className="nav__logo-container">
-              <NavLink reloadDocument to="/">
-                <img className="nav__logo-img" src={logomark} />
-              </NavLink>
-            </div>
-          </div>
-
+        <motion.div
+          className="nav__container"
+          initial={{ y: "-100%" }}
+          animate={{ y: "0%", transition: { duration: 0.3 } }}
+        >
           <div className="nav__right-container">
-            <div className="nav__links">
-              <NavLink reloadDocument to="/" className="nav__links-item">
-                Work
-              </NavLink>
-              <NavLink
-                reloadDocument
-                to="/marketing-projects"
-                className="nav__links-item"
-              >
-                Graphics
-              </NavLink>
-              <NavLink reloadDocument to="/about" className="nav__links-item">
-                About
-              </NavLink>
-              <NavLink
-                to="https://drive.google.com/file/d/1wfEGLT4n4xeaODvOHWjHYeNA15IRBg2y/view?usp=sharing"
-                target="_blank"
-                className="nav__links-item"
-              >
-                Resume
-              </NavLink>
-            </div>
             <div className="nav__mobile-menu" onClick={handleClick}>
               <img src={mobilemenu} className="mobile-menu" />
             </div>
           </div>
-        </div>
+        </motion.div>
       </nav>
-
-      {visible && (
-        <div className="mobile-nav">
-          <div className="mobile-nav__box">
-            <NavLink reloadDocument className="mobile-nav__link" to="/">
-              Work
-            </NavLink>
-            <NavLink
-              reloadDocument
-              className="mobile-nav__link"
-              to="/marketing-projects"
-            >
-              Graphics
-            </NavLink>
-            <NavLink reloadDocument className="mobile-nav__link" to="/about">
-              About
-            </NavLink>
-            <NavLink
-              className="mobile-nav__link"
-              to="https://drive.google.com/file/d/1wfEGLT4n4xeaODvOHWjHYeNA15IRBg2y/view?usp=sharing"
-              target="_blank"
-            >
-              Resume
-            </NavLink>
-          </div>
-        </div>
-      )}
+      <AnimatePresence>
+        {visible && (
+          <motion.div
+            className="mobile-nav"
+            initial={{ y: "-100%" }}
+            animate={{ y: "40%", transition: { duration: 0.5 } }}
+            exit={{ y: "-100%" }}
+          >
+            <div className="mobile-nav__box">
+              <NavLink reloadDocument className="mobile-nav__link" to="/">
+                Work
+              </NavLink>
+              <NavLink
+                reloadDocument
+                className="mobile-nav__link"
+                to="/marketing-projects"
+              >
+                Graphics
+              </NavLink>
+              <NavLink reloadDocument className="mobile-nav__link" to="/about">
+                About
+              </NavLink>
+              <NavLink
+                className="mobile-nav__link"
+                to="https://drive.google.com/file/d/1wfEGLT4n4xeaODvOHWjHYeNA15IRBg2y/view?usp=sharing"
+                target="_blank"
+              >
+                Resume
+              </NavLink>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

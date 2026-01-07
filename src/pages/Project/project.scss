@@ -133,6 +133,7 @@ iframe {
     @include breakpoint-min-size($desktop) {
       @include flex-row;
       gap: 1rem;
+      padding-bottom: 1rem;
     }
   }
 

@@ -3,11 +3,28 @@
 @import "../../styles/partials/_Variables";
 @import "../../styles/partials/_ThemeColors";
 
+.background::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
 .background {
-  @include themed() {
-    color: t("text");
-    background: t("bg");
-  }
+  // background-image:
+  //   linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+  //   linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  // background-size: 32px 32px;
+
+  // @include themed() {
+  //   color: t("text");
+  //   background: t("bg");
+  // }
 }
 
 .projects-container {

@@ -1,6 +1,6 @@
 import "./projectblock.scss";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import accentTop from "../../assets/tl.svg";
 import accentBottom from "../../assets/br.svg";
 import { ReactComponent as WorkIcon } from "../../assets/work.svg";
@@ -26,6 +26,27 @@ function ProjectBlock(props) {
         onMouseLeave={mouseLeave}
         className="project"
       >
+        <AnimatePresence initial={false}>
+          {hovered ? (
+            <motion.div
+              className="project__skills"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <p className="project__location">{props.location}</p>
+              <div className="project__tags">
+                {tags.map((tag) => (
+                  <p className="project__desc">
+                    <span className="hashtag"># </span>
+                    {tag}
+                  </p>
+                ))}
+              </div>
+            </motion.div>
+          ) : null}
+        </AnimatePresence>
+
         <div
           className={"project__img-container"}
           style={{ backgroundColor: props.bgcolor }}
@@ -39,19 +60,9 @@ function ProjectBlock(props) {
           />
         </div>
         <div className="project__info">
-          <p className="project__location">{props.location}</p>
-
           <h2 className="project__title" style={style}>
             {props.title}
           </h2>
-          <div className="project__skills">
-            {tags.map((tag) => (
-              <p className="project__desc">
-                <span className="hashtag"># </span>
-                {tag}
-              </p>
-            ))}
-          </div>
         </div>
       </div>
     </>

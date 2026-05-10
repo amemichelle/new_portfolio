@@ -4,9 +4,9 @@ import About from "./pages/About/about";
 import Boxpals from "./pages/Project/boxpals";
 import Guusto from "./pages/Project/guusto";
 import Cultivate from "./pages/Project/cultivate";
+import DeltaControls from "./pages/Project/deltacontrols";
 import MarketingProject from "./pages/MarketingProject/marketingproject";
 import FixedSidebarLayout from "./components/FixedSidebarLayout/fixedsidebarlayout";
-// import ScrollToTop from "./components/ScrollToTop/scrolltotop";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import { ThemeProvider } from "./context/themecontext";
 function App() {
@@ -35,6 +35,7 @@ function App() {
             <Route path="/boxpals" element={<Boxpals />}></Route>
             <Route path="/guusto" element={<Guusto />}></Route>
             <Route path="/cultivate" element={<Cultivate />}></Route>
+            <Route path="/deltacontrols" element={<DeltaControls />}></Route>
             <Route
               path="/marketing-projects"
               element={

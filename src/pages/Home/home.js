@@ -55,12 +55,24 @@ function Home() {
         >
           <section className="projects-box">
             <div className="projects-box__container">
+              <Link className="projects-box__link" to="/deltacontrols">
+                <ProjectBlock
+                  img={boxpalslogo}
+                  hoverimg={boxpalsGroup}
+                  title="Increasing efficiency during HVAC installation"
+                  location="DELTA CONTROLS"
+                  desc="Product design, web & app development"
+                  tags={["PRODUCT DESIGN", "WEB & APP DEVELOPMENT"]}
+                  bgcolor="#6C0E0E"
+                ></ProjectBlock>
+              </Link>
+
               <Link className="projects-box__link" to="/boxpals">
                 <ProjectBlock
                   img={boxpalslogo}
                   hoverimg={boxpalsGroup}
                   title="Helping individuals save money through group order management"
-                  location="Capstone project @ BrainStation"
+                  location="BRAINSTATION"
                   desc="Product design, web development"
                   tags={["PRODUCT DESIGN", "WEB DEVELOPMENT"]}
                   bgcolor="#004921"
@@ -72,7 +84,7 @@ function Home() {
                   img={guustologo}
                   hoverimg={guustoGroup}
                   title="Reimagining what employee recognition looks like in today's workforce"
-                  location="Employment @ Guusto"
+                  location="GUUSTO"
                   desc="Product design, branding & identity, web development"
                   bgcolor="#22315c"
                   tags={[
@@ -88,7 +100,7 @@ function Home() {
                   img={cultivateLogo}
                   hoverimg={cultivateGroup}
                   title="Connecting employers, employment agencies, and individuals with barriers to employment through micro-jobs"
-                  location="Final Project @ Civic Innovation Change Lab"
+                  location="CIVIC INNOVATION CHANGE LAB"
                   desc="Service design, product design, branding & identity"
                   bgcolor="#e3d7cc"
                   tags={[

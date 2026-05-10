@@ -75,8 +75,8 @@
       border-radius: 8px;
       padding: 1rem;
       box-sizing: border-box;
-      border: 1px solid white;
-      background-color: rgba(255, 255, 255, 0.3);
+      @include card-background;
+
       // @include themed() {
       //   background-color: t("card");
       // }

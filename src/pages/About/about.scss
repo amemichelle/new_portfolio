@@ -166,7 +166,8 @@
   }
 }
 
-.rec-container {
+.rec-container,
+.achievements-container {
   @include card-background;
   @include breakpoint-min-size($desktop) {
     max-width: 80%;
@@ -175,4 +176,14 @@
   // @include themed() {
   //   background-color: t("card");
   // }
+}
+
+.paper {
+  height: 100%;
+  margin: 1rem;
+  background-image: url("../../assets/dotgrid.png");
+}
+
+.ach-photo {
+  width: 8rem;
 }

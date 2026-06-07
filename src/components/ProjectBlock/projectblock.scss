@@ -4,8 +4,11 @@
 @import "../../styles/partials/_ThemeColors";
 
 .project {
+  display: flex;
+  flex-direction: column;
   position: relative;
   padding: 1.5rem;
+  overflow: hidden;
   @include card-background;
   // @include themed() {
   //   background: t("card");
@@ -21,7 +24,9 @@
     @include flex-row;
     align-items: center;
     justify-content: space-between;
-    padding-bottom: 0.6rem;
+    border-top: 1px solid $blue;
+    padding-top: 1rem;
+    will-change: opacity, transform;
   }
 
   &__tags {
@@ -46,10 +51,13 @@
     height: 7rem;
     width: 100%;
     border-radius: 8px;
-    @include flex-row;
-    align-items: flex-end;
+    display: flex;
     justify-content: center;
-    overflow: hidden;
+    align-items: flex-end;
+    // @include flex-row;
+    // align-items: flex-end;
+    // justify-content: center;
+    // overflow: hidden;
 
     @include breakpoint-min-size($tablet) {
       height: 16rem;
@@ -91,7 +99,11 @@
   }
 
   &__logo {
-    width: 70%;
+    max-width: 72%;
+    height: auto;
+    // display: block;
+    // transform-origin: center;
+    // width: 70%;
   }
 
   &__title {

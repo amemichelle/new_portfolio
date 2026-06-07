@@ -6,6 +6,9 @@ import clock from "../../assets/clock.svg";
 import headphones from "../../assets/headset.svg";
 import circleQuestion from "../../assets/circlequestion.svg";
 import configPhoto from "../../assets/configphoto.jpg";
+import glove from "../../assets/glove.png";
+import books from "../../assets/books.png";
+import dotgrid from "../../assets/dotgrid.png";
 import { motion } from "framer-motion";
 function About() {
   return (
@@ -91,7 +94,6 @@ function About() {
               </li>
             </ul>
           </div>
-
           <div className="horizontal">
             <div className="resume-things">
               <ResumeItem />
@@ -101,10 +103,15 @@ function About() {
               <Hackathons />
             </div>
           </div>
-
           <div className="rec-container">
             <Recommendations />
           </div>
+          {/* <div className="achievements-container">
+            <div className="paper">
+              <img className="ach-photo" src={glove} />
+              <img className="ach-photo" src={books} />
+            </div>
+          </div> */}
         </div>
       </motion.div>
     </>

@@ -31,10 +31,8 @@ function ProjectBlock(props) {
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         transition={{
-          type: "spring",
-          stiffness: 240,
-          damping: 30,
-          mass: 1,
+          duration: 0.15,
+          ease: ["easeIn", "easeOut"],
         }}
       >
         {/* Image */}
@@ -68,8 +66,8 @@ function ProjectBlock(props) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 10 }}
               transition={{
-                duration: 0.18,
-                ease: [0.22, 1, 0.36, 1],
+                duration: 0.15,
+                ease: ["easeIn", "easeOut"],
               }}
             >
               <p className="project__location">{props.location}</p>

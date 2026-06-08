@@ -31,10 +31,34 @@ function ProjectBlock(props) {
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         transition={{
-          duration: 0.15,
-          ease: ["easeIn", "easeOut"],
+          type: "spring",
+          stiffness: 240,
+          damping: 30,
+          mass: 1,
         }}
       >
+        <motion.div
+          className="project__skills"
+          key="skills"
+          initial={{ opacity: 0, height: hovered ? "auto" : 0 }}
+          animate={{
+            opacity: hovered ? 1 : 0,
+            y: 0,
+            height: hovered ? "auto" : 0,
+          }}
+          exit={{ opacity: 0, height: hovered ? "auto" : 0 }}
+        >
+          <p className="project__location">{props.location}</p>
+
+          <div className="project__tags">
+            {props.tags.map((tag) => (
+              <p key={tag} className="project__desc">
+                <span className="hashtag"># </span>
+                {tag}
+              </p>
+            ))}
+          </div>
+        </motion.div>
         {/* Image */}
         <div
           className="project__img-container"
@@ -56,33 +80,6 @@ function ProjectBlock(props) {
         <div className="project__info">
           <h2 className="project__title">{props.title}</h2>
         </div>
-
-        <AnimatePresence initial={false}>
-          {hovered && (
-            <motion.div
-              className="project__skills"
-              key="skills"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 10 }}
-              transition={{
-                duration: 0.15,
-                ease: ["easeIn", "easeOut"],
-              }}
-            >
-              <p className="project__location">{props.location}</p>
-
-              <div className="project__tags">
-                {props.tags.map((tag) => (
-                  <p key={tag} className="project__desc">
-                    <span className="hashtag"># </span>
-                    {tag}
-                  </p>
-                ))}
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </motion.div>
     </>
   );

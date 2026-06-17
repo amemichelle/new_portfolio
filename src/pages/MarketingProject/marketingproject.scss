@@ -16,8 +16,7 @@
   }
 
   &__card {
-    background-color: rgba(255, 255, 255, 0.3);
-    border: 1px solid white;
+    @include card-background;
     border-radius: 8px;
     padding: 1rem;
   }
@@ -28,6 +27,7 @@
 
     @include breakpoint-min-size($tablet) {
       @include flex-row;
+      width: 100%;
     }
   }
 
@@ -86,16 +86,15 @@
   }
 
   &__img {
-    width: 100%;
+    width: 30%;
+    // @include breakpoint-min-size($tablet) {
+    //   flex-grow: 1;
+    //   width: fill;
+    //   max-width: 31.6%;
+    // }
 
-    @include breakpoint-min-size($tablet) {
-      flex-grow: 1;
-      width: fill;
-      max-width: 31.6%;
-    }
-
-    @include breakpoint-min-size($desktop) {
-      max-width: 32.3%;
-    }
+    // @include breakpoint-min-size($desktop) {
+    //   max-width: 32.3%;
+    // }
   }
 }

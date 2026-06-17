@@ -13,6 +13,7 @@ import textSafeImg from "../../assets/textsafe-img.jpg";
 import vizitImg from "../../assets/vizit-img.jpg";
 import { ReactComponent as ArrowLeft } from "../../assets/slideshowArrowLeft.svg";
 import { ReactComponent as ArrowRight } from "../../assets/slideshowArrowRight.svg";
+import { motion, AnimatePresence } from "framer-motion";
 
 function Hackathons() {
   const [projCount, setProjCount] = useState(0);
@@ -120,28 +121,38 @@ function Hackathons() {
 
   return (
     <>
-      <div className="hackathon">
-        <img className="hackathon__img" src={projectArray[projCount].img} />
-
-        <div className="hackathon__container">
-          <div className="hackathon__container-left">
-            <p className="hackathon__project">
-              {projectArray[projCount].project}
-            </p>
-            <div className="hackathon__container-info">
-              <p className="hackathon__event">
-                {projectArray[projCount].event}
-              </p>
-              <img className="hackathon__divider" src={singleSparkle} />
-              <p className="hackathon__year">{projectArray[projCount].year}</p>
+      <AnimatePresence mode="wait">
+        <div className="hackathon">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { duration: 1 } }}
+            exit={{ opacity: 0 }}
+            key={projCount}
+          >
+            <img className="hackathon__img" src={projectArray[projCount].img} />
+            <div className="hackathon__container">
+              <div className="hackathon__container-left">
+                <p className="hackathon__project">
+                  {projectArray[projCount].project}
+                </p>
+                <div className="hackathon__container-info">
+                  <p className="hackathon__event">
+                    {projectArray[projCount].event}
+                  </p>
+                  <img className="hackathon__divider" src={singleSparkle} />
+                  <p className="hackathon__year">
+                    {projectArray[projCount].year}
+                  </p>
+                </div>
+              </div>
+              <div className="hackathon__container-right">
+                <ArrowLeft className="arrow__left" onClick={decreaseCount} />
+                <ArrowRight className="arrow__right" onClick={increaseCount} />
+              </div>
             </div>
-          </div>
-          <div className="hackathon__container-right">
-            <ArrowLeft className="arrow__left" onClick={decreaseCount} />
-            <ArrowRight className="arrow__right" onClick={increaseCount} />
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </AnimatePresence>
     </>
   );
 }

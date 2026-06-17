@@ -17,7 +17,7 @@ function ProjectBlock(props) {
   const mouseLeave = (e) => {
     timeout = setTimeout(() => {
       setHovered(false);
-    }, 60);
+    }, 30);
   };
 
   const style = hovered ? { color: "#4069cc" } : {};

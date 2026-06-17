@@ -112,7 +112,7 @@ function Navbar() {
               </NavLink>
               <NavLink
                 className="mobile-nav__link"
-                to="https://drive.google.com/file/d/1wfEGLT4n4xeaODvOHWjHYeNA15IRBg2y/view?usp=sharing"
+                to="https://drive.google.com/file/d/1q-qAXsGjh-USntfhrxIp_uQ7rI_WjZ-i/view?usp=sharing"
                 target="_blank"
               >
                 Resume
